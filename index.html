@@ -1,0 +1,1763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Threads of Memory</title>
+<meta name="description" content="Threads of Memory: Weaving Identity and Belonging. A touring exhibition proposal of ten artists working in thread, cloth and bead (University of Amsterdam, 2026).">
+<meta property="og:title" content="Threads of Memory">
+<meta property="og:description" content="Ten artists work in thread, cloth and bead to hold on to what official records leave out.">
+<meta property="og:image" content="images/rucha-installation.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316182B'/%3E%3Cpath d='M6 22c5-10 9 4 14-6s6-6 6-6' fill='none' stroke='%23E3576F' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..700;1,62..125,300..700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&display=swap">
+<style>
+/* Layout: museum microsite. Split hero, wall-label artist spreads on a 12-column grid.
+   Every <section data-slide> doubles as a 16:9 slide in presentation mode. */
+:root{
+  --bg:#F7F5F4;        /* silk white, faint rose bias */
+  --panel:#EEEAE9;     /* second ground */
+  --ink:#16182B;       /* indigo-black */
+  --ink-2:#575B6C;     /* secondary text */
+  --rule:#D9D4D4;      /* hairlines */
+  --thread:#AE1F3B;    /* cochineal thread: the one accent */
+  --indigo:#2A3275;    /* indigo dye: chapter II */
+  --mount:#FFFFFF;     /* photographic mount */
+  --veil:rgba(247,245,244,.9);
+  --f-display:"Bodoni Moda","Bodoni 72",Didot,"Libre Bodoni",Georgia,serif;
+  --f-sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --gutter:clamp(16px,4.2vw,64px);
+  --max:1380px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0F1121;--panel:#171A2E;--ink:#EDEAE9;--ink-2:#A7A9BA;--rule:#2A2D46;--thread:#E3576F;--indigo:#A4ACF3;--mount:#FFFFFF;--veil:rgba(15,17,33,.9);color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F1121;--panel:#171A2E;--ink:#EDEAE9;--ink-2:#A7A9BA;--rule:#2A2D46;--thread:#E3576F;--indigo:#A4ACF3;--mount:#FFFFFF;--veil:rgba(15,17,33,.9);color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-sans);font-size:1.0625rem;line-height:1.6;font-weight:400;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--thread);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+em{font-style:italic}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-family:var(--f-sans);font-stretch:118%;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.eyebrow b{color:var(--thread);font-weight:600}
+.rule{border:0;border-top:1px solid var(--rule);margin:0}
+.lede{font-size:1.28rem;line-height:1.5;max-width:36ch}
+.prose{max-width:62ch;display:grid;gap:1rem}
+.prose p{color:var(--ink)}
+.present-only{display:none!important}
+.notes{display:none!important}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6em;border-radius:999px;padding:.82em 1.5em;font-size:.8rem;font-weight:600;font-stretch:112%;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn--solid{background:var(--ink);color:var(--bg)}
+.btn--solid:hover{background:var(--thread);border-color:var(--thread);color:var(--bg)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{border-color:var(--thread);color:var(--thread)}
+.btn--sm{padding:.6em 1.15em;font-size:.7rem}
+.link{font-size:.78rem;font-weight:600;font-stretch:112%;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;background:none;border-top:0;border-left:0;border-right:0;cursor:pointer}
+.link:hover{color:var(--thread)}
+
+/* ---------- announcement + nav ---------- */
+.announce{background:var(--ink);color:var(--bg);font-size:.74rem;letter-spacing:.06em;text-align:center;padding-block:.55rem}
+.announce .wrap{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap}
+.announce button{background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:inherit;padding:0}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--veil);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;gap:1.5rem;min-height:68px}
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1;gap:.28rem;margin-right:auto}
+.brand__name{font-family:var(--f-display);font-size:1.45rem;letter-spacing:-.01em}
+.brand__name em{color:var(--thread)}
+.brand__sub{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-stretch:118%;color:var(--ink-2)}
+.nav__links{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}
+.nav__links a{text-decoration:none;font-size:.76rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-stretch:112%;padding-block:.4rem;border-bottom:1px solid transparent}
+.nav__links a:hover{border-color:var(--thread);color:var(--thread)}
+.nav__tools{display:flex;align-items:center;gap:.9rem}
+.lang{display:flex;gap:.2rem;font-size:.72rem;letter-spacing:.1em}
+.lang button{background:none;border:0;padding:.2rem .3rem;cursor:pointer;color:var(--ink-2)}
+.lang button[aria-pressed="true"]{color:var(--ink);font-weight:600}
+.present-btn{display:inline-flex;align-items:center;gap:.45rem;background:none;border:1px solid var(--rule);border-radius:999px;padding:.45rem .8rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--ink-2)}
+.present-btn:hover{border-color:var(--thread);color:var(--thread)}
+.present-btn svg{width:12px;height:12px}
+.menu-btn{display:none;background:none;border:1px solid var(--rule);border-radius:999px;width:40px;height:40px;cursor:pointer}
+@media (max-width: 1060px){
+  .nav__links{display:none}
+  .menu-btn{display:inline-grid;place-items:center}
+  .nav.is-open .nav__links{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--rule);padding:.5rem var(--gutter) 1rem}
+  .nav.is-open .nav__links a{display:block;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+}
+@media (max-width: 620px){
+  .lang,.present-btn span{display:none}
+  .nav .btn{padding:.6em 1em}
+}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.section{padding-block:clamp(4.5rem,9vw,8.5rem)}
+.section--panel{background:var(--panel)}
+.section__head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem 2rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section__head .eyebrow{grid-column:1/-1}
+.section__head h2{grid-column:1/span 7;font-size:clamp(2.6rem,5vw,4.6rem)}
+.section__head .lede,.section__head .prose{grid-column:8/-1}
+@media (max-width: 900px){.section__head h2,.section__head .lede,.section__head .prose{grid-column:1/-1}}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:min(86vh,880px);border-bottom:1px solid var(--rule);overflow:hidden}
+.hero__text{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;padding:clamp(2.5rem,5vw,4.5rem) var(--gutter) clamp(2rem,4vw,3rem)}
+.hero__title{font-size:clamp(3.6rem,9.2vw,10rem);line-height:.9;letter-spacing:-.025em;font-variation-settings:"opsz" 96}
+.hero__title span{display:block}
+.hero__title em{display:block;color:var(--thread);padding-left:.55em;font-weight:400}
+.hero__subtitle{font-family:var(--f-display);font-style:italic;font-size:clamp(1.3rem,2vw,1.8rem);margin-top:1.4rem;color:var(--ink-2)}
+.hero__lede{font-size:1.15rem;max-width:34ch;margin-top:1.4rem}
+.hero__ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.hero__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;border-top:1px solid var(--rule);padding-top:1.2rem}
+.fact dt{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-stretch:118%;color:var(--ink-2);margin-bottom:.35rem}
+.fact dd{margin:0;font-size:.98rem;line-height:1.35}
+.hero__media{position:relative;z-index:0;margin:0;background:var(--panel)}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero__media figcaption{position:absolute;left:1rem;bottom:1rem;right:1rem;font-size:.72rem;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.55);letter-spacing:.02em}
+.hero__thread{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.hero__thread path{fill:none;stroke:var(--thread);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.hero__present{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-stretch:115%;color:var(--ink-2)}
+@media (prefers-reduced-motion: no-preference){
+  .hero__thread path{stroke-dasharray:4200;stroke-dashoffset:4200;animation:sew 3.2s cubic-bezier(.6,.05,.3,1) .3s forwards}
+  @keyframes sew{to{stroke-dashoffset:0}}
+}
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero__media{aspect-ratio:4/3;max-height:70vh}
+  .hero__facts{grid-template-columns:1fr 1fr}
+  .hero__thread{display:none}
+}
+
+/* ---------- concept ---------- */
+.concept{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.concept__statement{grid-column:1/span 7}
+.concept__statement h2{font-size:clamp(2.6rem,5vw,4.6rem);margin-block:1rem 2rem}
+.concept__statement .prose p:first-child{font-family:var(--f-display);font-size:clamp(1.35rem,2vw,1.7rem);line-height:1.38}
+.concept__figures{grid-column:9/-1;align-self:end;display:grid;gap:0;border-top:1px solid var(--ink)}
+.figure-row{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:baseline;padding-block:1.1rem;border-bottom:1px solid var(--rule)}
+.figure-row strong{font-family:var(--f-display);font-weight:400;font-size:3rem;line-height:1;font-variant-numeric:lining-nums tabular-nums;min-width:2.4ch}
+.figure-row span{font-size:.92rem;color:var(--ink-2);line-height:1.4}
+.figure-row span i{color:var(--ink)}
+.concept__figures .eyebrow{padding-block:.9rem .2rem}
+@media (max-width: 900px){.concept__statement,.concept__figures{grid-column:1/-1}}
+
+/* ---------- thread map ---------- */
+.map-wrap{overflow-x:auto;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+.map{width:100%;min-width:720px;height:auto;display:block}
+.map .edge{fill:none;stroke:var(--thread);stroke-width:1.2;opacity:.55;transition:opacity .25s,stroke-width .25s}
+.map .edge-label{font-family:var(--f-display);font-style:italic;font-size:15px;fill:var(--ink-2);paint-order:stroke;stroke:var(--bg);stroke-width:6px;stroke-linejoin:round;transition:opacity .25s}
+.map .node circle{stroke-width:2;transition:r .2s}
+.map .node.w circle{fill:var(--thread);stroke:var(--thread)}
+.map .node.c circle{fill:var(--indigo);stroke:var(--indigo)}
+.map .node.p circle{fill:var(--bg);stroke:var(--indigo)}
+.map .node text{font-family:var(--f-sans);font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:6px;stroke-linejoin:round}
+.map .node a{cursor:pointer;text-decoration:none}
+.map .node:hover circle,.map .node:focus-within circle{r:11}
+.map.is-focus .edge{opacity:.12}
+.map.is-focus .edge-label{opacity:.15}
+.map.is-focus .edge.on{opacity:1;stroke-width:2.2}
+.map.is-focus .edge-label.on{opacity:1}
+.legend{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;margin-top:1.5rem;font-size:.82rem;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:.55rem}
+.legend i{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid}
+.legend .w{background:var(--thread);border-color:var(--thread)}
+.legend .c{background:var(--indigo);border-color:var(--indigo)}
+.legend .p{background:transparent;border-color:var(--indigo)}
+.legend .t{width:28px;height:0;border-radius:0;border:0;border-top:1.5px solid var(--thread)}
+.index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem;margin-top:3rem;border-top:1px solid var(--ink);list-style:none;padding:0}
+.index li{border-bottom:1px solid var(--rule)}
+.index a{display:grid;grid-template-columns:1.2rem 1fr auto;gap:1rem;align-items:baseline;padding-block:.95rem;text-decoration:none}
+.index a:hover .index__name{color:var(--thread)}
+.index__no{font-size:.75rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.index__name{font-family:var(--f-display);font-size:1.5rem;line-height:1.1;transition:color .2s}
+.index__tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-stretch:115%}
+@media (max-width: 700px){.index{grid-template-columns:1fr}}
+
+/* ---------- chapter dividers ---------- */
+.chapter{padding-block:clamp(4rem,8vw,7rem);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden}
+.chapter .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem 2rem;align-items:end}
+.chapter__num{grid-column:1/span 3;font-family:var(--f-display);font-size:clamp(7rem,16vw,15rem);line-height:.8;color:var(--thread);font-style:italic}
+.chapter--ii .chapter__num{color:var(--indigo)}
+.chapter__body{grid-column:5/-1;display:grid;gap:1.2rem}
+.chapter__body h2{font-size:clamp(3rem,7vw,6.5rem)}
+.chapter__body p{max-width:46ch;font-size:1.15rem}
+.chapter__artists{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-stretch:115%;color:var(--ink-2);padding-top:.6rem;border-top:1px solid var(--rule)}
+.chapter__artists b{color:var(--ink);font-weight:600}
+@media (max-width: 800px){.chapter__num,.chapter__body{grid-column:1/-1}}
+
+/* ---------- artist spreads ---------- */
+.artist{padding-block:clamp(3.5rem,7vw,6.5rem);border-bottom:1px solid var(--rule)}
+.artist .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem clamp(2rem,4vw,4rem);align-items:start}
+.artist__media{grid-column:1/span 7;display:grid;gap:.9rem;min-width:0}
+.artist__text{grid-column:8/-1;display:grid;gap:1.25rem;min-width:0;position:sticky;top:96px}
+.artist--flip .artist__media{grid-column:6/-1;grid-row:1}
+.artist--flip .artist__text{grid-column:1/span 5;grid-row:1}
+.artist__top{display:flex;align-items:center;gap:.8rem}
+.cdot{width:.62rem;height:.62rem;border-radius:50%;background:var(--thread);display:inline-block;flex:none}
+.chapter-ii .cdot,.cdot.ii{background:var(--indigo)}
+.stop{display:inline-grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--thread);color:var(--bg);font-size:.74rem;font-weight:600;font-variant-numeric:tabular-nums;flex:none}
+.chapter-ii .stop{background:var(--indigo)}
+.artist__name{font-size:clamp(2.6rem,4.4vw,4.2rem);line-height:.98}
+.artist__meta{font-size:.82rem;letter-spacing:.06em;color:var(--ink-2)}
+.artist__lede{font-size:1.12rem;line-height:1.55}
+.label{display:grid;grid-template-columns:7.2rem 1fr;gap:.55rem 1rem;margin:0;padding-block:1rem;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);font-size:.9rem;line-height:1.45}
+.label dt{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;font-stretch:118%;color:var(--ink-2);padding-top:.2rem}
+.label dd{margin:0;min-width:0}
+.label dd i{font-style:italic}
+.why{font-size:.98rem;line-height:1.6;color:var(--ink)}
+.why::before{content:"Why it is here";display:block;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;font-stretch:118%;color:var(--thread);font-weight:600;margin-bottom:.4rem}
+.quote{font-family:var(--f-display);font-style:italic;font-size:1.35rem;line-height:1.35;border-left:1.5px solid var(--thread);padding-left:1rem;margin:0}
+.quote cite{display:block;font-family:var(--f-sans);font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:.5rem}
+.mount{margin:0;background:var(--mount);display:grid;place-items:center;overflow:hidden;position:relative}
+.mount img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.mount--main{aspect-ratio:4/3.3}
+.mount--main.tall{aspect-ratio:4/4.4}
+.mount--cover img{object-fit:cover}
+.caption{font-size:.74rem;line-height:1.4;color:var(--ink-2);margin-top:.5rem}
+.caption i{font-style:italic;color:var(--ink)}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem}
+.thumbs--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.mount--duo{aspect-ratio:4/5}
+.thumbs--5{grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
+@media (max-width: 600px){.thumbs--5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.thumbs .mount{aspect-ratio:1/1}
+@media (max-width: 900px){
+  .artist__media,.artist__text,.artist--flip .artist__media,.artist--flip .artist__text{grid-column:1/-1;grid-row:auto;position:static}
+}
+
+/* placeholder: a woven swatch standing in for an image to follow */
+.ph{--w1:#C9C2C0;--w2:#8E8682;--w3:#EDE8E6;background-color:var(--w3);
+  background-image:
+   repeating-linear-gradient(90deg, color-mix(in srgb,var(--w1) 55%,transparent) 0 9px, transparent 9px 14px),
+   repeating-linear-gradient(0deg, color-mix(in srgb,var(--w2) 40%,transparent) 0 9px, transparent 9px 14px);
+}
+.ph::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 30% 20%,rgba(255,255,255,.35),transparent 60%)}
+.ph__label{position:relative;z-index:1;background:#FBFAF9;color:#16182B;padding:1.1rem 1.4rem;text-align:center;display:grid;gap:.3rem;max-width:80%}
+.ph__label b{font-family:var(--f-display);font-weight:400;font-size:1.5rem;line-height:1.1}
+.ph__label span{font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:#575B6C;font-stretch:115%}
+.ph__add{position:absolute;z-index:2;right:.7rem;bottom:.7rem;background:#16182B;color:#F7F5F4;border:0;border-radius:999px;padding:.5rem .9rem;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:0;transition:opacity .2s}
+.mount:hover .ph__add,.ph__add:focus-visible,.mount.is-drag .ph__add{opacity:1}
+.mount.is-drag{outline:2px dashed var(--thread);outline-offset:-8px}
+.mount .ph__img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--mount);z-index:1}
+.ph__remove{position:absolute;z-index:3;right:.7rem;top:.7rem;background:rgba(22,24,43,.85);color:#fff;border:0;border-radius:999px;padding:.35rem .7rem;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;opacity:0;transition:opacity .2s}
+.mount:hover .ph__remove{opacity:1}
+
+/* ---------- the space ---------- */
+.space{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2.5rem 2rem}
+.space__points{grid-column:1/span 5;display:grid;gap:0;border-top:1px solid var(--ink);align-self:start}
+.point{display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding-block:1.3rem;border-bottom:1px solid var(--rule)}
+.point h3{font-size:1.55rem;margin-bottom:.35rem}
+.point p{font-size:.98rem;color:var(--ink-2);max-width:52ch}
+.point__k{font-family:var(--f-display);font-style:italic;font-size:1.4rem;color:var(--thread)}
+.materials{grid-column:7/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem;align-self:start}
+.materials h3{font-size:.68rem;font-family:var(--f-sans);letter-spacing:.16em;text-transform:uppercase;font-stretch:118%;font-weight:600;color:var(--ink-2);padding-bottom:.7rem;border-bottom:1px solid var(--ink);margin-bottom:.3rem}
+.materials ul{list-style:none;margin:0;padding:0}
+.materials li{display:flex;align-items:center;gap:.8rem;padding-block:.55rem;border-bottom:1px solid var(--rule);font-size:.92rem;line-height:1.3}
+.materials li small{display:block;font-size:.72rem;color:var(--ink-2)}
+.sw{width:2.3rem;height:2.3rem;flex:none;border-radius:2px}
+.sw-concrete{background:#9A9894;background-image:radial-gradient(#7d7b77 1px,transparent 1.5px),radial-gradient(#b4b2ad 1px,transparent 1.5px);background-size:7px 7px,11px 11px;background-position:0 0,3px 5px}
+.sw-steel{background:linear-gradient(135deg,#5f6670,#9aa1a9 45%,#5a6069)}
+.sw-brick{background-color:#9b4a35;background-image:linear-gradient(#d8cfc6 1.5px,transparent 1.5px),linear-gradient(90deg,#d8cfc6 1.5px,transparent 1.5px);background-size:100% 9px,18px 18px}
+.sw-concrete2{background:#b3b0aa;background-image:radial-gradient(#9b9892 1px,transparent 1.6px);background-size:6px 6px}
+.sw-bed{background:linear-gradient(#22344a 70%,#e8e6e3 70%)}
+.sw-chair{background:radial-gradient(circle,#e7c6cc 55%,transparent 57%)}
+.sw-wood{background:repeating-linear-gradient(90deg,#6b3b26 0 5px,#7d4a31 5px 9px)}
+.sw-wood2{background:linear-gradient(#5a3120,#7a4630)}
+.sw-height{background:linear-gradient(#cfd3d6,#f2f2f0)}
+.sw-silk{background:linear-gradient(160deg,#b9d3c3,#e7f0ea 50%,#a8c6b4)}
+.sw-pandanus{background:repeating-linear-gradient(90deg,#c9a24a 0 4px,#8e3b5c 4px 8px,#2f7d77 8px 12px)}
+.sw-seal{background:radial-gradient(circle at 30% 30%,#a7313f,#5e1220)}
+.sw-beads{background-color:#f3e3a8;background-image:radial-gradient(circle,#e63b2e 2.4px,transparent 2.8px),radial-gradient(circle,#2554a6 2.4px,transparent 2.8px);background-size:9px 9px;background-position:0 0,4.5px 4.5px}
+.sw-rope{background:repeating-linear-gradient(60deg,#c8b28a 0 3px,#8f7a55 3px 6px)}
+.sw-floss{background-color:#f4efee;background-image:repeating-linear-gradient(0deg,transparent 0 5px,#AE1F3B 5px 6.5px)}
+@media (max-width: 900px){.space__points,.materials{grid-column:1/-1}}
+@media (max-width: 560px){.materials{grid-template-columns:1fr 1fr}}
+.tour{margin-top:clamp(2.5rem,5vw,4rem);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem 2rem;padding:clamp(1.5rem,3vw,2.5rem);border:1px solid var(--rule);background:var(--bg)}
+.tour h3{grid-column:1/span 4;font-size:clamp(1.7rem,2.6vw,2.4rem)}
+.tour p{grid-column:5/-1;max-width:68ch}
+@media (max-width: 800px){.tour h3,.tour p{grid-column:1/-1}}
+
+/* ---------- floor plan ---------- */
+.plan-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.plan-box{grid-column:1/span 8;min-width:0}
+.plan-scroll{overflow-x:auto}
+.plan{width:100%;min-width:640px;height:auto;display:block}
+.plan .wall{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:square}
+.plan .iwall{fill:none;stroke:var(--ink);stroke-width:2}
+.plan .zone-i{fill:var(--thread);fill-opacity:.07}
+.plan .zone-ii{fill:var(--indigo);fill-opacity:.07}
+.plan .work{fill:var(--bg);stroke:var(--ink-2);stroke-width:1}
+.plan .work-d{fill:none;stroke:var(--ink-2);stroke-width:1;stroke-dasharray:4 3}
+.plan .fine{fill:none;stroke:var(--ink-2);stroke-width:1}
+.plan .mat{fill:var(--ink-2);fill-opacity:.35}
+.plan .route{fill:none;stroke:var(--thread);stroke-width:2.2;stroke-dasharray:1 7;stroke-linecap:round}
+.plan .arrow{fill:none;stroke:var(--thread);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.plan .doho{fill-opacity:.4;stroke:var(--ink-2);stroke-width:1}
+.plan .work-w{fill:var(--thread);fill-opacity:.1;stroke:var(--thread);stroke-width:1.2}
+.plan .work-ii{fill:var(--indigo);fill-opacity:.1;stroke:var(--indigo);stroke-width:1.2}
+.plan .bar-w{fill:var(--thread)}
+.plan .bar-ii{fill:var(--indigo)}
+.plan .mat-ii{fill:var(--indigo);fill-opacity:.45}
+.plan .drape{fill:none;stroke:var(--thread);stroke-width:3;stroke-linecap:round}
+.plan .furn{fill:none;stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:3 3}
+.plan .halo{paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+.plan .stopc{fill:var(--thread)}
+.plan .stopc.ii{fill:var(--indigo)}
+.plan .stopt{fill:var(--bg);font-family:var(--f-sans);font-size:12px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+.plan .lbl{fill:var(--ink-2);font-family:var(--f-sans);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.plan .lbl-d{fill:var(--ink);font-family:var(--f-display);font-style:italic;font-size:23px}
+.route-list{grid-column:9/-1;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);align-self:start}
+.route-list li{display:grid;grid-template-columns:2rem 1fr auto;gap:.8rem;align-items:center;padding-block:.62rem;border-bottom:1px solid var(--rule);font-size:.95rem}
+.route-list .stop{width:1.65rem;height:1.65rem;font-size:.66rem}
+.route-list small{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.plan-legend{margin-top:1rem}
+.legend .f{background:transparent;border:1.5px dashed var(--ink-2);border-radius:2px}
+.legend .t.dash{border-top:2px dotted var(--thread)}
+.where{grid-column:9/-1;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);align-self:start}
+.where li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:baseline;padding-block:.55rem;border-bottom:1px solid var(--rule)}
+.where a{text-decoration:none;font-size:.98rem}
+.where a:hover{color:var(--thread)}
+.where small{display:block;font-size:.72rem;letter-spacing:.06em;color:var(--ink-2)}
+.thanks__more{font-size:.8rem!important;letter-spacing:.14em;text-transform:uppercase}
+html:not(.presenting) .thanks__more{display:none}
+@media (max-width: 1000px){.plan-box,.route-list,.where{grid-column:1/-1}}
+.model-cue{display:flex;gap:1rem;align-items:center;margin-top:1.4rem;padding:1rem 1.2rem;border:1px dashed var(--thread);color:var(--ink)}
+.model-cue svg{width:28px;height:28px;flex:none;stroke:var(--thread);fill:none;stroke-width:1.4}
+
+/* ---------- audio / participation ---------- */
+.audio{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.player{--hl:color-mix(in srgb,var(--thread) 62%,var(--bg));grid-column:1/span 7;background:var(--ink);color:var(--bg);padding:clamp(1.4rem,3vw,2.2rem);display:grid;gap:1.4rem;min-width:0}
+.player__now{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:center}
+.play{width:3.6rem;height:3.6rem;border-radius:50%;border:1px solid var(--bg);background:transparent;color:var(--bg);display:grid;place-items:center;cursor:pointer}
+.play:hover{background:var(--bg);color:var(--ink)}
+.play svg{width:18px;height:18px;fill:currentColor}
+.player__title{font-family:var(--f-display);font-size:1.6rem;line-height:1.15}
+.player__sub{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:.3rem}
+.bar{height:2px;background:color-mix(in srgb,var(--bg) 25%,transparent);position:relative}
+.bar i{position:absolute;left:0;top:-1px;height:4px;width:0;background:var(--hl)}
+.tracks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem}
+.tracks button{width:100%;display:block;text-align:left;background:none;border:0;border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent);padding:.6rem 0;cursor:pointer;color:var(--bg);font-size:.88rem}
+.tracks button span{font-size:.7rem;opacity:.6;font-variant-numeric:tabular-nums}
+.tracks button[aria-current="true"]{color:var(--hl)}
+.tracks button:hover{color:var(--hl)}
+.audio__side{grid-column:9/-1;display:grid;gap:1.6rem;align-content:start}
+.archive{border-top:1px solid var(--ink);padding-top:1.2rem;display:grid;gap:.8rem}
+.archive h3{font-size:2rem}
+.archive p{font-size:.98rem}
+@media (max-width: 900px){.player,.audio__side{grid-column:1/-1}.tracks{grid-template-columns:1fr}}
+
+/* ---------- context ---------- */
+.context{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.context__col{grid-column:span 6;display:grid;gap:1rem;align-content:start;border-top:1px solid var(--ink);padding-top:1.4rem}
+.context__col h3{font-size:clamp(1.8rem,2.8vw,2.5rem)}
+.context__col p{max-width:58ch}
+.context__quote{grid-column:1/-1;font-family:var(--f-display);font-style:italic;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.2;max-width:28ch;margin-top:1.5rem;color:var(--ink)}
+.context__quote::before{content:"";display:block;width:4rem;border-top:1.5px solid var(--thread);margin-bottom:1.2rem}
+@media (max-width: 800px){.context__col{grid-column:1/-1}}
+
+/* ---------- framework (present only) ---------- */
+.frame-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.frame-card{border-top:1px solid var(--ink);padding-top:1.2rem;display:grid;gap:.7rem;align-content:start}
+.frame-card h3{font-size:1.9rem}
+.frame-card p{font-size:.98rem;color:var(--ink-2)}
+.frame-card--todo{border:1px dashed var(--rule);padding:1.2rem}
+
+/* ---------- visit ---------- */
+.visit{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.visit__info{grid-column:1/span 7;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;border-top:1px solid var(--ink)}
+.vi{padding-block:1.2rem;border-bottom:1px solid var(--rule);display:grid;gap:.35rem;align-content:start}
+.vi dt{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-stretch:118%;color:var(--ink-2)}
+.vi dd{margin:0;font-size:1rem;line-height:1.45}
+.vi dd strong{font-family:var(--f-display);font-weight:400;font-size:1.5rem;display:block;line-height:1.15}
+.prices{list-style:none;padding:0;margin:0}
+.prices li{display:flex;justify-content:space-between;gap:1rem;font-variant-numeric:tabular-nums;padding-block:.15rem}
+.visit__card{grid-column:9/-1;background:var(--ink);color:var(--bg);padding:clamp(1.5rem,3vw,2.4rem);display:grid;gap:1.1rem;align-content:start}
+.visit__card h3{font-size:2.3rem}
+.visit__card p{opacity:.85;font-size:.98rem}
+.visit__card .btn--solid{background:var(--bg);color:var(--ink);border-color:var(--bg);justify-self:start}
+.visit__card .btn--solid:hover{background:var(--thread);border-color:var(--thread);color:var(--bg)}
+.signup{display:flex;gap:.5rem;flex-wrap:wrap;border-top:1px solid color-mix(in srgb,var(--bg) 22%,transparent);padding-top:1.1rem}
+.signup label{width:100%;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.signup input{flex:1;min-width:0;background:transparent;border:0;border-bottom:1px solid color-mix(in srgb,var(--bg) 50%,transparent);color:var(--bg);padding:.55rem 0;font:inherit;font-size:.95rem}
+.signup input::placeholder{color:var(--bg);opacity:.5}
+.signup button{background:none;border:1px solid var(--bg);color:var(--bg);border-radius:999px;padding:.5rem 1rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.catalogue{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:center;border:1px solid var(--rule);padding:1.2rem 1.4rem;margin-top:.5rem}
+.book{width:3.4rem;height:4.4rem;background:var(--thread);position:relative;box-shadow:4px 4px 0 var(--rule)}
+.book::after{content:"ToM";position:absolute;left:.35rem;bottom:.35rem;font-family:var(--f-display);font-style:italic;font-size:.8rem;color:var(--bg)}
+.catalogue p{font-size:.95rem}
+.catalogue p span{display:block;color:var(--ink-2);font-size:.85rem}
+@media (max-width: 900px){.visit__info,.visit__card{grid-column:1/-1}}
+@media (max-width: 560px){.visit__info{grid-template-columns:1fr}.catalogue{grid-template-columns:auto 1fr}.catalogue .btn{grid-column:1/-1;justify-self:start}}
+
+/* ---------- thanks (present only) ---------- */
+.thanks h2{font-size:clamp(4rem,10vw,9rem);line-height:.9}
+.thanks h2 em{color:var(--thread);display:block;padding-left:.5em}
+.thanks p{margin-top:2rem;font-size:1.2rem;color:var(--ink-2)}
+
+/* ---------- footer ---------- */
+.footer{background:var(--ink);color:var(--bg);padding-block:4rem 2.5rem}
+.footer .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
+.footer__brand{grid-column:1/span 5}
+.footer__brand .brand__name{font-size:2.4rem}
+.footer__brand .brand__name em{color:color-mix(in srgb,var(--thread) 70%,var(--bg))}
+.footer__brand p{margin-top:1rem;opacity:.75;max-width:40ch;font-size:.92rem}
+.footer__links{grid-column:7/span 3;list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:.92rem}
+.footer__links a,.footer__links button{text-decoration:none;opacity:.85;background:none;border:0;color:inherit;padding:0;cursor:pointer;font-size:inherit;text-align:left}
+.footer__links a:hover,.footer__links button:hover{opacity:1;text-decoration:underline}
+.footer__social{grid-column:10/-1;font-size:.92rem;display:grid;gap:.5rem;align-content:start;opacity:.85}
+.footer__small{grid-column:1/-1;border-top:1px solid color-mix(in srgb,var(--bg) 20%,transparent);padding-top:1.5rem;margin-top:1.5rem;font-size:.76rem;opacity:.65;display:grid;gap:.5rem;line-height:1.5}
+@media (max-width: 800px){.footer__brand,.footer__links,.footer__social{grid-column:1/-1}}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,calc(100% + 5rem));background:var(--ink);color:var(--bg);padding:.85rem 1.3rem;font-size:.88rem;max-width:min(92vw,520px);z-index:200;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s linear .35s;box-shadow:0 10px 30px rgba(0,0,0,.18);visibility:hidden}
+.toast.is-on{transform:translate(-50%,0);visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+
+/* ---------- tickets dialog ---------- */
+.tix{border:0;padding:0;width:min(940px,calc(100vw - 32px));max-height:calc(100vh - 32px);background:var(--bg);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.tix::backdrop{background:rgba(10,11,22,.55);backdrop-filter:blur(3px)}
+.tix__inner{padding:clamp(1.4rem,3vw,2.4rem);display:grid;gap:1.4rem}
+.tix__head{display:flex;justify-content:space-between;gap:1rem;align-items:start;border-bottom:1px solid var(--ink);padding-bottom:1rem}
+.tix__head h2{font-size:clamp(1.9rem,3vw,2.6rem)}
+.tix__head p{font-size:.85rem;color:var(--ink-2);margin-top:.3rem}
+.x{background:none;border:1px solid var(--rule);border-radius:50%;width:2.4rem;height:2.4rem;cursor:pointer;font-size:1.2rem;line-height:1;flex:none}
+.x:hover{border-color:var(--thread);color:var(--thread)}
+.tix__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem}
+.cal__head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.cal__head b{font-family:var(--f-display);font-weight:400;font-size:1.35rem}
+.cal__nav{display:flex;gap:.3rem}
+.cal__nav button{background:none;border:1px solid var(--rule);width:2rem;height:2rem;border-radius:50%;cursor:pointer}
+.cal__nav button:disabled{opacity:.3;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center;font-variant-numeric:tabular-nums}
+.cal .dow{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding-block:.3rem}
+.cal button{aspect-ratio:1/1;background:none;border:1px solid transparent;cursor:pointer;font-size:.86rem;border-radius:2px}
+.cal button:hover:not(:disabled){border-color:var(--ink)}
+.cal button:disabled{color:var(--rule);cursor:default;text-decoration:line-through}
+.cal button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.cal__key{font-size:.74rem;color:var(--ink-2);margin-top:.6rem}
+.slots{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.slots button{border:1px solid var(--rule);background:none;border-radius:999px;padding:.4rem .8rem;font-size:.82rem;cursor:pointer;font-variant-numeric:tabular-nums}
+.slots button small{color:var(--thread);font-size:.65rem;margin-left:.3rem}
+.slots button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.slots button[aria-pressed="true"] small{color:var(--bg)}
+.sub-h{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-stretch:118%;color:var(--ink-2);margin-bottom:.6rem}
+.ttype{display:grid;grid-template-columns:1fr auto auto;gap:1rem;align-items:center;padding-block:.65rem;border-bottom:1px solid var(--rule)}
+.ttype p{font-size:.95rem;line-height:1.25}
+.ttype p small{display:block;color:var(--ink-2);font-size:.75rem}
+.ttype .price{font-variant-numeric:tabular-nums;font-size:.92rem}
+.step{display:flex;align-items:center;gap:.5rem}
+.step button{width:1.9rem;height:1.9rem;border-radius:50%;border:1px solid var(--rule);background:none;cursor:pointer;font-size:1rem;line-height:1}
+.step button:hover{border-color:var(--ink)}
+.step output{min-width:1.2ch;text-align:center;font-variant-numeric:tabular-nums}
+.tix__total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;font-variant-numeric:tabular-nums}
+.tix__total b{font-family:var(--f-display);font-weight:400;font-size:1.8rem}
+.tix__foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--rule);padding-top:1.1rem}
+.tix__foot p{font-size:.8rem;color:var(--ink-2);max-width:46ch}
+.done{display:grid;gap:1rem;padding-block:1rem;max-width:56ch}
+.done h3{font-size:clamp(2rem,4vw,3rem)}
+.done .summary{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding-block:1rem;font-variant-numeric:tabular-nums}
+@media (max-width: 760px){.tix__grid{grid-template-columns:1fr}}
+
+@media (max-width: 800px){
+  :is(.section__head,.concept,.chapter .wrap,.artist .wrap,.space,.tour,.plan-grid,.audio,.context,.visit,.footer .wrap){grid-template-columns:minmax(0,1fr)}
+  .where{column-count:1}
+  :is(.section__head,.concept,.chapter .wrap,.artist .wrap,.space,.tour,.plan-grid,.audio,.context,.visit,.footer .wrap) > *{grid-column:1/-1!important;grid-row:auto!important}
+  .frame-cards{grid-template-columns:1fr}
+}
+
+/* ======================================================================
+   PRESENTATION MODE
+   ====================================================================== */
+.hud,.notes-panel,.help{display:none}
+html.presenting{font-size:clamp(12.5px,calc(.62vw + .62vh + 1.6px),28px);scroll-behavior:auto}
+html.presenting body{overflow:hidden;height:100vh}
+html.presenting .announce,html.presenting .nav,html.presenting .footer,html.presenting .site-only{display:none!important}
+html.presenting .present-only{display:block!important}
+html.presenting [data-slide]{position:fixed;inset:0;z-index:10;margin:0;overflow-y:auto;overflow-x:hidden;background:var(--bg);display:flex!important;flex-direction:column;justify-content:flex-start;padding:4.5vh 0 9vh;border:0;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+html.presenting [data-slide].section--panel{background:var(--panel)}
+html.presenting [data-slide].is-current{opacity:1;visibility:visible;transition:opacity .45s ease}
+html.presenting [data-slide] > .wrap{max-width:none;padding-inline:6vw;margin-block:auto}
+html.presenting .model-cue.present-only{display:flex!important}
+html.presenting .hero__media figcaption{top:1rem;bottom:auto}
+html.presenting .artist__text{position:static}
+
+/* hero slide */
+html.presenting .hero{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(0,5fr);padding:0}
+html.presenting .hero__text{padding:7vh 4vw 11vh 6vw}
+html.presenting .hero__title{font-size:min(8.8rem,15vh)}
+html.presenting .hero__media{height:100vh}
+html.presenting .hero__ctas{display:none}
+
+/* type scale for the room */
+html.presenting .section__head{margin-bottom:2.2rem}
+html.presenting .section__head h2,html.presenting .concept__statement h2{font-size:min(4rem,9vh)}
+html.presenting .chapter__num{font-size:min(15rem,34vh)}
+html.presenting .chapter__body h2{font-size:min(6.5rem,15vh)}
+html.presenting .artist__name{font-size:min(3.6rem,8.5vh)}
+html.presenting .artist .wrap{align-items:center}
+html.presenting .artist__text{gap:1rem}
+html.presenting .artist__lede{font-size:1.02rem}
+html.presenting .artist .label{font-size:.82rem;padding-block:.75rem}
+html.presenting .artist .why{font-size:.9rem}
+html.presenting .artist__meta{font-size:.74rem}
+html.presenting .mount--main{aspect-ratio:auto;height:min(58vh,46vw)}
+html.presenting .mount--main.tall{height:min(64vh,46vw)}
+html.presenting .thumbs .mount{aspect-ratio:auto;height:15vh}
+html.presenting .artist .quote{font-size:1.15rem}
+html.presenting .index{display:none}
+html.presenting .map{max-height:52vh}
+html.presenting .plan{max-height:50vh}
+html.presenting #route .section__head h2{font-size:min(3.2rem,7vh)}
+html.presenting .artist__media:has(.thumbs) .mount--main{height:min(47vh,40vw)}
+html.presenting .artist__media .thumbs + .caption{font-size:.62rem;line-height:1.35}
+html.presenting .thumbs .mount{height:13vh}
+html.presenting .mount--duo{aspect-ratio:auto;height:min(60vh,30vw)}
+html.presenting #route .section__head,html.presenting #space .section__head,html.presenting #artists .section__head{margin-bottom:1.4rem}
+html.presenting .point{padding-block:.85rem}
+html.presenting .materials li{padding-block:.38rem}
+html.presenting .tour{padding:1.1rem 1.6rem}
+html.presenting .model-cue{margin-top:.9rem;padding:.7rem 1rem}
+html.presenting .where li{padding-block:.32rem}
+html.presenting .where small{font-size:.66rem}
+html.presenting .plan-legend{margin-top:.6rem}
+html.presenting .materials li{font-size:.85rem}
+html.presenting .tour{margin-top:1.4rem}
+html.presenting .section__head .lede{font-size:1.15rem}
+html.presenting .context__quote{font-size:2.2rem;margin-top:.5rem}
+html.presenting .catalogue{display:none}
+html.presenting .thanks h2{font-size:min(9rem,22vh)}
+
+/* hud */
+html.presenting .hud{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;gap:1.5rem;padding:0 2vw calc(1.2vh + env(safe-area-inset-bottom,0px));height:7vh;min-height:44px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-stretch:112%;color:var(--ink-2);pointer-events:none}
+.hud > *{pointer-events:auto}
+.hud__brand{font-family:var(--f-display);font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--ink)}
+.hud__brand em{color:var(--thread)}
+.hud__label{flex:1;text-align:center}
+.hud__count{font-variant-numeric:tabular-nums;color:var(--ink)}
+.hud__btns{display:flex;gap:.35rem}
+.hud__btns button{width:2.1rem;height:2.1rem;border-radius:50%;border:1px solid var(--rule);background:var(--bg);color:var(--ink);cursor:pointer;display:grid;place-items:center;font-size:.9rem;line-height:1}
+.hud__btns button:hover{border-color:var(--thread);color:var(--thread)}
+.hud__btns button.wide{width:auto;padding:0 .85rem;border-radius:999px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+.hud__progress{position:absolute;left:0;bottom:0;height:3px;background:var(--thread);transition:width .45s ease;width:0}
+html.presenting .notes-panel.is-on{display:block;position:fixed;right:1.2vw;bottom:8.5vh;width:min(34vw,560px);max-height:62vh;overflow:auto;z-index:70;background:var(--ink);color:var(--bg);padding:1.2rem 1.4rem;font-size:.92rem;line-height:1.55;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.notes-panel h4{margin:0 0 .6rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7;font-weight:600}
+.notes-panel p + p{margin-top:.6rem}
+html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:center;z-index:80;background:rgba(10,11,22,.6)}
+.help__card{background:var(--bg);color:var(--ink);padding:2rem 2.4rem;max-width:520px;display:grid;gap:.9rem}
+.help__card h4{margin:0;font-family:var(--f-display);font-weight:400;font-size:2rem}
+.help__card dl{display:grid;grid-template-columns:auto 1fr;gap:.45rem 1.2rem;margin:0;font-size:.95rem}
+.help__card dt{font-variant-numeric:tabular-nums}
+.help__card kbd{font-family:var(--f-sans);font-size:.75rem;border:1px solid var(--rule);border-bottom-width:2px;border-radius:4px;padding:.12rem .45rem;background:var(--panel)}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.presenting [data-slide],html.presenting [data-slide].is-current{transition:none}
+}
+</style>
+<style>body{margin:0}</style>
+</head>
+<body>
+
+<!-- ============================ TOP ============================ -->
+<div class="announce" role="note">
+  <div class="wrap">
+    <span>Opening 5 March 2027 &nbsp;·&nbsp; Priority booking for Friends opens 1 December 2026</span>
+    <button type="button" data-tickets>Book tickets</button>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Threads of Memory, home">
+      <span class="brand__name">Threads <em>of Memory</em></span>
+      <span class="brand__sub">Weaving identity and belonging</span>
+    </a>
+    <ul class="nav__links" id="navlinks">
+      <li><a href="#exhibition">Exhibition</a></li>
+      <li><a href="#artists">Artists</a></li>
+      <li><a href="#space">The Space</a></li>
+      <li><a href="#audio">Audio guide</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <div class="nav__tools">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" aria-pressed="true">EN</button>
+        <button type="button" aria-pressed="false" data-toast="The Dutch version of this site arrives with the venue announcement.">NL</button>
+      </div>
+      <button class="present-btn" type="button" id="presentBtn" title="Presentation mode (P)">
+        <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1.5v9l8-4.5z" fill="currentColor"/></svg><span>Present</span>
+      </button>
+      <button class="btn btn--solid btn--sm" type="button" data-tickets>Tickets</button>
+      <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
+        <svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true"><path d="M0 1h16M0 9h16" stroke="currentColor" stroke-width="1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ 1. HERO ============================ -->
+<section class="hero" id="top" data-slide data-label="Opening">
+  <div class="hero__text">
+    <div>
+      <p class="eyebrow">A touring exhibition &nbsp;·&nbsp; <b>5 March – 29 August 2027</b></p>
+    </div>
+    <div>
+      <h1 class="hero__title"><span>Threads</span><em>of Memory</em></h1>
+      <p class="hero__subtitle">Weaving Identity and Belonging</p>
+      <p class="hero__lede">Ten artists work in thread, cloth and bead to hold on to what official records leave out: the memories of women, families and communities.</p>
+      <div class="hero__ctas">
+        <button class="btn btn--solid" type="button" data-tickets>Book tickets</button>
+        <a class="btn btn--ghost" href="#exhibition">Explore the exhibition</a>
+      </div>
+    </div>
+    <div>
+      <p class="hero__present present-only">Exhibition proposal &nbsp;·&nbsp; Bjarne, Fiona, Lola &amp; Marije &nbsp;·&nbsp; Doing Modern and Contemporary Art, University of Amsterdam &nbsp;·&nbsp; 13 October 2026</p>
+      <dl class="hero__facts site-only">
+        <div class="fact"><dt>Opens</dt><dd>Friday 5 March 2027</dd></div>
+        <div class="fact"><dt>Venue</dt><dd>A former industrial building, announced January 2027</dd></div>
+        <div class="fact"><dt>Visit</dt><dd>Timed entry, allow 75 minutes</dd></div>
+      </dl>
+    </div>
+  </div>
+  <figure class="hero__media">
+    <img src="images/rucha-installation.jpg" alt="Two large pink stitched textiles suspended from the ceiling of a concrete-floored hall, a branching line drawn on the floor beneath them.">
+    <figcaption>Rucha Kulkarni, installation view</figcaption>
+  </figure>
+  <svg class="hero__thread" viewBox="0 0 1440 860" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M775 -20 C 770 150, 790 300, 772 420 C 760 500, 700 590, 762 615 C 825 640, 852 548, 800 528 C 748 508, 722 650, 870 668 C 1010 684, 1190 560, 1460 380"/>
+  </svg>
+  <aside class="notes">
+    <p>Welcome. Our exhibition is called <i>Threads of Memory: Weaving Identity and Belonging</i>.</p>
+    <p>This is the public website a visitor would find, with tickets, an audio guide and visitor information. We use it for the theme and the context; after that Fiona takes us through the exhibition in her 3D model.</p>
+  </aside>
+</section>
+
+<!-- ============================ 2. CONCEPT ============================ -->
+<section class="section" id="exhibition" data-slide data-label="Theme">
+  <div class="wrap concept">
+    <div class="concept__statement">
+      <p class="eyebrow">The exhibition</p>
+      <h2>What textiles remember</h2>
+      <div class="prose">
+        <p>Threads of Memory explores fabric, weaving, thread and embroidery as ways of preserving personal and collective memories.</p>
+        <p>It examines how textile practices are connected to the home, family, cultural heritage and ideas of womanhood, motherhood, femininity and queerness. By bringing together different artists and cultural perspectives, the exhibition presents textiles as both intimate forms of expression and carriers of histories, identities and social relations.</p>
+      </div>
+    </div>
+    <div class="concept__figures" aria-label="Counted by hand">
+      <p class="eyebrow">Counted by hand</p>
+      <div class="figure-row"><strong>60</strong><span>dyed pandanus mats in Yee I-Lann's <i>TIKAR/MEJA</i></span></div>
+      <div class="figure-row"><strong>19</strong><span>weavers named in its credit line, most of them women</span></div>
+      <div class="figure-row"><strong>49</strong><span>beaded wooden spoons in Nico Williams's <i>Feast</i>, one for each Anishinaabe clan</span></div>
+      <div class="figure-row"><strong>7–11</strong><span>beadworkers in Williams's Hochelaga studio, year round</span></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Theme: the exhibition explores fabric, weaving, thread and embroidery as ways of preserving personal and collective memories, and how textile practices connect to the home, family, cultural heritage and ideas of womanhood, motherhood, femininity and queerness.</p>
+    <p>Textiles as both intimate forms of expression and carriers of histories, identities and social relations. The numbers on the right are the labour behind the works: many hands, often women's, behind one name.</p>
+  </aside>
+</section>
+
+<!-- ============================ CONTEXT ============================ -->
+<section class="section" id="context" data-slide data-label="Socio-political context">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Historical &amp; socio-political context</p>
+      <h2>Why <em>thread?</em></h2>
+      <p class="lede">The exhibition asks whose histories are preserved, whose labour is recognised, and how domestic materials can challenge established hierarchies in art institutions.</p>
+    </div>
+    <div class="context">
+      <div class="context__col">
+        <h3>Power, resistance &amp; gender</h3>
+        <p>Sewing, embroidery, knitting and weaving have long been treated as women's work, done in the private sphere of the home, and classed as craft rather than fine art. The hierarchy that ranks painting and sculpture above textile in Western institutions reflects a gendered division in which women's work is undervalued or made invisible.</p>
+        <p>These artists push a medium once tied to domestic labour into new forms of expression, each shaped by their own context and understanding of heritage.</p>
+      </div>
+      <div class="context__col">
+        <h3>Cultural &amp; intergenerational memory</h3>
+        <p>A garment, an embroidered cloth or a handmade object can carry traces of a person, a family or a tradition. Techniques and patterns pass knowledge between generations, and textiles carry memories of migration, belonging, gender and sexuality that official archives rarely keep.</p>
+        <p>The artists come from Canada (Anishinaabe and Inuvialuit), South Africa, India, Malaysia, Indonesia, Nigeria, Taiwan (Truku) and South Korea: thread and embroidery are common everywhere in the world. Most are working today, keeping practices alive for a younger generation.</p>
+      </div>
+      <p class="context__quote">These memories are not always recorded in official archives.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>The exhibition questions the historical marginalisation of textile practices, associated with women's domestic labour and categorised as crafts rather than fine art. It explores how textiles communicate cultural memory, migration, belonging and experiences of gender and sexuality, and considers whose histories are preserved, whose labour is recognised and how domestic materials can challenge hierarchies in art institutions.</p>
+    <p>Artists from Indigenous Canada, South Africa, India, Malaysia, Indonesia, Nigeria, Taiwan and South Korea: thread and embroidery are common all over the world. Mostly living artists: the need for a younger generation to remember practices that are being forgotten.</p>
+  </aside>
+</section>
+
+<!-- ============================ 3. THREAD MAP ============================ -->
+<section class="section section--panel" id="artists" data-slide data-label="The artists">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">The artists</p>
+      <h2>Ten artists, <em>two threads</em></h2>
+      <p class="lede">Both threads sit within community. <b>Womanhood</b> takes in femininity, motherhood and queerness. <b>Memory</b> runs from the shared to the personal. The red lines show where the works meet.</p>
+    </div>
+    <div class="map-wrap">
+      <svg class="map" id="map" viewBox="0 0 1000 600" role="img" aria-label="Map of the ten artists in two threads, connected by shared themes."></svg>
+    </div>
+    <div class="legend">
+      <span><i class="w"></i>Womanhood</span>
+      <span><i class="c"></i>Memory, shared</span>
+      <span><i class="p"></i>Memory, personal</span>
+      <span><i class="t"></i>A shared theme</span>
+    </div>
+    <ul class="index" id="index"></ul>
+  </div>
+  <aside class="notes">
+    <p>Within the scope of community we talk about memory (shared and personal) and about womanhood (queerness, femininity, motherhood).</p>
+    <p>Womanhood: Woo Hannah, Labay Eyong, Kablusiak, Rucha Kulkarni. Memory, shared: Yee I-Lann, Meita Meilita. Memory, personal: Nico Williams, Elfreda Dali, Igshaan Adams, Do Ho Suh.</p>
+    <p>Click a name on the map to open that artist's page; press M to come back here.</p>
+  </aside>
+</section>
+
+<!-- ============================ CHAPTER I ============================ -->
+<section class="chapter" id="womanhood" data-slide data-label="Artist pages · Womanhood">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">I</p>
+    <div class="chapter__body">
+      <p class="eyebrow">Chapter I</p>
+      <h2>Womanhood</h2>
+      <p>Femininity, motherhood and queerness: the body, ageing and desire, worked in fabric, sealskin and stitch.</p>
+      <p class="chapter__artists">Woo Hannah <b>·</b> Labay Eyong <b>·</b> Kablusiak <b>·</b> Rucha Kulkarni</p>
+    </div>
+  </div>
+</section>
+
+<!-- 01 WOO HANNAH -->
+<section class="artist" id="woo-hannah" data-slide data-label="Artist pages · Womanhood">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/woo-hannah-installation.jpg" alt="Two long grey fabric drapes sag from the ceiling into U-shaped folds, with a purple and a pink sewn form hanging from where they meet."></figure>
+      <p class="caption">Woo Hannah, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood</span></div>
+      <h3 class="artist__name">Woo Hannah</h3>
+      <p class="artist__meta">South Korea &nbsp;·&nbsp; Frieze Seoul Artist Award 2023</p>
+      <p class="artist__lede">Woo Hannah works mainly with fabric, across painting, sculpture and installation. Her soft sculptures borrow the shapes of bodily organs, human and non-human, from the uterus to blood vessels, and imagine forms beyond the body in which all existences stand on an equal plane.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>The Great Ballroom</i>, 2023, which extends her series <i>Milk and Honey</i></dd>
+        <dt>Materials</dt><dd>Fabric, beads, sewing</dd>
+        <dt>Thread</dt><dd>Ageing, femininity, motherhood</dd>
+        <dt>In the room</dt><dd>Along a curve through the room</dd>
+      </dl>
+      <p class="why">Oversized drapes sag into U-shaped creases that Woo sees as both a bat and a woman's breast, a celebration of the female body as it ages. At Frieze Seoul they hung from an eight-metre ceiling.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Woo Hannah: South Korean artist working with fabric as her main material, from painting to sculpture to installation. Her fabric sculptures draw on the imagery of bodily organs, human or non-human.</p>
+    <p>The Great Ballroom (2023), winner of the first Frieze Seoul Artist Award, extends her Milk and Honey series: a celebration of the ageing female body. Link: ageing, womanhood, femininity, motherhood.</p>
+  </aside>
+</section>
+
+<!-- 02 LABAY EYONG -->
+<section class="artist artist--flip" id="labay-eyong" data-slide data-label="Artist pages · Womanhood">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main tall"><img src="images/labay-fallen-mother.jpg" alt="Two round tabletops wrapped in woven textiles, with woven legs stretched across the floor and golden woven discs behind them."></figure>
+      <p class="caption">Labay Eyong, <i>The Fallen Mother</i> (倒地媽媽), 2020</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood</span></div>
+      <h3 class="artist__name">Labay Eyong</h3>
+      <p class="artist__meta">Also known as Lin Gieh-wen &nbsp;·&nbsp; Born 1982, Truku, Hualien, Taiwan</p>
+      <p class="artist__lede">Labay Eyong draws on the weaving culture of the Truku people and the daily life of her community, in soft sculpture, film, metalwork and installation. Since becoming a mother in 2015 she has made her work a record of her own experience, from the birth of a child to the bond between mother and child.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>The Fallen Mother</i> (倒地媽媽), 2020</dd>
+        <dt>Thread</dt><dd>Motherhood, what it is to be a woman, traditional craft</dd>
+        <dt>In the room</dt><dd>Beside the entrance corridor</dd>
+      </dl>
+      <p class="why">She often wraps her traditionally woven textiles around a plastic round tabletop, a common fixture in Truku households though not tied to the culture. To her it is a reminder of communal life, and of how culture is shaped by people and changes with new ways of living.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Labay Eyong (Lin Gieh-wen), Indigenous Truku artist from Hualien, Taiwan. Inspired by the traditional weaving culture of the Truku people; soft sculpture, film, metalwork, installation.</p>
+    <p>Themes: womanhood, identity, diaspora, the clash between traditional culture and modern values, and motherhood. Selected work: The Fallen Mother (2020).</p>
+  </aside>
+</section>
+
+<!-- 03 KABLUSIAK -->
+<section class="artist" id="kablusiak" data-slide data-label="Artist pages · Womanhood">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/kablusiak-heart-paddle.jpg" alt="A heart-shaped paddle covered in deep red dyed sealskin with a black leather handle."></figure>
+      <p class="caption">Kablusiak, <i>Heart Paddle</i>, 2022. Dyed sealskin, leather, artificial sinew</p>
+      <div class="thumbs thumbs--5">
+        <figure class="mount"><img src="images/kablusiak-ball-gag.jpg" alt="A ball gag with a carved grey soapstone ball on a black leather strap."></figure>
+        <figure class="mount"><img src="images/kablusiak-doll-3.jpg" alt="A small deep-blue fur doll figure with a leather harness."></figure>
+        <figure class="mount"><img src="images/kablusiak-garfield-ookpik.jpg" alt="An orange fur owl figure with the face of Garfield the cat."></figure>
+        <figure class="mount"><img src="images/kablusiak-pierrot-ukpik.jpg" alt="A white fur owl figure with yellow eyes and a pleated white ruff."></figure>
+        <figure class="mount"><img src="images/kablusiak-red-ookpik.jpg" alt="A red fur owl figure with round eyes and a black leather harness."></figure>
+      </div>
+      <p class="caption"><i>Ball Gag</i>, 2022, soapstone, tung oil, metal hardware, leather, artificial sinew &nbsp;·&nbsp; <i>Doll 3</i>, 2024, rabbit fur, leather, metal hardware, plastic doll eyes &nbsp;·&nbsp; <i>Garfield Ookpik</i>, 2022, rabbit fur, felt, fibre fill, embroidery floss, leather &nbsp;·&nbsp; <i>Pierrot Ukpik</i>, 2026, white rabbit fur, felt, ribbon &nbsp;·&nbsp; <i>Red Ookpik</i>, 2022, dyed sealskin, felt, fibre fill, embroidery floss, leather</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood</span></div>
+      <h3 class="artist__name">Kablusiak</h3>
+      <p class="artist__meta">Inuvialuk, born Somba K'e (Yellowknife) &nbsp;·&nbsp; lives in Mohkinstsis (Calgary) &nbsp;·&nbsp; Sobey Art Award 2023</p>
+      <p class="artist__lede">Kablusiak redefines contemporary Inuit art with irony, humour and real emotional weight. Their work addresses displacement and cultural loss, Inuit queerness and sexuality, and pop-culture nostalgia.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Heart Paddle</i>, 2022; <i>Ball Gag</i>, 2022; <i>Doll 3</i>, 2024; <i>Garfield Ookpik</i>, 2022; <i>Pierrot Ukpik</i>, 2026; <i>Red Ookpik</i>, 2022</dd>
+        <dt>Materials</dt><dd>Dyed sealskin, soapstone, rabbit fur, leather, felt, artificial sinew, embroidery floss</dd>
+        <dt>Thread</dt><dd>Queerness, sexuality, pop culture</dd>
+        <dt>In the room</dt><dd>On the bed</dd>
+      </dl>
+      <p class="why"><i>Heart Paddle</i> and <i>Ball Gag</i> turn the materials of Inuit making towards intimacy and desire, refusing heteronormative ideas of Indigenous sexuality. The Ookpiks remake the traditional Inuit snowy-owl figure; <i>Garfield Ookpik</i> fuses it with the cartoon cat to comment on how pop culture appropriates Indigenous culture.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Kablusiak: Inuvialuk visual artist born in Somba K'e (Yellowknife), raised in Edmonton, based in Calgary; Sobey Art Award 2023, the first Inuvialuk artist to win it.</p>
+    <p>Queerness and sexuality: Heart Paddle (2022), dyed sealskin, leather and artificial sinew; Ball Gag (2022), soapstone, tung oil and leather. Pop culture: Garfield Ookpik (2022), Garfield fused with the traditional Inuit Ookpik (snowy owl). The works sit on the bed in the model.</p>
+  </aside>
+</section>
+
+<!-- 04 RUCHA KULKARNI -->
+<section class="artist artist--flip" id="rucha-kulkarni" data-slide data-label="Artist pages · Womanhood">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main tall mount--cover"><img src="images/rucha-installation.jpg" alt="Two pink textiles with stitched and painted forms hang from the ceiling of a hall; a drawing of roots spreads across the floor below."></figure>
+      <p class="caption">Rucha Kulkarni, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood &nbsp;→&nbsp; Memory</span></div>
+      <h3 class="artist__name">Rucha Kulkarni</h3>
+      <p class="artist__meta">Born 1986, Pune &nbsp;·&nbsp; works between Amsterdam and Pune</p>
+      <p class="artist__lede">Rucha Kulkarni is a visual artist and social art practitioner. Her practice combines textiles, painting and installation, and asks how people locate themselves geographically, socially and mentally. In <i>Bonds per stitch</i> (2024–ongoing), stitching becomes a way of thinking about relationships.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>Two textile hangings; titles to be announced</dd>
+        <dt>Materials</dt><dd>Textile and stitching</dd>
+        <dt>Thread</dt><dd>Femininity, collective making, migration</dd>
+        <dt>In the room</dt><dd>On the corner walls</dd>
+      </dl>
+      <p class="why">Single stitches form something larger together. Her participatory methods of storytelling, care and embodied knowledge let others help make the work, towards what she calls an "Egalitarian Utopia". She links the two threads.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Rucha Kulkarni, visual artist and social art practitioner between Amsterdam and Pune. Textiles, painting and installation; identity, migration, memory and community.</p>
+    <p>Bonds per stitch (2024–ongoing): stitching as a way of thinking about relationships and connection. Making can be collective. Bridge to Yee I-Lann and Meita Meilita (collective projects).</p>
+  </aside>
+</section>
+
+<!-- ============================ CHAPTER II ============================ -->
+<section class="chapter chapter--ii" id="memory" data-slide data-label="Artist pages · Memory">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">II</p>
+    <div class="chapter__body">
+      <p class="eyebrow">Chapter II</p>
+      <h2>Memory</h2>
+      <p>Shared and personal: cloth made together, and objects that carry a family, a journey and a home.</p>
+      <p class="chapter__artists">Yee I-Lann <b>·</b> Meita Meilita <b>·</b> Nico Williams <b>·</b> Elfreda Dali <b>·</b> Igshaan Adams <b>·</b> Do Ho Suh</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 YEE I-LANN -->
+<section class="artist chapter-ii" id="yee-i-lann" data-slide data-label="Artist pages · Shared memory">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/yee-tikar-meja.jpg" alt="Sixty colourful woven pandanus mats arranged in a grid, each with the silhouette of a different table woven into it."></figure>
+      <p class="caption">Yee I-Lann with Bajau Sama DiLaut weavers, <i>TIKAR/MEJA</i>, 2020. Image: Silverlens</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · shared</span></div>
+      <h3 class="artist__name">Yee I-Lann</h3>
+      <p class="artist__meta">Born 1971, Kota Kinabalu, Sabah, Malaysian Borneo</p>
+      <p class="artist__lede">Since 2018 Yee I-Lann has made works with Bajau Sama DiLaut weavers on Omadal island, many of them stateless. In <i>TIKAR/MEJA</i> (mat/table) each of sixty mats carries the silhouette of a different table.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>TIKAR/MEJA</i>, 2020</dd>
+        <dt>Materials</dt><dd>Sixty dyed, woven pandanus mats</dd>
+        <dt>Thread</dt><dd>Collective making, cultural memory, women's labour</dd>
+        <dt>In the room</dt><dd>At the centre</dd>
+      </dl>
+      <p class="why">The table stands for "colonial, patriarchal, federal, state power"; the tikar, the woven mat, is its counterpart, a shared surface without hierarchy. The 2021 credit line names nineteen weavers after Yee, most of them women. Naming them answers the invisibility of women's work only in part: the work still circulates under one name.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Yee I-Lann, TIKAR/MEJA (2020): sixty dyed pandanus mats, each with the silhouette of a different table. Made with Bajau Sama DiLaut weavers on Omadal island, many stateless.</p>
+    <p>Silverlens: the table as a sign of "colonial, patriarchal, federal, state power"; the tikar as a shared, non-hierarchical surface. One artist to nineteen makers: the division of labour we discussed.</p>
+  </aside>
+</section>
+
+<!-- 06 MEITA MEILITA -->
+<section class="artist artist--flip chapter-ii" id="meita-meilita" data-slide data-label="Artist pages · Shared memory">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/meita-wanai-saiji.jpg" alt="A long white cotton cloth hung in a circle, embroidered with mountains, animals, houses and lines of text."></figure>
+      <p class="caption">Meita Meilita, <i>Wanai Saiji: The Shape of Being</i>, 2025</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · shared</span></div>
+      <h3 class="artist__name">Meita Meilita</h3>
+      <p class="artist__meta">Born Bogor, Indonesia</p>
+      <p class="artist__lede">For Meita Meilita, embroidery is a way of holding emotion and memory, and of understanding the complexities of the female condition. She draws on her own experience as a woman, child, mother and wife.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Wanai Saiji: The Shape of Being</i>, 2025, made with Kavalan elders and PateRongan Studio in Xinshe, Hualien, Taiwan</dd>
+        <dt>Materials</dt><dd>Embroidery on cotton cloth</dd>
+        <dt>Thread</dt><dd>Shared memory, heritage, womanhood, language</dd>
+        <dt>In the room</dt><dd>Along the long wall</dd>
+      </dl>
+      <p class="why">Roosters, mountains, fish, boats, crabs, village scenes and lines of Kavalan song drift across a long cotton cloth, embroidered together with Kavalan elders, with large stretches left blank. Her participatory work treats textile as a story shared among women and asks where women stand in society.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Meita Meilita: Indonesian artist whose practice centres on embroidery, a process of maintaining emotions and memory, a way to understand the complexities of the female condition.</p>
+    <p>Wanai Saiji: The Shape of Being (2025): a long embroidered cotton cloth made with Kavalan elders in Hualien, Taiwan, with lines of Kavalan song. Language as storytelling and as living identity.</p>
+  </aside>
+</section>
+
+<!-- 07 NICO WILLIAMS -->
+<section class="artist chapter-ii" id="nico-williams" data-slide data-label="Artist pages · Personal memory">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/nico-feast.jpg" alt="A blue IKEA bag woven entirely from glass beads, filled with beaded wooden spoons."></figure>
+      <p class="caption">Nico Williams, <i>Feast</i>, 2024. 10/0 Delica beads, 11/0 seed beads, 49 wood spoons</p>
+      <div class="thumbs thumbs--5">
+        <figure class="mount"><img src="images/nico-tintin.jpg" alt="A VHS case of Tintin en Amérique covered in beadwork."></figure>
+        <figure class="mount"><img src="images/nico-indian-cupboard.jpg" alt="A VHS case of The Indian in the Cupboard covered in beadwork."></figure>
+        <figure class="mount"><img src="images/nico-pokemon-snap.jpg" alt="A beaded Pokémon Snap! game box with a grey game cartridge."></figure>
+        <figure class="mount"><img src="images/nico-status-cards.jpg" alt="A wallet holding beaded versions of Indigenous status cards."></figure>
+        <figure class="mount"><img src="images/nico-ndn-market.jpg" alt="A beaded green and white trucker cap beside small beaded objects."></figure>
+      </div>
+      <p class="caption"><i>TINTIN EN AMERIQUE</i>, 2025, Japanese cylindrical glass beads on polyethylene thread, VHS cassette &nbsp;·&nbsp; <i>The Indian in the Cupboard (1995)</i>, 2024, beads, original VHS tape, thread &nbsp;·&nbsp; <i>POKÉMON SNAP!</i>, 2025, glass beads, thread, plastic game case &nbsp;·&nbsp; <i>NDN Status Cards</i>, 2019–, glass beads, mixed materials &nbsp;·&nbsp; <i>NDN MARKET ESSENTIALS, OLD FIELDS AND PROUD OF IT (GREEN)</i>, 2025</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
+      <h3 class="artist__name">Nico Williams</h3>
+      <p class="artist__meta">Born 1989, Aamjiwnaang First Nation (Anishinaabe) &nbsp;·&nbsp; Tiohtià:ke/Montréal &nbsp;·&nbsp; Sobey Art Award 2024</p>
+      <p class="artist__lede">Nico Williams renews traditional beadwork through sculpture and collaboration. At Hochelaga studio he works year round with a team of seven to eleven people, an approach he describes as caretaking.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Feast</i>, 2024; <i>TINTIN EN AMERIQUE</i>, 2025; <i>The Indian in the Cupboard (1995)</i>, 2024; <i>POKÉMON SNAP!</i>, 2025; <i>NDN Status Cards</i>, 2019–; <i>NDN MARKET ESSENTIALS, OLD FIELDS AND PROUD OF IT (GREEN)</i>, 2025</dd>
+        <dt>Materials</dt><dd>Glass beads, thread, wooden spoons, VHS cassettes, a plastic game case</dd>
+        <dt>Thread</dt><dd>Family memory, traditional craft, Indigenous identity</dd>
+        <dt>In the room</dt><dd>On the low stand in the living area</dd>
+      </dl>
+      <p class="why"><i>Feast</i> carries forty-nine beaded spoons, one for each Anishinaabe clan, recalling thanksgiving feasts and the carved ladles lost under amendments to the Indian Act. The beaded tapes, game case and status cards rework pop-culture objects and the cards that classify Indigenous identity in Canada. Beading is historically associated with women; Williams, as a man, takes it up and questions those norms.</p>
+      <blockquote class="quote site-only">"They'll touch people's moments of nostalgia. They'll go into people's psyche."<cite>Nico Williams, in interview</cite></blockquote>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Nico Williams (b. 1989), Aamjiwnaang First Nation, Anishinaabe. Renews traditional beadwork in modern contexts; Hochelaga studio in Tiohtià:ke/Montréal with a team of 7 to 11 people. Sobey Art Award 2024.</p>
+    <p>Feast (2024): 49 beaded wooden spoons, one per Anishinaabe clan. The Indian in the Cupboard: the portrayal of Indigenous people in mainstream media. NDN Status Cards: colonial systems of identity classification. In the model the works sit on the stand.</p>
+  </aside>
+</section>
+
+<!-- 08 ELFREDA DALI -->
+<section class="artist artist--flip chapter-ii" id="elfreda-dali" data-slide data-label="Artist pages · Personal memory">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/elfreda-dali-hangings.jpg" alt="Four hangings of different sizes on a white wall, each with stitched, layered faces in brown, black, cream and green."></figure>
+      <p class="caption">Elfreda Dali, wall hangings, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
+      <h3 class="artist__name">Elfreda Dali</h3>
+      <p class="artist__meta">Born 1995, Nigeria &nbsp;·&nbsp; lives in London</p>
+      <p class="artist__lede">Elfreda Dali stitches London and Lagos together, with materials from both cities. Working where art and fashion meet, she explores the complexities of a layered identity.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>Wall tapestries and clothing</dd>
+        <dt>Materials</dt><dd>Textile and stitching, with materials from London and Lagos</dd>
+        <dt>Thread</dt><dd>Personal memory, migration, clothing</dd>
+        <dt>In the room</dt><dd>On the walls of the living area</dd>
+      </dl>
+      <p class="why">Her tapestries sew the story of a heritage and trace the route of a journey she has made time and time again, so that cloth becomes something carried between two homes.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Elfreda Dali stitches London and Lagos together with materials from both locations. Her textile tapestries sew the story of the heritage and show the route of a journey she has taken time and time again.</p>
+    <p>She explores the complexities of layered identity. In the exhibition: wall tapestries and clothing.</p>
+  </aside>
+</section>
+
+<!-- 09 IGSHAAN ADAMS -->
+<section class="artist chapter-ii" id="igshaan-adams" data-slide data-label="Artist pages · Personal memory">
+  <div class="wrap">
+    <div class="artist__media">
+      <div class="duo"><figure class="mount mount--duo"><img src="images/igshaan-clouds-1.jpg" alt="Pink cloud-like forms of beads and wire suspended in the corner of a white gallery."></figure><figure class="mount mount--duo"><img src="images/igshaan-clouds-2.jpg" alt="A visitor looks up at a pink cloud of beads and wire hanging on a white wall."></figure></div>
+      <p class="caption">Igshaan Adams, suspended bead and wire sculptures, installation views</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
+      <h3 class="artist__name">Igshaan Adams</h3>
+      <p class="artist__meta">Born 1982, Cape Town, South Africa</p>
+      <p class="artist__lede">Igshaan Adams grew up in Bonteheuwel, a community shaped by apartheid. His weaving, tapestry, sculpture and installation draw on memories of childhood, family, home and the streets around it.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>Cloud-like suspended sculptures; titles to be announced</dd>
+        <dt>Materials</dt><dd>Beads and wire</dd>
+        <dt>Thread</dt><dd>Personal memory, home, community</dd>
+        <dt>In the room</dt><dd>In the far corner</dd>
+      </dl>
+      <p class="why">Beads and wire are threaded into forms that resemble clouds or dust, so the labour of making stays visible in the work. Across his practice, materials from working-class homes and neighbourhoods carry a social history and blur the line between fine art and domestic or communal labour.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Igshaan Adams (b. 1982), Cape Town. Grew up in Bonteheuwel, shaped by apartheid. Fabric, thread, rope, beads, plastic and everyday domestic materials; threading, knotting, weaving and stitching make the labour of construction part of the work.</p>
+    <p>Community and collective forms of making: domestic, working-class materials challenge the line between fine art and domestic or communal labour. The question of divided labour from Yee I-Lann returns here.</p>
+  </aside>
+</section>
+
+<!-- 10 DO HO SUH -->
+<section class="artist artist--flip chapter-ii" id="do-ho-suh" data-slide data-label="Artist pages · Personal memory">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/do-ho-suh-nests.jpg" alt="A row of translucent fabric rooms in orange, purple, teal and pink on a concrete floor; visitors walk through them."></figure>
+      <p class="caption">Do Ho Suh, <i>Nest/s</i>, 2024, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
+      <h3 class="artist__name">Do Ho Suh</h3>
+      <p class="artist__meta">Born 1962, Seoul, South Korea</p>
+      <p class="artist__lede">Do Ho Suh's sculpture and installation explore home, memory, identity and space, shaped by a nomadic life between cultures.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Nest/s</i>, 2024</dd>
+        <dt>Materials</dt><dd>Polyester and stainless steel</dd>
+        <dt>Thread</dt><dd>Personal memory, home, displacement</dd>
+        <dt>In the room</dt><dd>The entrance: visitors walk through it</dd>
+      </dl>
+      <p class="why"><i>Nest/s</i> stitches corridors and entryways from homes he has lived in into one long passage of colourful, sheer fabric that visitors walk through. Its transparency mirrors the way memory works. The exhibition begins inside it.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Do Ho Suh: sculptor and installation artist exploring home, memory, identity and space; a nomadic life between cultures.</p>
+    <p>Nest/s (2024), shown at Tate Modern in Walk the House (2025): life-size corridors and entryways from his homes in sheer polyester on stainless steel, linked into one passage. The transparency reflects how memory works. The first artwork visitors meet is a home.</p>
+  </aside>
+</section>
+
+<!-- ============================ THE SPACE ============================ -->
+<section class="section section--panel" id="space" data-slide data-label="The space">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">The space</p>
+      <h2>Soft work in <em>a hard building</em></h2>
+      <p class="lede">Threads of Memory is made for a warehouse. Concrete floors and high ceilings set off the softness of thread and fabric, and suspended textiles change the scale of the industrial interior.</p>
+    </div>
+    <div class="space">
+      <div class="space__points">
+        <div class="point"><span class="point__k">a</span><div><h3>Concrete and cloth</h3><p>Suspended textiles transform the scale and atmosphere of the interior. The contrast makes the softness of the works felt.</p></div></div>
+        <div class="point"><span class="point__k">b</span><div><h3>A place of labour</h3><p>The warehouse evokes labour and production, and the historical relationship between textiles and gendered work.</p></div></div>
+        <div class="point"><span class="point__k">c</span><div><h3>Met gradually</h3><p>Visitors move through the space and meet the works one by one, rather than as isolated objects on white walls.</p></div></div>
+      </div>
+      <div class="materials">
+        <div>
+          <h3>The building</h3>
+          <ul>
+            <li><i class="sw sw-concrete"></i>Concrete floor</li>
+            <li><i class="sw sw-concrete2"></i>Concrete walls</li>
+            <li><i class="sw sw-height"></i>High ceilings</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The home</h3>
+          <ul>
+            <li><i class="sw sw-bed"></i>A bed</li>
+            <li><i class="sw sw-chair"></i>Chairs</li>
+            <li><i class="sw sw-wood"></i>Coffee table</li>
+            <li><i class="sw sw-wood2"></i>A low stand</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The works</h3>
+          <ul>
+            <li><i class="sw sw-silk"></i><span>Translucent fabric<small>Do Ho Suh</small></span></li>
+            <li><i class="sw sw-pandanus"></i><span>Pandanus leaf<small>Yee I-Lann</small></span></li>
+            <li><i class="sw sw-seal"></i><span>Sealskin, soapstone<small>Kablusiak</small></span></li>
+            <li><i class="sw sw-beads"></i><span>Glass beads<small>Nico Williams</small></span></li>
+            <li><i class="sw sw-floss"></i><span>Embroidery on cotton<small>Meita Meilita</small></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tour">
+      <h3>One layout, <em>many cities</em></h3>
+      <p>The exhibition is designed for a type of building rather than a single address. It can travel between former industrial spaces, and the layout adapts to each one.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>We had a warehouse-type space in mind: concrete floors and high ceilings contrast with the softness of fabric and thread. Suspended textiles transform the scale and atmosphere of the industrial interior.</p>
+    <p>The warehouse evokes labour, production and the historical relationship between textiles and gendered work. Furniture (a bed, chairs, a coffee table, a stand) brings in the home: textiles were historically domestic labour.</p>
+    <p>We deliberately don't name one venue: we frame the exhibition around a style of space, so it can travel between several existing locations.</p>
+  </aside>
+</section>
+
+<!-- ============================ ROUTE / FLOOR PLAN ============================ -->
+<section class="section" id="route" data-slide data-label="Layout">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Exhibition design &amp; visitor journey</p>
+      <h2>A home <em>inside the warehouse</em></h2>
+      <p class="lede site-only">You enter through Do Ho Suh's houses into one concrete room. A bed, chairs, a coffee table and a low stand set part of it as a home; the works sit on the furniture, the walls and the floor.</p>
+      <p class="lede present-only">You enter through Do Ho Suh's houses into one concrete room, partly furnished as a home. Next: a tour of the exhibition in our 3D model.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan-box">
+        <div class="plan-scroll">
+          <svg class="plan" id="plan" viewBox="0 0 1000 760" role="img" aria-label="Floor plan: one room entered through Do Ho Suh's corridor of houses, with a living area, a bed and works on the walls and floor.">
+            <!-- walls, entrance gap in the top wall -->
+            <path class="wall" d="M195 40 H960 V720 H40 V40 H85"/>
+            <path class="iwall" d="M245 40 V425"/>
+            <!-- entrance -->
+            <text class="lbl" x="210" y="28">Entrance</text>
+            <!-- Do Ho Suh: corridor of houses -->
+            <rect class="doho" x="65" y="58" width="155" height="88" style="fill:#E58FB5"/>
+            <rect class="doho" x="65" y="146" width="155" height="88" style="fill:#6CC3C6"/>
+            <rect class="doho" x="65" y="234" width="155" height="88" style="fill:#6F7FE0"/>
+            <rect class="doho" x="65" y="322" width="155" height="88" style="fill:#9AA0EA"/>
+            <text class="lbl-d halo" x="142" y="205" text-anchor="middle">Do Ho Suh</text>
+            <!-- route: in through the houses, out into the living area -->
+            <path class="route" d="M140 0 V 440 C 140 470, 160 490, 200 492"/>
+            <path class="arrow" d="M132 18 L140 32 L148 18 M190 484 L204 492 L190 500"/>
+            <!-- Labay Eyong -->
+            <circle class="work-w" cx="385" cy="150" r="62"/>
+            <circle class="fine" cx="385" cy="150" r="40" stroke-dasharray="4 4"/>
+            <text class="lbl-d" x="385" y="244" text-anchor="middle">Labay Eyong</text>
+            <!-- Woo Hannah: drapes along a curve -->
+            <path class="drape" d="M455 195 Q 650 345, 935 335"/>
+            <path class="drape" d="M455 212 Q 650 362, 935 352" opacity=".55"/>
+            <text class="lbl-d" x="720" y="392" text-anchor="middle">Woo Hannah</text>
+            <!-- Rucha Kulkarni: two hangings on the corner walls -->
+            <rect class="bar-w" x="700" y="43" width="200" height="9"/>
+            <rect class="bar-w" x="948" y="70" width="9" height="180"/>
+            <text class="lbl-d" x="700" y="30">Rucha Kulkarni</text>
+            <!-- Kablusiak: the bed -->
+            <g transform="rotate(-18 805 160)">
+              <rect class="work-w" x="745" y="85" width="120" height="150"/>
+              <rect class="fine" x="755" y="93" width="100" height="30"/>
+            </g>
+            <text class="lbl" x="805" y="168" text-anchor="middle">Bed</text>
+            <text class="lbl-d" x="805" y="276" text-anchor="middle">Kablusiak</text>
+            <!-- Yee I-Lann: 60 mats at the centre -->
+            <g id="mats"></g>
+            <text class="lbl-d" x="505" y="574" text-anchor="middle">Yee I-Lann</text>
+            <!-- Meita Meilita: long wall -->
+            <rect class="bar-ii" x="948" y="380" width="9" height="250"/>
+            <text class="lbl-d" x="928" y="505" text-anchor="middle" transform="rotate(-90 928 505)">Meita Meilita</text>
+            <!-- Igshaan Adams: far corner -->
+            <ellipse class="work-ii" cx="775" cy="620" rx="125" ry="68"/>
+            <text class="lbl-d" x="775" y="625" text-anchor="middle">Igshaan Adams</text>
+            <!-- living area: chairs, coffee table, stand (Nico Williams), tapestries (Elfreda Dali) -->
+            <circle class="furn" cx="120" cy="555" r="24"/>
+            <circle class="furn" cx="300" cy="555" r="24"/>
+            <rect class="furn" x="140" y="590" width="140" height="55" transform="rotate(-6 210 617)"/>
+            <text class="lbl" x="210" y="622" text-anchor="middle">Table</text>
+            <rect class="work-ii" x="95" y="664" width="250" height="30"/>
+            <text class="lbl" x="220" y="684" text-anchor="middle">Stand</text>
+            <text class="lbl-d" x="358" y="688">Nico Williams</text>
+            <rect class="bar-ii" x="43" y="470" width="9" height="235"/>
+            <rect class="bar-ii" x="60" y="711" width="330" height="9"/>
+            <text class="lbl-d" x="60" y="748">Elfreda Dali</text>
+          </svg>
+        </div>
+        <div class="legend plan-legend">
+          <span><i class="w"></i>Womanhood</span>
+          <span><i class="c"></i>Memory</span>
+          <span><i class="f"></i>Furniture</span>
+          <span><i class="t dash"></i>Way in</span>
+        </div>
+        <div class="model-cue present-only">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3 L25 9 V20 L14 26 L3 20 V9 Z M3 9 L14 15 L25 9 M14 15 V26"/></svg>
+          <span><b>Tour:</b> Fiona's 3D model of the exhibition, artist by artist.</span>
+        </div>
+      </div>
+      <ul class="where">
+        <li><i class="cdot ii"></i><div><a href="#do-ho-suh">Do Ho Suh</a><small>Entrance, walk through</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#nico-williams">Nico Williams</a><small>On the stand</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#elfreda-dali">Elfreda Dali</a><small>Walls of the living area</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#yee-i-lann">Yee I-Lann</a><small>Centre of the room</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#igshaan-adams">Igshaan Adams</a><small>Far corner</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#meita-meilita">Meita Meilita</a><small>Long wall</small></div></li>
+        <li><i class="cdot"></i><div><a href="#woo-hannah">Woo Hannah</a><small>Along a curve</small></div></li>
+        <li><i class="cdot"></i><div><a href="#kablusiak">Kablusiak</a><small>On the bed</small></div></li>
+        <li><i class="cdot"></i><div><a href="#rucha-kulkarni">Rucha Kulkarni</a><small>Corner walls</small></div></li>
+        <li><i class="cdot"></i><div><a href="#labay-eyong">Labay Eyong</a><small>Beside the entrance</small></div></li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Hand over to Fiona: the tour through the 3D model, where we go into each artist in more depth.</p>
+    <p>The plan follows the model: in through Do Ho Suh's houses, then the living area (Nico Williams on the stand, Elfreda Dali's tapestries), Yee I-Lann at the centre, Meita Meilita on the long wall, Igshaan Adams in the far corner, Woo Hannah along the curve, Kablusiak on the bed, Rucha Kulkarni on the corner walls, Labay Eyong beside the entrance.</p>
+    <p>Artist pages are at the end of this presentation, or click a name on the map.</p>
+  </aside>
+</section>
+
+<!-- ============================ AUDIO / TECHNOLOGY ============================ -->
+<section class="section section--panel" id="audio" data-slide data-label="Technology & participation">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Audio guide &amp; Memory Archive</p>
+      <h2>Listen to <em>the makers</em></h2>
+      <p class="lede">At each work you can hear the artist talk about it and its materials, and a short documentary introduces Do Ho Suh. Before you leave, you can add a memory of your own.</p>
+    </div>
+    <div class="audio">
+      <div class="player" aria-label="Audio guide preview">
+        <div class="player__now">
+          <button class="play" type="button" id="playBtn" aria-label="Play preview">
+            <svg viewBox="0 0 18 18" id="playIcon" aria-hidden="true"><path d="M4 2v14l12-7z"/></svg>
+          </button>
+          <div>
+            <p class="player__sub" id="nowSub">Documentary</p>
+            <p class="player__title" id="nowTitle">Do Ho Suh</p>
+          </div>
+        </div>
+        <div class="bar"><i id="barFill"></i></div>
+        <ul class="tracks" id="tracks"></ul>
+      </div>
+      <div class="audio__side">
+        <div class="archive">
+          <p class="eyebrow">The Memory Archive</p>
+          <h3>Bring a memory</h3>
+          <p>A quilt, a garment, a cloth someone made for you. Record two minutes about it in the exhibition, or from home. The stories become part of the exhibition and travel with it.</p>
+          <div><button class="btn btn--ghost btn--sm" type="button" data-toast="The Memory Archive opens with the exhibition in March 2027.">Share a memory</button></div>
+        </div>
+        <div class="archive">
+          <p class="eyebrow">Between generations</p>
+          <p>Personal memories, related stories and experiences passed between generations: the archive keeps the kind of knowledge that textiles carry and official records leave out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Technological integration: short audio reflections by the artists about their works and materials, and a short documentary on Do Ho Suh.</p>
+    <p>Participation: visitors record personal memories, related stories and intergenerational experiences, collected in a Memory Archive that grows at each venue.</p>
+  </aside>
+</section>
+
+<!-- ============================ FRAMEWORK (presentation only) ============================ -->
+<section class="section section--panel present-only" id="framework" data-slide data-label="Course framework">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Curatorial framework</p>
+      <h2>From the <em>seminar room</em></h2>
+      <p class="lede">The course sessions that shape the proposal.</p>
+    </div>
+    <div class="frame-cards">
+      <div class="frame-card">
+        <p class="eyebrow">Session 4</p>
+        <h3>Exhibition Space as Ideology</h3>
+        <p>The building is never neutral. Choosing a warehouse over a white cube puts labour, production and gendered work into the frame, and lets visitors meet the works gradually instead of as isolated objects.</p>
+      </div>
+      <div class="frame-card">
+        <p class="eyebrow">Session 5</p>
+        <h3>Exhibitions and the Politics of Memory</h3>
+        <p>Whose memory gets exhibited? Textiles keep memories that official archives leave out, and the Memory Archive adds visitors' own.</p>
+      </div>
+      <div class="frame-card frame-card--todo">
+        <p class="eyebrow">Guest lecture</p>
+        <h3>Reading to be confirmed</h3>
+        <p>Add the guest-lecture reading the group links to the proposal.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Link to the course readings: the week on Exhibition Space as Ideology and the week on Exhibitions and the Politics of Memory. Add the guest-lecture reading here.</p>
+  </aside>
+</section>
+
+<!-- ============================ VISIT ============================ -->
+<section class="section" id="visit" data-slide data-label="Plan your visit">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Plan your visit</p>
+      <h2>Visit <em>Threads of Memory</em></h2>
+      <p class="lede">Timed tickets keep the galleries calm. The audio guide is included with every ticket.</p>
+    </div>
+    <div class="visit">
+      <dl class="visit__info">
+        <div class="vi"><dt>Dates</dt><dd><strong>5 March – 29 August 2027</strong>First stop of the tour</dd></div>
+        <div class="vi"><dt>Opening hours</dt><dd>Tuesday – Sunday, 10:00 – 18:00<br>Thursday until 21:00<br>Closed on Mondays</dd></div>
+        <div class="vi"><dt>Tickets</dt><dd>
+          <ul class="prices">
+            <li><span>Adult</span><span>€17.50</span></li>
+            <li><span>Student (with ID)</span><span>€9.00</span></li>
+            <li><span>Under 18</span><span>Free</span></li>
+            <li><span>Friends of the exhibition</span><span>Free</span></li>
+          </ul></dd></div>
+        <div class="vi"><dt>Venue</dt><dd>A former industrial building, announced in January 2027. The exhibition then travels to further cities.</dd></div>
+        <div class="vi"><dt>Access</dt><dd>Step-free throughout, seating in the living area, large-print labels and audio description for every work.</dd></div>
+        <div class="vi"><dt>Time</dt><dd>Allow 75 minutes, plus time in the Memory Archive.</dd></div>
+      </dl>
+      <div class="visit__card">
+        <p class="eyebrow" style="color:inherit;opacity:.7">Tickets</p>
+        <h3>Book a time slot</h3>
+        <p>Choose a day and an entry time. Thursday evenings are quieter.</p>
+        <button class="btn btn--solid" type="button" data-tickets>Book tickets</button>
+        <form class="signup" id="signup" novalidate>
+          <label for="email">Hear first when the venue is announced</label>
+          <input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email">
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+      <div class="catalogue">
+        <span class="book" aria-hidden="true"></span>
+        <p>The exhibition catalogue<span>Essays, wall texts and full-page plates of all ten artists. Pre-order, €35.</span></p>
+        <button class="btn btn--ghost btn--sm" type="button" data-toast="The shop opens with the first venue.">Pre-order</button>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>How a visitor would plan the visit: dates, timed tickets, access, the audio guide. Click "Book tickets" to show the ticket flow.</p>
+  </aside>
+</section>
+
+<!-- ============================ THANKS (presentation only) ============================ -->
+<section class="section thanks present-only" id="thanks" data-slide data-label="Questions">
+  <div class="wrap">
+    <p class="eyebrow">Threads of Memory &nbsp;·&nbsp; Weaving Identity and Belonging</p>
+    <h2 style="margin-top:1.5rem">Thank you<em>Questions?</em></h2>
+    <p>Bjarne, Fiona, Lola &amp; Marije &nbsp;·&nbsp; Doing Modern and Contemporary Art &nbsp;·&nbsp; University of Amsterdam</p>
+    <p class="thanks__more">Artist pages follow &nbsp;→</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__brand">
+      <span class="brand__name">Threads <em>of Memory</em></span>
+      <p>Weaving Identity and Belonging. A touring exhibition of ten artists working in thread, cloth and bead.</p>
+    </div>
+    <ul class="footer__links">
+      <li><a href="#exhibition">About the exhibition</a></li>
+      <li><a href="#artists">Artists</a></li>
+      <li><a href="#visit">Plan your visit</a></li>
+      <li><a href="#audio">Audio guide</a></li>
+      <li><button type="button" data-present>Presentation mode</button></li>
+    </ul>
+    <div class="footer__social">
+      <span>Instagram</span><span>Newsletter</span><span>Press</span>
+    </div>
+    <div class="footer__small">
+      <p>Threads of Memory is an exhibition proposal developed for the course Doing Modern and Contemporary Art: Curating as Practice in Art History, University of Amsterdam, 2026. Dates, tickets, shop and audio guide are mock-ups; nothing is on sale.</p>
+      <p>Images: Yee I-Lann, <i>TIKAR/MEJA</i>, courtesy Silverlens. Works by Nico Williams, Kablusiak and Rucha Kulkarni courtesy the artists and their galleries.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ TICKETS DIALOG ============================ -->
+<dialog class="tix" id="tix" aria-labelledby="tixTitle">
+  <div class="tix__inner" id="tixStep1">
+    <div class="tix__head">
+      <div>
+        <p class="eyebrow">Book tickets</p>
+        <h2 id="tixTitle">Threads of Memory</h2>
+        <p>Timed entry · Audio guide included · 5 March – 29 August 2027</p>
+      </div>
+      <button class="x" type="button" data-close aria-label="Close">×</button>
+    </div>
+    <div class="tix__grid">
+      <div>
+        <div class="cal__head">
+          <b id="calMonth">March 2027</b>
+          <div class="cal__nav">
+            <button type="button" id="calPrev" aria-label="Previous month">‹</button>
+            <button type="button" id="calNext" aria-label="Next month">›</button>
+          </div>
+        </div>
+        <div class="cal" id="cal"></div>
+        <p class="cal__key">Closed on Mondays. Late opening on Thursdays.</p>
+      </div>
+      <div>
+        <p class="sub-h" id="slotHead">Entry time</p>
+        <div class="slots" id="slots"></div>
+        <p class="sub-h">Tickets</p>
+        <div id="ttypes"></div>
+        <div class="tix__total"><span>Total</span><b id="total">€0.00</b></div>
+      </div>
+    </div>
+    <div class="tix__foot">
+      <p>Tickets are timed; you can stay as long as you like once inside.</p>
+      <button class="btn btn--solid" type="button" id="tixContinue">Continue</button>
+    </div>
+  </div>
+  <div class="tix__inner" id="tixStep2" hidden>
+    <div class="tix__head">
+      <div><p class="eyebrow">Your visit</p></div>
+      <button class="x" type="button" data-close aria-label="Close">×</button>
+    </div>
+    <div class="done">
+      <h3>Thank you for <em>planning a visit</em></h3>
+      <div class="summary" id="summary"></div>
+      <p>Threads of Memory is an exhibition proposal by students of the University of Amsterdam, so tickets are not on sale and nothing has been booked.</p>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+        <button class="btn btn--solid" type="button" data-close>Back to the exhibition</button>
+        <button class="btn btn--ghost" type="button" id="tixBack">Change selection</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============================ PRESENTATION CHROME ============================ -->
+<div class="hud" id="hud" aria-live="polite">
+  <span class="hud__brand">Threads <em>of Memory</em></span>
+  <span class="hud__label" id="hudLabel"></span>
+  <span class="hud__count" id="hudCount"></span>
+  <div class="hud__btns">
+    <button type="button" id="hudMap" class="wide" hidden title="Back to the artist map (M)">Map</button>
+    <button type="button" id="hudPrev" aria-label="Previous slide">‹</button>
+    <button type="button" id="hudNext" aria-label="Next slide">›</button>
+    <button type="button" id="hudNotes" aria-label="Speaker notes (N)" title="Speaker notes (N)">N</button>
+    <button type="button" id="hudHelp" aria-label="Keyboard shortcuts (?)" title="Shortcuts (?)">?</button>
+    <button type="button" id="hudExit" aria-label="Exit presentation (Esc)" title="Exit (Esc)">×</button>
+  </div>
+  <i class="hud__progress" id="hudProgress"></i>
+</div>
+<div class="notes-panel" id="notesPanel" aria-live="polite"></div>
+<div class="help" id="help">
+  <div class="help__card">
+    <h4>Presenting</h4>
+    <dl>
+      <dt><kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd></dt><dd>Next slide (clickers work)</dd>
+      <dt><kbd>←</kbd> <kbd>PgUp</kbd></dt><dd>Previous slide</dd>
+      <dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>First / last slide</dd>
+      <dt><kbd>N</kbd></dt><dd>Speaker notes on / off</dd>
+      <dt><kbd>M</kbd></dt><dd>Back to the artist map</dd>
+      <dt><kbd>T</kbd></dt><dd>Switch light / dark</dd>
+      <dt><kbd>F</kbd></dt><dd>Full screen</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Back to the website</dd>
+    </dl>
+    <button class="btn btn--solid btn--sm" type="button" id="helpClose" style="justify-self:start">Got it</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="phFile" accept="image/*" hidden>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const root = document.documentElement;
+  const NS = 'http://www.w3.org/2000/svg';
+  const svgEl = (tag, attrs = {}, parent) => {
+    const el = document.createElementNS(NS, tag);
+    for (const k in attrs) el.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(el);
+    return el;
+  };
+
+  /* ---------- toast ---------- */
+  const toast = $('#toast'); let toastT;
+  const say = (msg) => { toast.textContent = msg; toast.classList.add('is-on'); clearTimeout(toastT); toastT = setTimeout(() => toast.classList.remove('is-on'), 3400); };
+  $$('[data-toast]').forEach(b => b.addEventListener('click', () => say(b.dataset.toast)));
+  $('#signup').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = $('#email').value.trim();
+    if (!/^\S+@\S+\.\S+$/.test(v)) { say('Enter an email address like name@example.com.'); return; }
+    $('#email').value = '';
+    say('Thank you. This is a proposal site, so no address was stored.');
+  });
+
+  /* ---------- mobile menu ---------- */
+  const nav = $('#nav'), menuBtn = $('#menuBtn');
+  menuBtn.addEventListener('click', () => { const o = nav.classList.toggle('is-open'); menuBtn.setAttribute('aria-expanded', o); });
+  $$('#navlinks a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', false); }));
+
+  /* ---------- artists data (map, index, route, audio) ---------- */
+  const A = [
+    { id:'woo-hannah',     name:'Woo Hannah',     g:'w', tag:'Womanhood',          x:150, y:110, lx:0,   ly:-20, a:'middle' },
+    { id:'labay-eyong',    name:'Labay Eyong',    g:'w', tag:'Womanhood',          x:110, y:400, lx:0,   ly:30,  a:'middle' },
+    { id:'kablusiak',      name:'Kablusiak',      g:'w', tag:'Womanhood',          x:330, y:520, lx:0,   ly:32,  a:'middle' },
+    { id:'rucha-kulkarni', name:'Rucha Kulkarni', g:'w', tag:'Womanhood',          x:380, y:255, lx:-16, ly:-16, a:'end' },
+    { id:'yee-i-lann',     name:'Yee I-Lann',     g:'c', tag:'Memory · shared', x:620, y:95,  lx:0,   ly:-20, a:'middle' },
+    { id:'meita-meilita',  name:'Meita Meilita',  g:'c', tag:'Memory · shared', x:880, y:185, lx:0,   ly:-20, a:'middle' },
+    { id:'nico-williams',  name:'Nico Williams',  g:'p', tag:'Memory · personal',   x:560, y:420, lx:-16, ly:-14, a:'end' },
+    { id:'elfreda-dali',   name:'Elfreda Dali',   g:'p', tag:'Memory · personal',   x:720, y:540, lx:0,   ly:32,  a:'middle' },
+    { id:'igshaan-adams',  name:'Igshaan Adams',  g:'p', tag:'Memory · personal',   x:790, y:345, lx:16,  ly:-14, a:'start' },
+    { id:'do-ho-suh',      name:'Do Ho Suh',      g:'p', tag:'Memory · personal',   x:930, y:470, lx:0,   ly:32,  a:'middle' },
+  ];
+  const byId = Object.fromEntries(A.map(a => [a.id, a]));
+  const E = [
+    ['rucha-kulkarni','yee-i-lann','woven together', .18],
+    ['yee-i-lann','meita-meilita','cultural memory', -.18],
+    ['rucha-kulkarni','meita-meilita','collective making', .1],
+    ['rucha-kulkarni','woo-hannah','femininity', .16],
+    ['woo-hannah','labay-eyong','motherhood', -.2],
+    ['woo-hannah','kablusiak','the body', .14],
+    ['labay-eyong','nico-williams','traditional craft', .12],
+    ['kablusiak','nico-williams','pop culture', .2],
+    ['nico-williams','igshaan-adams','family memory', -.2],
+    ['igshaan-adams','do-ho-suh','the childhood home', -.18],
+    ['elfreda-dali','do-ho-suh','migration', .2],
+  ];
+
+  /* thread map */
+  const map = $('#map');
+  if (map) {
+    const gE = svgEl('g', {}, map), gL = svgEl('g', {}, map), gN = svgEl('g', {}, map);
+    E.forEach(([a, b, label, k], i) => {
+      const p = byId[a], q = byId[b];
+      const mx = (p.x + q.x) / 2, my = (p.y + q.y) / 2, dx = q.x - p.x, dy = q.y - p.y;
+      const cx = mx - dy * k, cy = my + dx * k;
+      svgEl('path', { d:`M${p.x} ${p.y} Q${cx} ${cy} ${q.x} ${q.y}`, class:'edge', 'data-a':a, 'data-b':b }, gE);
+      const tx = .25*p.x + .5*cx + .25*q.x, ty = .25*p.y + .5*cy + .25*q.y;
+      const t = svgEl('text', { x:tx, y:ty + 5, 'text-anchor':'middle', class:'edge-label', 'data-a':a, 'data-b':b }, gL);
+      t.textContent = label;
+    });
+    A.forEach(n => {
+      const g = svgEl('g', { class:'node ' + n.g, 'data-id':n.id }, gN);
+      const link = svgEl('a', { href:'#' + n.id, 'aria-label':n.name }, g);
+      svgEl('circle', { cx:n.x, cy:n.y, r:8 }, link);
+      const t = svgEl('text', { x:n.x + n.lx, y:n.y + n.ly, 'text-anchor':n.a }, link);
+      t.textContent = n.name;
+      const on = () => { map.classList.add('is-focus'); $$('.edge,.edge-label', map).forEach(e => e.classList.toggle('on', e.dataset.a === n.id || e.dataset.b === n.id)); };
+      const off = () => { map.classList.remove('is-focus'); };
+      g.addEventListener('mouseenter', on); g.addEventListener('mouseleave', off);
+      link.addEventListener('focus', on); link.addEventListener('blur', off);
+      link.addEventListener('click', (e) => { if (P.on) { e.preventDefault(); P.goId(n.id); } });
+    });
+  }
+  /* index */
+  const idx = $('#index');
+  A.forEach((n, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="#${n.id}"><i class="cdot${n.g === 'w' ? '' : ' ii'}"></i><span class="index__name">${n.name}</span><span class="index__tag">${n.tag}</span></a>`;
+    idx.appendChild(li);
+  });
+
+  /* ---------- floor plan ---------- */
+  const mats = $('#mats');
+  if (mats) for (let r = 0; r < 6; r++) for (let c = 0; c < 10; c++)
+    svgEl('rect', { x:391 + c*23, y:388 + r*26, width:21, height:24, class:'mat-ii' }, mats);
+
+  /* ---------- audio preview ---------- */
+  const tracks = $('#tracks');
+  const T = A.map((n) => ({ name: n.name, title: n.name, sub: n.id === 'do-ho-suh' ? 'Documentary' : 'Artist reflection' }));
+  T.push({ name:'Memory Archive', title:'Visitors’ memories', sub:'Memory Archive' });
+  let cur = 9, playing = false, prog = 0, raf;
+  T.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<button type="button" data-i="${i}" ${i === cur ? 'aria-current="true"' : ''}>${t.name}</button>`;
+    tracks.appendChild(li);
+  });
+  const setTrack = (i) => {
+    cur = i; prog = 0; $('#barFill').style.width = '0%';
+    $('#nowTitle').textContent = T[i].title; $('#nowSub').textContent = T[i].sub;
+    $$('button', tracks).forEach(b => b.toggleAttribute('aria-current', +b.dataset.i === i));
+    if (!playing) toggle();
+  };
+  const icon = $('#playIcon');
+  const tick = () => { prog = Math.min(100, prog + .08); $('#barFill').style.width = prog + '%'; if (prog < 100 && playing) raf = requestAnimationFrame(tick); else if (prog >= 100) toggle(); };
+  const toggle = () => {
+    playing = !playing;
+    icon.innerHTML = playing ? '<path d="M4 2h3.5v14H4zM10.5 2H14v14h-3.5z"/>' : '<path d="M4 2v14l12-7z"/>';
+    $('#playBtn').setAttribute('aria-label', playing ? 'Pause preview' : 'Play preview');
+    if (playing) { if (prog >= 100) prog = 0; raf = requestAnimationFrame(tick); say('Audio preview: recordings are made with the artists before opening.'); }
+    else cancelAnimationFrame(raf);
+  };
+  $('#playBtn').addEventListener('click', toggle);
+  tracks.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) setTrack(+b.dataset.i); });
+
+  /* ---------- tickets ---------- */
+  const dlg = $('#tix');
+  const START = new Date(2027, 2, 5), END = new Date(2027, 7, 29);
+  let month = new Date(2027, 2, 1), sel = new Date(START), slot = '11:00';
+  const qty = { adult: 2, student: 0, child: 0, friend: 0 };
+  const PRICES = [
+    { k:'adult', n:'Adult', s:'', p:17.5 },
+    { k:'student', n:'Student', s:'With a valid student card', p:9 },
+    { k:'child', n:'Under 18', s:'With an adult', p:0 },
+    { k:'friend', n:'Friend of the exhibition', s:'Show your Friends card', p:0 },
+  ];
+  const fmt = (v) => v === 0 ? 'Free' : '€' + v.toFixed(2);
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const DAYS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const same = (a, b) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+  const open = (d) => d >= START && d <= END && d.getDay() !== 1;
+  const renderCal = () => {
+    const cal = $('#cal'); cal.innerHTML = '';
+    ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(d => { const s = document.createElement('span'); s.className = 'dow'; s.textContent = d; cal.appendChild(s); });
+    $('#calMonth').textContent = `${MONTHS[month.getMonth()]} ${month.getFullYear()}`;
+    const first = (month.getDay() + 6) % 7, days = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+    for (let i = 0; i < first; i++) cal.appendChild(document.createElement('span'));
+    for (let d = 1; d <= days; d++) {
+      const dt = new Date(month.getFullYear(), month.getMonth(), d);
+      const b = document.createElement('button'); b.type = 'button'; b.textContent = d;
+      b.disabled = !open(dt); b.setAttribute('aria-pressed', same(dt, sel));
+      b.setAttribute('aria-label', `${DAYS[dt.getDay()]} ${d} ${MONTHS[dt.getMonth()]}`);
+      b.addEventListener('click', () => { sel = dt; renderCal(); renderSlots(); });
+      cal.appendChild(b);
+    }
+    $('#calPrev').disabled = month.getMonth() <= 2; $('#calNext').disabled = month.getMonth() >= 7;
+  };
+  $('#calPrev').addEventListener('click', () => { month = new Date(2027, month.getMonth() - 1, 1); renderCal(); });
+  $('#calNext').addEventListener('click', () => { month = new Date(2027, month.getMonth() + 1, 1); renderCal(); });
+  const renderSlots = () => {
+    const box = $('#slots'); box.innerHTML = '';
+    const hrs = [10,11,12,13,14,15,16,17].concat(sel.getDay() === 4 ? [18,19,20] : []);
+    $('#slotHead').textContent = `Entry time · ${DAYS[sel.getDay()]} ${sel.getDate()} ${MONTHS[sel.getMonth()]}`;
+    if (!hrs.includes(+slot.slice(0,2))) slot = '11:00';
+    hrs.forEach(h => {
+      const t = `${h}:00`, few = ((sel.getDate() * 7 + h) % 5) === 0;
+      const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', t === slot);
+      b.innerHTML = t + (few ? '<small>Few left</small>' : '');
+      b.addEventListener('click', () => { slot = t; renderSlots(); });
+      box.appendChild(b);
+    });
+  };
+  const renderTypes = () => {
+    const box = $('#ttypes'); box.innerHTML = '';
+    PRICES.forEach(pr => {
+      const row = document.createElement('div'); row.className = 'ttype';
+      row.innerHTML = `<p>${pr.n}${pr.s ? `<small>${pr.s}</small>` : ''}</p><span class="price">${fmt(pr.p)}</span>
+        <span class="step"><button type="button" aria-label="Fewer ${pr.n} tickets" data-k="${pr.k}" data-d="-1">−</button><output>${qty[pr.k]}</output><button type="button" aria-label="More ${pr.n} tickets" data-k="${pr.k}" data-d="1">+</button></span>`;
+      box.appendChild(row);
+    });
+    const total = PRICES.reduce((s, pr) => s + pr.p * qty[pr.k], 0);
+    $('#total').textContent = '€' + total.toFixed(2);
+  };
+  $('#ttypes').addEventListener('click', (e) => { const b = e.target.closest('button[data-k]'); if (!b) return; qty[b.dataset.k] = Math.max(0, Math.min(10, qty[b.dataset.k] + +b.dataset.d)); renderTypes(); });
+  const openTix = () => {
+    $('#tixStep1').hidden = false; $('#tixStep2').hidden = true;
+    renderCal(); renderSlots(); renderTypes();
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+  };
+  const closeTix = () => { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); };
+  $$('[data-tickets]').forEach(b => b.addEventListener('click', openTix));
+  $$('[data-close]', dlg).forEach(b => b.addEventListener('click', closeTix));
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) closeTix(); });
+  $('#tixContinue').addEventListener('click', () => {
+    const n = Object.values(qty).reduce((a, b) => a + b, 0);
+    if (!n) { say('Add at least one ticket to continue.'); return; }
+    const lines = PRICES.filter(p => qty[p.k]).map(p => `${qty[p.k]} × ${p.n}`).join(', ');
+    const total = PRICES.reduce((s, pr) => s + pr.p * qty[pr.k], 0);
+    $('#summary').innerHTML = `<b>${DAYS[sel.getDay()]} ${sel.getDate()} ${MONTHS[sel.getMonth()]} 2027, ${slot}</b><br>${lines} &nbsp;·&nbsp; €${total.toFixed(2)}`;
+    $('#tixStep1').hidden = true; $('#tixStep2').hidden = false;
+  });
+  $('#tixBack').addEventListener('click', () => { $('#tixStep1').hidden = false; $('#tixStep2').hidden = true; });
+
+  /* ---------- image slots: add your own image (kept in this browser) ---------- */
+  const DB = 'threads-of-memory', STORE = 'images';
+  const idb = () => new Promise((res, rej) => {
+    try { const r = indexedDB.open(DB, 1); r.onupgradeneeded = () => r.result.createObjectStore(STORE); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); }
+    catch (e) { rej(e); }
+  });
+  const tx = async (mode, fn) => { const db = await idb(); return new Promise((res, rej) => { const t = db.transaction(STORE, mode); const st = t.objectStore(STORE); const r = fn(st); t.oncomplete = () => res(r && r.result); t.onerror = () => rej(t.error); }); };
+  const showImg = (fig, blob) => {
+    $$('.ph__img,.ph__remove', fig).forEach(n => n.remove());
+    if (!blob) return;
+    const img = document.createElement('img'); img.className = 'ph__img'; img.alt = (fig.dataset.slot || '').replace(/-/g, ' ') + ', image added for the presentation';
+    img.src = URL.createObjectURL(blob); fig.appendChild(img);
+    const rm = document.createElement('button'); rm.type = 'button'; rm.className = 'ph__remove site-only'; rm.textContent = 'Remove';
+    rm.addEventListener('click', async () => { try { await tx('readwrite', st => st.delete(fig.dataset.slot)); } catch (e) {} showImg(fig, null); say('Image removed.'); });
+    fig.appendChild(rm);
+  };
+  let target = null; const file = $('#phFile');
+  const save = async (fig, f) => {
+    if (!f || !/^image\//.test(f.type)) { say('Choose an image file (JPG, PNG or WebP).'); return; }
+    showImg(fig, f);
+    try { await tx('readwrite', st => st.put(f, fig.dataset.slot)); say('Image added. It is saved in this browser only.'); }
+    catch (e) { say('Image shown, but this browser could not save it for next time.'); }
+  };
+  $$('.ph[data-slot]').forEach(fig => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'ph__add site-only'; b.textContent = 'Add image';
+    b.addEventListener('click', () => { target = fig; file.value = ''; file.click(); });
+    fig.appendChild(b);
+    fig.addEventListener('dragover', (e) => { e.preventDefault(); fig.classList.add('is-drag'); });
+    fig.addEventListener('dragleave', () => fig.classList.remove('is-drag'));
+    fig.addEventListener('drop', (e) => { e.preventDefault(); fig.classList.remove('is-drag'); save(fig, e.dataTransfer.files[0]); });
+  });
+  file.addEventListener('change', () => { if (target && file.files[0]) save(target, file.files[0]); });
+  (async () => {
+    try { for (const fig of $$('.ph[data-slot]')) { const blob = await tx('readonly', st => st.get(fig.dataset.slot)); if (blob) showImg(fig, blob); } } catch (e) { /* storage unavailable: placeholders stay */ }
+  })();
+
+  /* ---------- presentation mode ---------- */
+  const ORDER = ['top','exhibition','context','artists','space','route','audio','framework','visit','thanks',
+    'womanhood','woo-hannah','labay-eyong','kablusiak','rucha-kulkarni','memory','yee-i-lann','meita-meilita','nico-williams','elfreda-dali','igshaan-adams','do-ho-suh'];
+  const all = $$('[data-slide]');
+  const slides = ORDER.map(id => document.getElementById(id)).filter(Boolean).concat(all.filter(s => !ORDER.includes(s.id)));
+  const APPENDIX = slides.findIndex(s => s.id === 'womanhood');
+  const MAP = slides.findIndex(s => s.id === 'artists');
+  const hud = { label: $('#hudLabel'), count: $('#hudCount'), prog: $('#hudProgress') };
+  const notes = $('#notesPanel'), help = $('#help');
+  const P = {
+    on: false, i: 0, notes: false,
+    show(i) {
+      this.i = Math.max(0, Math.min(slides.length - 1, i));
+      slides.forEach((s, k) => { s.classList.toggle('is-current', k === this.i); s.setAttribute('aria-hidden', k !== this.i); });
+      const s = slides[this.i]; s.scrollTop = 0;
+      hud.label.textContent = s.dataset.label || '';
+      hud.count.textContent = `${String(this.i + 1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+      hud.prog.style.width = ((this.i + 1) / slides.length * 100) + '%';
+      $('#hudMap').hidden = !(APPENDIX > -1 && this.i >= APPENDIX);
+      const n = $('.notes', s);
+      notes.innerHTML = `<h4>Speaker notes · ${s.dataset.label || ''}</h4>` + (n ? n.innerHTML : '<p>No notes for this slide.</p>');
+      try { sessionStorage.setItem('tom-slide', this.i); } catch (e) {}
+    },
+    goId(id) { const k = slides.findIndex(s => s.id === id); if (k > -1) this.show(k); },
+    enter(i) {
+      if (this.on) return;
+      this.on = true; root.classList.add('presenting');
+      let start = 0;
+      if (typeof i === 'number') start = i;
+      else { try { start = +(sessionStorage.getItem('tom-slide') || 0); } catch (e) {} }
+      this.show(start);
+      try { const r = root.requestFullscreen && root.requestFullscreen(); if (r && r.catch) r.catch(() => {}); } catch (e) {}
+      nav.classList.remove('is-open');
+    },
+    exit() {
+      if (!this.on) return;
+      const cur = slides[this.i];
+      this.on = false; root.classList.remove('presenting');
+      slides.forEach(s => { s.classList.remove('is-current'); s.removeAttribute('aria-hidden'); });
+      notes.classList.remove('is-on'); help.classList.remove('is-on');
+      try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) {}
+      if (cur && !cur.classList.contains('present-only')) cur.scrollIntoView({ block: 'start' });
+    },
+  };
+  $('#presentBtn').addEventListener('click', () => P.enter());
+  $$('[data-present]').forEach(b => b.addEventListener('click', () => P.enter(0)));
+  $('#hudPrev').addEventListener('click', () => P.show(P.i - 1));
+  $('#hudNext').addEventListener('click', () => P.show(P.i + 1));
+  $('#hudExit').addEventListener('click', () => P.exit());
+  $('#hudMap').addEventListener('click', () => P.show(MAP));
+  $('#hudNotes').addEventListener('click', () => notes.classList.toggle('is-on'));
+  $('#hudHelp').addEventListener('click', () => help.classList.toggle('is-on'));
+  $('#helpClose').addEventListener('click', () => help.classList.remove('is-on'));
+  const toggleTheme = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+  };
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest && e.target.closest('input,textarea,select')) return;
+    if (dlg.open) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key;
+    if (!P.on) { if (k === 'p' || k === 'P') { e.preventDefault(); P.enter(); } return; }
+    if (['ArrowRight','ArrowDown','PageDown',' ','Enter'].includes(k)) { e.preventDefault(); P.show(P.i + 1); }
+    else if (['ArrowLeft','ArrowUp','PageUp','Backspace'].includes(k)) { e.preventDefault(); P.show(P.i - 1); }
+    else if (k === 'Home') { e.preventDefault(); P.show(0); }
+    else if (k === 'End') { e.preventDefault(); P.show(slides.length - 1); }
+    else if (k === 'Escape') { if (help.classList.contains('is-on')) help.classList.remove('is-on'); else if (!document.fullscreenElement) P.exit(); }
+    else if (k === 'n' || k === 'N') notes.classList.toggle('is-on');
+    else if (k === 'm' || k === 'M') P.show(MAP);
+    else if (k === 't' || k === 'T') toggleTheme();
+    else if (k === 'f' || k === 'F') { try { if (document.fullscreenElement) document.exitFullscreen(); else root.requestFullscreen().catch(() => {}); } catch (err) {} }
+    else if (k === '?') help.classList.toggle('is-on');
+  });
+  // Esc while in fullscreen leaves fullscreen first; a second Esc leaves the presentation.
+  // swipe on touch screens
+  let tx0 = null;
+  document.addEventListener('touchstart', (e) => { if (P.on) tx0 = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', (e) => { if (!P.on || tx0 === null) return; const dx = e.changedTouches[0].clientX - tx0; if (Math.abs(dx) > 60) P.show(P.i + (dx < 0 ? 1 : -1)); tx0 = null; });
+  if (location.hash === '#present') P.enter(0);
+  window.addEventListener('hashchange', () => { if (location.hash === '#present') P.enter(0); });
+})();
+</script>
+
+</body>
+</html>
