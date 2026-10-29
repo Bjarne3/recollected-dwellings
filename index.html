@@ -236,6 +236,9 @@ section{position:relative}
 .thumbs--2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
 .mount--duo{aspect-ratio:4/5}
+.pair{display:grid;grid-template-columns:minmax(0,1.91fr) minmax(0,1fr);gap:.9rem;align-items:start}
+.mount--still{aspect-ratio:16/9}
+.mount--cloth{aspect-ratio:808/864}
 .thumbs--5{grid-template-columns:repeat(5,minmax(0,1fr));gap:.6rem}
 @media (max-width: 600px){.thumbs--5{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .thumbs .mount{aspect-ratio:1/1}
@@ -1207,10 +1210,8 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 <section class="artist chapter-ii" id="gina-adams" data-slide data-label="Artists · Indigenous histories">
   <div class="wrap">
     <div class="artist__media">
-      <figure class="mount mount--main ph" data-slot="gina-adams" style="--w1:#B98B5E;--w2:#4F6E8C;--w3:#EFE8DD">
-        <div class="ph__label"><b>Gina Adams</b><span>Image to follow</span></div>
-      </figure>
-      <p class="caption">Gina Adams, from the series <i>Broken Treaty Quilts</i></p>
+      <div class="duo"><figure class="mount mount--duo"><img src="images/gina-fort-laramie-1868.jpg" alt="A cream antique quilt covered in multicoloured hand-cut calico letters spelling out the opening of the Fort Laramie Treaty of 1868."></figure><figure class="mount mount--duo"><img src="images/gina-pinwheel-quilt.jpg" alt="An antique quilt with a blue and white pinwheel pattern, overlaid with rows of patterned calico letters that are hard to read against the pattern."></figure></div>
+      <p class="caption">Gina Adams, two quilts from the series <i>Broken Treaty Quilts</i>, hand-cut calico letters on antique quilts. Left: the Treaty of Fort Laramie, 1868</p>
     </div>
     <div class="artist__text">
       <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Indigenous histories</span></div>
@@ -1218,7 +1219,7 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
       <p class="artist__meta">Ojibwe and colonial American descent</p>
       <p class="artist__lede">In her <i>Broken Treaty Quilts</i>, Gina Adams stitches the texts of historical treaties between Indigenous nations and the United States onto antique quilts, in hand-cut calico letters that are not always easy to read.</p>
       <dl class="label">
-        <dt>On view</dt><dd>From the series <i>Broken Treaty Quilts</i>, begun in 2014</dd>
+        <dt>On view</dt><dd>Two quilts from the series <i>Broken Treaty Quilts</i> (first quilt completed in 2014), one with the Treaty of Fort Laramie of 1868</dd>
         <dt>Materials</dt><dd>Hand-cut calico letters appliquéd onto antique quilts</dd>
         <dt>Thread</dt><dd>Colonial violence, broken promises, dispossession</dd>
         <dt>In the room</dt><dd>On the side wall, beside Igshaan Adams</dd>
@@ -1472,10 +1473,8 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 <section class="artist artist--flip" id="hema-shironi" data-slide data-label="Artists · The body and displacement">
   <div class="wrap">
     <div class="artist__media">
-      <figure class="mount mount--main ph" data-slot="hema-shironi" style="--w1:#C4876B;--w2:#6E7D5B;--w3:#F1EADF">
-        <div class="ph__label"><b>Hema Shironi</b><span>Image to follow</span></div>
-      </figure>
-      <p class="caption">Hema Shironi, <i>Buried Alive Stories</i>, 2020</p>
+      <figure class="mount mount--main"><img src="images/hema-buried-alive-stories.jpg" alt="An off-white cloth embroidered with a house, a fence, plants and a water tank along the top; below, outlined belongings hang on long loose threads."></figure>
+      <p class="caption">Hema Shironi, <i>Buried Alive Stories</i>, 2020. Embroidery on cloth, 95 × 104 cm</p>
     </div>
     <div class="artist__text">
       <div class="artist__top"><i class="cdot"></i><span class="eyebrow">The body and displacement</span></div>
@@ -1484,11 +1483,11 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
       <p class="artist__lede">Hema Shironi examines domestic memory and displacement through embroidery, photographs and found fabrics, addressing Sri Lanka's histories of colonisation, civil war, displacement and migration.</p>
       <dl class="label">
         <dt>On view</dt><dd><i>Buried Alive Stories</i>, 2020</dd>
-        <dt>Materials</dt><dd>Embroidery, photographs, found fabrics</dd>
+        <dt>Materials</dt><dd>Embroidery on cloth</dd>
         <dt>Thread</dt><dd>Domestic memory, displacement, civil war</dd>
         <dt>In the room</dt><dd>On the entrance wall, beside Do Ho Suh's houses</dd>
       </dl>
-      <p class="why">The work draws on her grandmother's account of burying treasured possessions around the house when the family was forced to leave it during Sri Lanka's civil war (1983–2009). It shows how ordinary objects can become traces of lives disrupted by political violence.</p>
+      <p class="why">The work draws on her grandmother's account of burying treasured possessions around the house when the family was forced to leave it during Sri Lanka's civil war (1983–2009). The house and garden line the top of the cloth; below them, the belongings hang on loose threads, as if buried in the ground. It shows how ordinary objects can become traces of lives disrupted by political violence.</p>
     </div>
   </div>
   <aside class="notes">
@@ -1512,10 +1511,8 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 <section class="artist" id="zoe-buckman" data-slide data-label="Artists · Painful memories of home">
   <div class="wrap">
     <div class="artist__media">
-      <figure class="mount mount--main ph" data-slot="zoe-buckman" style="--w1:#B85E6B;--w2:#8D8A9A;--w3:#F2E9EA">
-        <div class="ph__label"><b>Zoë Buckman</b><span>Image to follow</span></div>
-      </figure>
-      <p class="caption">Zoë Buckman, <i>Show Me Your Bruises, Then</i></p>
+      <div class="pair"><figure class="mount mount--still"><img src="images/zoe-bruises-video.jpg" alt="Three side-by-side video frames of three women seated at a wooden table, looking into the camera, two with mugs in front of them."></figure><figure class="mount mount--cloth"><img src="images/zoe-embroidered-poem.jpg" alt="A white cloth embroidered in dark red script with lines of a poem; loose pink threads hang down over a pink smocked band."></figure></div>
+      <p class="caption">Zoë Buckman, <i>Show Me Your Bruises, Then</i>, 2021–22: still from the three-channel video, and an embroidered textile with lines from her poem</p>
     </div>
     <div class="artist__text">
       <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Painful memories of home</span></div>
