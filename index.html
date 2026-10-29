@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Threads of Memory</title>
-<meta name="description" content="Threads of Memory: Weaving Identity and Belonging. A touring exhibition proposal of ten artists working in thread, cloth and bead (University of Amsterdam, 2026).">
-<meta property="og:title" content="Threads of Memory">
-<meta property="og:description" content="Ten artists work in thread, cloth and bead to hold on to what official records leave out.">
+<title>Recollected Dwellings</title>
+<meta name="description" content="Recollected Dwellings: a touring exhibition proposal of thirteen artists who work with recollection in thread, cloth and fibre. Proposed first venue: TextielMuseum, Tilburg (University of Amsterdam, 2026).">
+<meta property="og:title" content="Recollected Dwellings">
+<meta property="og:description" content="What shape must our memories take for our histories to become visible? Thirteen artists, thread, cloth and fibre.">
 <meta property="og:image" content="images/rucha-installation.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2316182B'/%3E%3Cpath d='M6 22c5-10 9 4 14-6s6-6 6-6' fill='none' stroke='%23E3576F' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 
@@ -96,9 +96,13 @@ em{font-style:italic}
   .nav.is-open .nav__links a{display:block;padding-block:.8rem;border-bottom:1px solid var(--rule)}
 }
 @media (max-width: 620px){
-  .lang,.present-btn span{display:none}
+  .lang,.present-btn span,.brand__sub{display:none}
   .nav .btn{padding:.6em 1em}
+  .nav .wrap{gap:.8rem}
+  .nav__tools{gap:.5rem}
+  .brand__name{font-size:1.2rem;white-space:nowrap}
 }
+@media (max-width: 420px){.present-btn{display:none}}
 
 /* ---------- sections ---------- */
 section{position:relative}
@@ -113,7 +117,7 @@ section{position:relative}
 /* ---------- hero ---------- */
 .hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);min-height:min(86vh,880px);border-bottom:1px solid var(--rule);overflow:hidden}
 .hero__text{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;padding:clamp(2.5rem,5vw,4.5rem) var(--gutter) clamp(2rem,4vw,3rem)}
-.hero__title{font-size:clamp(3.6rem,9.2vw,10rem);line-height:.9;letter-spacing:-.025em;font-variation-settings:"opsz" 96}
+.hero__title{font-size:clamp(3rem,7.4vw,8.4rem);line-height:.9;letter-spacing:-.025em;font-variation-settings:"opsz" 96}
 .hero__title span{display:block}
 .hero__title em{display:block;color:var(--thread);padding-left:.55em;font-weight:400}
 .hero__subtitle{font-family:var(--f-display);font-style:italic;font-size:clamp(1.3rem,2vw,1.8rem);margin-top:1.4rem;color:var(--ink-2)}
@@ -152,37 +156,31 @@ section{position:relative}
 .concept__figures .eyebrow{padding-block:.9rem .2rem}
 @media (max-width: 900px){.concept__statement,.concept__figures{grid-column:1/-1}}
 
-/* ---------- thread map ---------- */
-.map-wrap{overflow-x:auto;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
-.map{width:100%;min-width:720px;height:auto;display:block}
-.map .edge{fill:none;stroke:var(--thread);stroke-width:1.2;opacity:.55;transition:opacity .25s,stroke-width .25s}
-.map .edge-label{font-family:var(--f-display);font-style:italic;font-size:15px;fill:var(--ink-2);paint-order:stroke;stroke:var(--bg);stroke-width:6px;stroke-linejoin:round;transition:opacity .25s}
-.map .node circle{stroke-width:2;transition:r .2s}
-.map .node.w circle{fill:var(--thread);stroke:var(--thread)}
-.map .node.c circle{fill:var(--indigo);stroke:var(--indigo)}
-.map .node.p circle{fill:var(--bg);stroke:var(--indigo)}
-.map .node text{font-family:var(--f-sans);font-size:14px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;fill:var(--ink);paint-order:stroke;stroke:var(--bg);stroke-width:6px;stroke-linejoin:round}
-.map .node a{cursor:pointer;text-decoration:none}
-.map .node:hover circle,.map .node:focus-within circle{r:11}
-.map.is-focus .edge{opacity:.12}
-.map.is-focus .edge-label{opacity:.15}
-.map.is-focus .edge.on{opacity:1;stroke-width:2.2}
-.map.is-focus .edge-label.on{opacity:1}
+/* ---------- artists board ---------- */
+.board{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:2.5rem clamp(2rem,4vw,4rem)}
+.board__side{display:grid;gap:1rem;align-content:start;border-top:3px solid var(--indigo);padding-top:1.2rem;min-width:0}
+.board__side--p{border-top-color:var(--thread)}
+.board__side--c > .eyebrow{color:var(--indigo)}
+.board__side--p > .eyebrow{color:var(--thread)}
+.board__desc{font-size:.98rem;color:var(--ink-2);max-width:52ch}
+.grps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:.6rem}
+.board__side--p .grps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grp{display:grid;gap:.5rem;align-content:start;border-top:1px solid var(--ink);padding-top:.9rem;min-width:0}
+.grp__no{font-family:var(--f-display);font-style:italic;font-size:2.6rem;line-height:.9;color:var(--indigo)}
+.board__side--p .grp__no{color:var(--thread)}
+.grp h3{font-size:1.4rem;line-height:1.1;min-height:2.2em}
+.grp ul{list-style:none;margin:.3rem 0 0;padding:0}
+.grp li{border-bottom:1px solid var(--rule)}
+.grp a{display:block;padding-block:.5rem;text-decoration:none;font-size:1rem}
+.grp a:hover{color:var(--thread)}
 .legend{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;margin-top:1.5rem;font-size:.82rem;color:var(--ink-2)}
 .legend span{display:inline-flex;align-items:center;gap:.55rem}
 .legend i{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid}
 .legend .w{background:var(--thread);border-color:var(--thread)}
 .legend .c{background:var(--indigo);border-color:var(--indigo)}
-.legend .p{background:transparent;border-color:var(--indigo)}
 .legend .t{width:28px;height:0;border-radius:0;border:0;border-top:1.5px solid var(--thread)}
-.index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem;margin-top:3rem;border-top:1px solid var(--ink);list-style:none;padding:0}
-.index li{border-bottom:1px solid var(--rule)}
-.index a{display:grid;grid-template-columns:1.2rem 1fr auto;gap:1rem;align-items:baseline;padding-block:.95rem;text-decoration:none}
-.index a:hover .index__name{color:var(--thread)}
-.index__no{font-size:.75rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
-.index__name{font-family:var(--f-display);font-size:1.5rem;line-height:1.1;transition:color .2s}
-.index__tag{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-stretch:115%}
-@media (max-width: 700px){.index{grid-template-columns:1fr}}
+@media (max-width: 1000px){.board{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 640px){.grps,.board__side--p .grps{grid-template-columns:minmax(0,1fr)}.grp h3{min-height:0}}
 
 /* ---------- chapter dividers ---------- */
 .chapter{padding-block:clamp(4rem,8vw,7rem);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);overflow:hidden}
@@ -270,6 +268,7 @@ section{position:relative}
 .sw-concrete{background:#9A9894;background-image:radial-gradient(#7d7b77 1px,transparent 1.5px),radial-gradient(#b4b2ad 1px,transparent 1.5px);background-size:7px 7px,11px 11px;background-position:0 0,3px 5px}
 .sw-steel{background:linear-gradient(135deg,#5f6670,#9aa1a9 45%,#5a6069)}
 .sw-brick{background-color:#9b4a35;background-image:linear-gradient(#d8cfc6 1.5px,transparent 1.5px),linear-gradient(90deg,#d8cfc6 1.5px,transparent 1.5px);background-size:100% 9px,18px 18px}
+.sw-loom{background-color:#d9d2c8;background-image:repeating-linear-gradient(90deg,#3f4a6b 0 2px,transparent 2px 6px),repeating-linear-gradient(0deg,#AE1F3B 0 2px,transparent 2px 7px)}
 .sw-concrete2{background:#b3b0aa;background-image:radial-gradient(#9b9892 1px,transparent 1.6px);background-size:6px 6px}
 .sw-bed{background:linear-gradient(#22344a 70%,#e8e6e3 70%)}
 .sw-chair{background:radial-gradient(circle,#e7c6cc 55%,transparent 57%)}
@@ -281,6 +280,7 @@ section{position:relative}
 .sw-seal{background:radial-gradient(circle at 30% 30%,#a7313f,#5e1220)}
 .sw-beads{background-color:#f3e3a8;background-image:radial-gradient(circle,#e63b2e 2.4px,transparent 2.8px),radial-gradient(circle,#2554a6 2.4px,transparent 2.8px);background-size:9px 9px;background-position:0 0,4.5px 4.5px}
 .sw-rope{background:repeating-linear-gradient(60deg,#c8b28a 0 3px,#8f7a55 3px 6px)}
+.sw-quilt{background-color:#ebe2d3;background-image:linear-gradient(45deg,#b5523b 25%,transparent 25%,transparent 75%,#b5523b 75%),linear-gradient(45deg,#3f5f86 25%,transparent 25%,transparent 75%,#3f5f86 75%);background-size:12px 12px;background-position:0 0,6px 6px}
 .sw-floss{background-color:#f4efee;background-image:repeating-linear-gradient(0deg,transparent 0 5px,#AE1F3B 5px 6.5px)}
 @media (max-width: 900px){.space__points,.materials{grid-column:1/-1}}
 @media (max-width: 560px){.materials{grid-template-columns:1fr 1fr}}
@@ -333,6 +333,7 @@ section{position:relative}
 .thanks__more{font-size:.8rem!important;letter-spacing:.14em;text-transform:uppercase}
 html:not(.presenting) .thanks__more{display:none}
 @media (max-width: 1000px){.plan-box,.route-list,.where{grid-column:1/-1}}
+.plan-note{margin-top:.8rem;font-size:.84rem;color:var(--ink-2);font-style:italic}
 .model-cue{display:flex;gap:1rem;align-items:center;margin-top:1.4rem;padding:1rem 1.2rem;border:1px dashed var(--thread);color:var(--ink)}
 .model-cue svg{width:28px;height:28px;flex:none;stroke:var(--thread);fill:none;stroke-width:1.4}
 
@@ -356,6 +357,7 @@ html:not(.presenting) .thanks__more{display:none}
 .archive{border-top:1px solid var(--ink);padding-top:1.2rem;display:grid;gap:.8rem}
 .archive h3{font-size:2rem}
 .archive p{font-size:.98rem}
+.archive .eyebrow,.visit__card .eyebrow{font-size:.72rem}
 @media (max-width: 900px){.player,.audio__side{grid-column:1/-1}.tracks{grid-template-columns:1fr}}
 
 /* ---------- context ---------- */
@@ -363,16 +365,19 @@ html:not(.presenting) .thanks__more{display:none}
 .context__col{grid-column:span 6;display:grid;gap:1rem;align-content:start;border-top:1px solid var(--ink);padding-top:1.4rem}
 .context__col h3{font-size:clamp(1.8rem,2.8vw,2.5rem)}
 .context__col p{max-width:58ch}
+.context--4 .context__col h3{font-size:clamp(1.6rem,2.4vw,2.2rem)}
 .context__quote{grid-column:1/-1;font-family:var(--f-display);font-style:italic;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.2;max-width:28ch;margin-top:1.5rem;color:var(--ink)}
 .context__quote::before{content:"";display:block;width:4rem;border-top:1.5px solid var(--thread);margin-bottom:1.2rem}
 @media (max-width: 800px){.context__col{grid-column:1/-1}}
 
-/* ---------- framework (present only) ---------- */
+/* ---------- framework ---------- */
 .frame-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .frame-card{border-top:1px solid var(--ink);padding-top:1.2rem;display:grid;gap:.7rem;align-content:start}
 .frame-card h3{font-size:1.9rem}
 .frame-card p{font-size:.98rem;color:var(--ink-2)}
-.frame-card--todo{border:1px dashed var(--rule);padding:1.2rem}
+.frame-cards--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.frame-cards--4 .frame-card h3{font-size:1.6rem}
+@media (max-width: 1000px){.frame-cards--4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ---------- visit ---------- */
 .visit{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:2rem}
@@ -382,6 +387,7 @@ html:not(.presenting) .thanks__more{display:none}
 .vi dd{margin:0;font-size:1rem;line-height:1.45}
 .vi dd strong{font-family:var(--f-display);font-weight:400;font-size:1.5rem;display:block;line-height:1.15}
 .prices{list-style:none;padding:0;margin:0}
+.vi__note{display:block;font-size:.74rem;color:var(--ink-2);margin-top:.35rem}
 .prices li{display:flex;justify-content:space-between;gap:1rem;font-variant-numeric:tabular-nums;padding-block:.15rem}
 .visit__card{grid-column:9/-1;background:var(--ink);color:var(--bg);padding:clamp(1.5rem,3vw,2.4rem);display:grid;gap:1.1rem;align-content:start}
 .visit__card h3{font-size:2.3rem}
@@ -395,7 +401,7 @@ html:not(.presenting) .thanks__more{display:none}
 .signup button{background:none;border:1px solid var(--bg);color:var(--bg);border-radius:999px;padding:.5rem 1rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
 .catalogue{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:center;border:1px solid var(--rule);padding:1.2rem 1.4rem;margin-top:.5rem}
 .book{width:3.4rem;height:4.4rem;background:var(--thread);position:relative;box-shadow:4px 4px 0 var(--rule)}
-.book::after{content:"ToM";position:absolute;left:.35rem;bottom:.35rem;font-family:var(--f-display);font-style:italic;font-size:.8rem;color:var(--bg)}
+.book::after{content:"RD";position:absolute;left:.35rem;bottom:.35rem;font-family:var(--f-display);font-style:italic;font-size:.8rem;color:var(--bg)}
 .catalogue p{font-size:.95rem}
 .catalogue p span{display:block;color:var(--ink-2);font-size:.85rem}
 @media (max-width: 900px){.visit__info,.visit__card{grid-column:1/-1}}
@@ -495,7 +501,7 @@ html.presenting .artist__text{position:static}
 /* hero slide */
 html.presenting .hero{display:grid!important;grid-template-columns:minmax(0,7fr) minmax(0,5fr);padding:0}
 html.presenting .hero__text{padding:7vh 4vw 11vh 6vw}
-html.presenting .hero__title{font-size:min(8.8rem,15vh)}
+html.presenting .hero__title{font-size:min(7.4rem,13.5vh)}
 html.presenting .hero__media{height:100vh}
 html.presenting .hero__ctas{display:none}
 
@@ -515,8 +521,6 @@ html.presenting .mount--main{aspect-ratio:auto;height:min(58vh,46vw)}
 html.presenting .mount--main.tall{height:min(64vh,46vw)}
 html.presenting .thumbs .mount{aspect-ratio:auto;height:15vh}
 html.presenting .artist .quote{font-size:1.15rem}
-html.presenting .index{display:none}
-html.presenting .map{max-height:52vh}
 html.presenting .plan{max-height:50vh}
 html.presenting #route .section__head h2{font-size:min(3.2rem,7vh)}
 html.presenting .artist__media:has(.thumbs) .mount--main{height:min(47vh,40vw)}
@@ -524,7 +528,9 @@ html.presenting .artist__media .thumbs + .caption{font-size:.62rem;line-height:1
 html.presenting .thumbs .mount{height:13vh}
 html.presenting .mount--duo{aspect-ratio:auto;height:min(60vh,30vw)}
 html.presenting #route .section__head,html.presenting #space .section__head,html.presenting #artists .section__head{margin-bottom:1.4rem}
-html.presenting .point{padding-block:.85rem}
+html.presenting .point{padding-block:.7rem}
+html.presenting .point h3{font-size:1.3rem}
+html.presenting .point p{font-size:.86rem;line-height:1.5}
 html.presenting .materials li{padding-block:.38rem}
 html.presenting .tour{padding:1.1rem 1.6rem}
 html.presenting .model-cue{margin-top:.9rem;padding:.7rem 1rem}
@@ -537,6 +543,19 @@ html.presenting .section__head .lede{font-size:1.15rem}
 html.presenting .context__quote{font-size:2.2rem;margin-top:.5rem}
 html.presenting .catalogue{display:none}
 html.presenting .thanks h2{font-size:min(9rem,22vh)}
+html.presenting .board__desc{font-size:.86rem}
+html.presenting .grp h3{font-size:1.15rem}
+html.presenting .grp__no{font-size:2.1rem}
+html.presenting .grp a{padding-block:.32rem;font-size:.9rem}
+html.presenting .context--4 .context__col{grid-column:span 3}
+html.presenting .context--4 .context__col h3{font-size:1.35rem}
+html.presenting .context--4 .context__col p{font-size:.84rem;line-height:1.5}
+html.presenting .frame-cards--4 .frame-card h3{font-size:1.75rem}
+html.presenting .frame-card p{font-size:1rem;line-height:1.5}
+html.presenting .plan-note{font-size:.72rem;margin-top:.4rem}
+html.presenting .tracks{grid-template-columns:repeat(3,minmax(0,1fr))}
+html.presenting .tracks button{padding:.42rem 0;font-size:.8rem}
+html.presenting .archive p:not(.eyebrow){font-size:.88rem}
 
 /* hud */
 html.presenting .hud{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;gap:1.5rem;padding:0 2vw calc(1.2vh + env(safe-area-inset-bottom,0px));height:7vh;min-height:44px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-stretch:112%;color:var(--ink-2);pointer-events:none}
@@ -569,25 +588,27 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 </head>
 <body>
 
+
 <!-- ============================ TOP ============================ -->
 <div class="announce" role="note">
   <div class="wrap">
-    <span>Opening 5 March 2027 &nbsp;·&nbsp; Priority booking for Friends opens 1 December 2026</span>
+    <span>An exhibition proposal &nbsp;·&nbsp; Proposed first venue: TextielMuseum, Tilburg, from 5 March 2027</span>
     <button type="button" data-tickets>Book tickets</button>
   </div>
 </div>
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Threads of Memory, home">
-      <span class="brand__name">Threads <em>of Memory</em></span>
-      <span class="brand__sub">Weaving identity and belonging</span>
+    <a class="brand" href="#top" aria-label="Recollected Dwellings, home">
+      <span class="brand__name">Recollected <em>Dwellings</em></span>
+      <span class="brand__sub">A touring exhibition proposal</span>
     </a>
     <ul class="nav__links" id="navlinks">
       <li><a href="#exhibition">Exhibition</a></li>
       <li><a href="#artists">Artists</a></li>
-      <li><a href="#space">The Space</a></li>
-      <li><a href="#audio">Audio guide</a></li>
+      <li><a href="#context">Context</a></li>
+      <li><a href="#space">Venue</a></li>
+      <li><a href="#audio">Memory Archive</a></li>
       <li><a href="#visit">Visit</a></li>
     </ul>
     <div class="nav__tools">
@@ -612,23 +633,23 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 <section class="hero" id="top" data-slide data-label="Opening">
   <div class="hero__text">
     <div>
-      <p class="eyebrow">A touring exhibition &nbsp;·&nbsp; <b>5 March – 29 August 2027</b></p>
+      <p class="eyebrow">A touring exhibition &nbsp;·&nbsp; <b>Proposed first venue: TextielMuseum, Tilburg</b></p>
     </div>
     <div>
-      <h1 class="hero__title"><span>Threads</span><em>of Memory</em></h1>
-      <p class="hero__subtitle">Weaving Identity and Belonging</p>
-      <p class="hero__lede">Ten artists work in thread, cloth and bead to hold on to what official records leave out: the memories of women, families and communities.</p>
+      <h1 class="hero__title"><span>Recollected</span><em>Dwellings</em></h1>
+      <p class="hero__subtitle">What shape must our memories take for our histories to become visible?</p>
+      <p class="hero__lede">Thirteen artists work with recollection, in thread, cloth and fibre, as an intervention in the structures that decide whose past is remembered.</p>
       <div class="hero__ctas">
         <button class="btn btn--solid" type="button" data-tickets>Book tickets</button>
         <a class="btn btn--ghost" href="#exhibition">Explore the exhibition</a>
       </div>
     </div>
     <div>
-      <p class="hero__present present-only">Exhibition proposal &nbsp;·&nbsp; Bjarne, Fiona, Lola &amp; Marije &nbsp;·&nbsp; Doing Modern and Contemporary Art, University of Amsterdam &nbsp;·&nbsp; 13 October 2026</p>
+      <p class="hero__present present-only">Exhibition proposal &nbsp;·&nbsp; Bjarne, Fiona, Lola &amp; Marije &nbsp;·&nbsp; Doing Modern and Contemporary Art, University of Amsterdam &nbsp;·&nbsp; October 2026</p>
       <dl class="hero__facts site-only">
-        <div class="fact"><dt>Opens</dt><dd>Friday 5 March 2027</dd></div>
-        <div class="fact"><dt>Venue</dt><dd>A former industrial building, announced January 2027</dd></div>
-        <div class="fact"><dt>Visit</dt><dd>Timed entry, allow 75 minutes</dd></div>
+        <div class="fact"><dt>Opens</dt><dd>5 March 2027 (proposed)</dd></div>
+        <div class="fact"><dt>First venue</dt><dd>TextielMuseum, Tilburg (proposed)</dd></div>
+        <div class="fact"><dt>Then</dt><dd>Touring to further venues</dd></div>
       </dl>
     </div>
   </div>
@@ -640,20 +661,21 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
     <path d="M775 -20 C 770 150, 790 300, 772 420 C 760 500, 700 590, 762 615 C 825 640, 852 548, 800 528 C 748 508, 722 650, 870 668 C 1010 684, 1190 560, 1460 380"/>
   </svg>
   <aside class="notes">
-    <p>Welcome. Our exhibition is called <i>Threads of Memory: Weaving Identity and Belonging</i>.</p>
-    <p>This is the public website a visitor would find, with tickets, an audio guide and visitor information. We use it for the theme and the context; after that Fiona takes us through the exhibition in her 3D model.</p>
+    <p>Our exhibition is called <i>Recollected Dwellings</i>: thirteen artists who work with recollection as an intervention within dominant and hierarchical sociopolitical structures.</p>
+    <p>This is the public website a visitor would find, with the artists, the venue and visitor information.</p>
   </aside>
 </section>
 
-<!-- ============================ 2. CONCEPT ============================ -->
+<!-- ============================ 2. THEME ============================ -->
 <section class="section" id="exhibition" data-slide data-label="Theme">
   <div class="wrap concept">
     <div class="concept__statement">
       <p class="eyebrow">The exhibition</p>
-      <h2>What textiles remember</h2>
+      <h2>Whose past <em>is remembered?</em></h2>
       <div class="prose">
-        <p>Threads of Memory explores fabric, weaving, thread and embroidery as ways of preserving personal and collective memories.</p>
-        <p>It examines how textile practices are connected to the home, family, cultural heritage and ideas of womanhood, motherhood, femininity and queerness. By bringing together different artists and cultural perspectives, the exhibition presents textiles as both intimate forms of expression and carriers of histories, identities and social relations.</p>
+        <p><i>Recollected Dwellings</i> introduces thirteen artists who work with recollection as an intervention within dominant and hierarchical sociopolitical structures.</p>
+        <p>Carol Duncan describes the art museum as a ritual site “affirm[ing] the goal of communion with immortal spirits of the past.” This exhibition asks which spirits, from whose past, count as valid in the museum today, and proposes other forms of memory that connect with peripheral pasts. Across coloniality, marginalisation, diaspora and gender, the artists investigate how embodied memory can work as a process of reckoning, reconciliation and preservation for communities and bodies at risk.</p>
+        <p class="site-only">The artists work in soft sculpture, mixed media and installation, with textile as their main medium. Long treated as craft or women's work rather than fine art, fibre shares the marginal status of the experiences it records. Memory locked into the rhythms of making becomes a new archive for the peoples left out of history, and the softness of fibre resists the hardness of systematic categorisation.</p>
       </div>
     </div>
     <div class="concept__figures" aria-label="Counted by hand">
@@ -665,398 +687,101 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
     </div>
   </div>
   <aside class="notes">
-    <p>Theme: the exhibition explores fabric, weaving, thread and embroidery as ways of preserving personal and collective memories, and how textile practices connect to the home, family, cultural heritage and ideas of womanhood, motherhood, femininity and queerness.</p>
-    <p>Textiles as both intimate forms of expression and carriers of histories, identities and social relations. The numbers on the right are the labour behind the works: many hands, often women's, behind one name.</p>
+    <p>Expanding on Carol Duncan's museum as a ritual site, we ask which spirits from whose past count as valid in the museum, and pose alternative expressions of memory that connect with peripheral pasts.</p>
+    <p>The artists ask: what can be done to remember the places that we come from? What shape must our memories take for our histories, both individual and collective, to become visible?</p>
   </aside>
 </section>
 
-<!-- ============================ CONTEXT ============================ -->
-<section class="section" id="context" data-slide data-label="Socio-political context">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="eyebrow">Historical &amp; socio-political context</p>
-      <h2>Why <em>thread?</em></h2>
-      <p class="lede">The exhibition asks whose histories are preserved, whose labour is recognised, and how domestic materials can challenge established hierarchies in art institutions.</p>
-    </div>
-    <div class="context">
-      <div class="context__col">
-        <h3>Power, resistance &amp; gender</h3>
-        <p>Sewing, embroidery, knitting and weaving have long been treated as women's work, done in the private sphere of the home, and classed as craft rather than fine art. The hierarchy that ranks painting and sculpture above textile in Western institutions reflects a gendered division in which women's work is undervalued or made invisible.</p>
-        <p>These artists push a medium once tied to domestic labour into new forms of expression, each shaped by their own context and understanding of heritage.</p>
-      </div>
-      <div class="context__col">
-        <h3>Cultural &amp; intergenerational memory</h3>
-        <p>A garment, an embroidered cloth or a handmade object can carry traces of a person, a family or a tradition. Techniques and patterns pass knowledge between generations, and textiles carry memories of migration, belonging, gender and sexuality that official archives rarely keep.</p>
-        <p>The artists come from Canada (Anishinaabe and Inuvialuit), South Africa, India, Malaysia, Indonesia, Nigeria, Taiwan (Truku) and South Korea: thread and embroidery are common everywhere in the world. Most are working today, keeping practices alive for a younger generation.</p>
-      </div>
-      <p class="context__quote">These memories are not always recorded in official archives.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>The exhibition questions the historical marginalisation of textile practices, associated with women's domestic labour and categorised as crafts rather than fine art. It explores how textiles communicate cultural memory, migration, belonging and experiences of gender and sexuality, and considers whose histories are preserved, whose labour is recognised and how domestic materials can challenge hierarchies in art institutions.</p>
-    <p>Artists from Indigenous Canada, South Africa, India, Malaysia, Indonesia, Nigeria, Taiwan and South Korea: thread and embroidery are common all over the world. Mostly living artists: the need for a younger generation to remember practices that are being forgotten.</p>
-  </aside>
-</section>
-
-<!-- ============================ 3. THREAD MAP ============================ -->
+<!-- ============================ 3. ARTISTS BOARD ============================ -->
 <section class="section section--panel" id="artists" data-slide data-label="The artists">
   <div class="wrap">
     <div class="section__head">
       <p class="eyebrow">The artists</p>
-      <h2>Ten artists, <em>two threads</em></h2>
-      <p class="lede">Both threads sit within community. <b>Womanhood</b> takes in femininity, motherhood and queerness. <b>Memory</b> runs from the shared to the personal. The red lines show where the works meet.</p>
+      <h2>Thirteen artists, <em>two perspectives</em></h2>
+      <p class="lede">The exhibition looks at memory from two sides. The communal follows cultural and intergenerational memory and the collective making that holds it together. The personal starts from the home, as a domestic space and as the body.</p>
     </div>
-    <div class="map-wrap">
-      <svg class="map" id="map" viewBox="0 0 1000 600" role="img" aria-label="Map of the ten artists in two threads, connected by shared themes."></svg>
-    </div>
-    <div class="legend">
-      <span><i class="w"></i>Womanhood</span>
-      <span><i class="c"></i>Memory, shared</span>
-      <span><i class="p"></i>Memory, personal</span>
-      <span><i class="t"></i>A shared theme</span>
-    </div>
-    <ul class="index" id="index"></ul>
-  </div>
-  <aside class="notes">
-    <p>Within the scope of community we talk about memory (shared and personal) and about womanhood (queerness, femininity, motherhood).</p>
-    <p>Womanhood: Woo Hannah, Labay Eyong, Kablusiak, Rucha Kulkarni. Memory, shared: Yee I-Lann, Meita Meilita. Memory, personal: Nico Williams, Elfreda Dali, Igshaan Adams, Do Ho Suh.</p>
-    <p>Click a name on the map to open that artist's page; press M to come back here.</p>
-  </aside>
-</section>
-
-<!-- ============================ CHAPTER I ============================ -->
-<section class="chapter" id="womanhood" data-slide data-label="Artist pages · Womanhood">
-  <div class="wrap">
-    <p class="chapter__num" aria-hidden="true">I</p>
-    <div class="chapter__body">
-      <p class="eyebrow">Chapter I</p>
-      <h2>Womanhood</h2>
-      <p>Femininity, motherhood and queerness: the body, ageing and desire, worked in fabric, sealskin and stitch.</p>
-      <p class="chapter__artists">Woo Hannah <b>·</b> Labay Eyong <b>·</b> Kablusiak <b>·</b> Rucha Kulkarni</p>
-    </div>
-  </div>
-</section>
-
-<!-- 01 WOO HANNAH -->
-<section class="artist" id="woo-hannah" data-slide data-label="Artist pages · Womanhood">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/woo-hannah-installation.jpg" alt="Two long grey fabric drapes sag from the ceiling into U-shaped folds, with a purple and a pink sewn form hanging from where they meet."></figure>
-      <p class="caption">Woo Hannah, installation view</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood</span></div>
-      <h3 class="artist__name">Woo Hannah</h3>
-      <p class="artist__meta">South Korea &nbsp;·&nbsp; Frieze Seoul Artist Award 2023</p>
-      <p class="artist__lede">Woo Hannah works mainly with fabric, across painting, sculpture and installation. Her soft sculptures borrow the shapes of bodily organs, human and non-human, from the uterus to blood vessels, and imagine forms beyond the body in which all existences stand on an equal plane.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>The Great Ballroom</i>, 2023, which extends her series <i>Milk and Honey</i></dd>
-        <dt>Materials</dt><dd>Fabric, beads, sewing</dd>
-        <dt>Thread</dt><dd>Ageing, femininity, motherhood</dd>
-        <dt>In the room</dt><dd>Hanging beside the bed</dd>
-      </dl>
-      <p class="why">Oversized drapes sag into U-shaped creases that Woo sees as both a bat and a woman's breast, a celebration of the female body as it ages. At Frieze Seoul they hung from an eight-metre ceiling.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Woo Hannah: South Korean artist working with fabric as her main material, from painting to sculpture to installation. Her fabric sculptures draw on the imagery of bodily organs, human or non-human.</p>
-    <p>The Great Ballroom (2023), winner of the first Frieze Seoul Artist Award, extends her Milk and Honey series: a celebration of the ageing female body. Link: ageing, womanhood, femininity, motherhood.</p>
-  </aside>
-</section>
-
-<!-- 02 LABAY EYONG -->
-<section class="artist artist--flip" id="labay-eyong" data-slide data-label="Artist pages · Womanhood">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main tall"><img src="images/labay-fallen-mother.jpg" alt="Two round tabletops wrapped in woven textiles, with woven legs stretched across the floor and golden woven discs behind them."></figure>
-      <p class="caption">Labay Eyong, <i>The Fallen Mother</i> (倒地媽媽), 2020</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood</span></div>
-      <h3 class="artist__name">Labay Eyong</h3>
-      <p class="artist__meta">Also known as Lin Gieh-wen &nbsp;·&nbsp; Born 1982, Truku, Hualien, Taiwan</p>
-      <p class="artist__lede">Labay Eyong draws on the weaving culture of the Truku people and the daily life of her community, in soft sculpture, film, metalwork and installation. Since becoming a mother in 2015 she has made her work a record of her own experience, from the birth of a child to the bond between mother and child.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>The Fallen Mother</i> (倒地媽媽), 2020</dd>
-        <dt>Thread</dt><dd>Motherhood, what it is to be a woman, traditional craft</dd>
-        <dt>In the room</dt><dd>Beside the entrance corridor</dd>
-      </dl>
-      <p class="why">She often wraps her traditionally woven textiles around a plastic round tabletop, a common fixture in Truku households though not tied to the culture. To her it is a reminder of communal life, and of how culture is shaped by people and changes with new ways of living.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Labay Eyong (Lin Gieh-wen), Indigenous Truku artist from Hualien, Taiwan. Inspired by the traditional weaving culture of the Truku people; soft sculpture, film, metalwork, installation.</p>
-    <p>Themes: womanhood, identity, diaspora, the clash between traditional culture and modern values, and motherhood. Selected work: The Fallen Mother (2020).</p>
-  </aside>
-</section>
-
-<!-- 03 KABLUSIAK -->
-<section class="artist" id="kablusiak" data-slide data-label="Artist pages · Womanhood">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/kablusiak-heart-paddle.jpg" alt="A heart-shaped paddle covered in deep red dyed sealskin with a black leather handle."></figure>
-      <p class="caption">Kablusiak, <i>Heart Paddle</i>, 2022. Dyed sealskin, leather, artificial sinew</p>
-      <div class="thumbs thumbs--5">
-        <figure class="mount"><img src="images/kablusiak-ball-gag.jpg" alt="A ball gag with a carved grey soapstone ball on a black leather strap."></figure>
-        <figure class="mount"><img src="images/kablusiak-doll-3.jpg" alt="A small deep-blue fur doll figure with a leather harness."></figure>
-        <figure class="mount"><img src="images/kablusiak-garfield-ookpik.jpg" alt="An orange fur owl figure with the face of Garfield the cat."></figure>
-        <figure class="mount"><img src="images/kablusiak-pierrot-ukpik.jpg" alt="A white fur owl figure with yellow eyes and a pleated white ruff."></figure>
-        <figure class="mount"><img src="images/kablusiak-red-ookpik.jpg" alt="A red fur owl figure with round eyes and a black leather harness."></figure>
+    <div class="board">
+      <div class="board__side board__side--c">
+        <p class="eyebrow">The communal</p>
+        <p class="board__desc">Personal memory becomes a shared site, and fragments across communities and generations come together into an abstracted “home” for stories whose tangible places are out of reach.</p>
+        <div class="grps">
+          <div class="grp"><span class="grp__no">I</span><h3>Indigenous histories</h3><ul><li><a href="#nico-williams">Nico Williams</a></li><li><a href="#kablusiak">Kablusiak</a></li><li><a href="#gina-adams">Gina Adams</a></li></ul></div>
+          <div class="grp"><span class="grp__no">II</span><h3>Community and recognition</h3><ul><li><a href="#yee-i-lann">Yee I-Lann</a></li><li><a href="#labay-eyong">Labay Eyong</a></li></ul></div>
+          <div class="grp"><span class="grp__no">III</span><h3>Labour and collective experience</h3><ul><li><a href="#igshaan-adams">Igshaan Adams</a></li><li><a href="#rucha-kulkarni">Rucha Kulkarni</a></li><li><a href="#meita-meilita">Meita Meilita</a></li></ul></div>
+        </div>
       </div>
-      <p class="caption"><i>Ball Gag</i>, 2022, soapstone, tung oil, metal hardware, leather, artificial sinew &nbsp;·&nbsp; <i>Doll 3</i>, 2024, rabbit fur, leather, metal hardware, plastic doll eyes &nbsp;·&nbsp; <i>Garfield Ookpik</i>, 2022, rabbit fur, felt, fibre fill, embroidery floss, leather &nbsp;·&nbsp; <i>Pierrot Ukpik</i>, 2026, white rabbit fur, felt, ribbon &nbsp;·&nbsp; <i>Red Ookpik</i>, 2022, dyed sealskin, felt, fibre fill, embroidery floss, leather</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood</span></div>
-      <h3 class="artist__name">Kablusiak</h3>
-      <p class="artist__meta">Inuvialuk, born Somba K'e (Yellowknife) &nbsp;·&nbsp; lives in Mohkinstsis (Calgary) &nbsp;·&nbsp; Sobey Art Award 2023</p>
-      <p class="artist__lede">Kablusiak redefines contemporary Inuit art with irony, humour and real emotional weight. Their work addresses displacement and cultural loss, Inuit queerness and sexuality, and pop-culture nostalgia.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>Heart Paddle</i>, 2022; <i>Ball Gag</i>, 2022; <i>Doll 3</i>, 2024; <i>Garfield Ookpik</i>, 2022; <i>Pierrot Ukpik</i>, 2026; <i>Red Ookpik</i>, 2022</dd>
-        <dt>Materials</dt><dd>Dyed sealskin, soapstone, rabbit fur, leather, felt, artificial sinew, embroidery floss</dd>
-        <dt>Thread</dt><dd>Queerness, sexuality, pop culture</dd>
-        <dt>In the room</dt><dd>On the bed</dd>
-      </dl>
-      <p class="why"><i>Heart Paddle</i> and <i>Ball Gag</i> turn the materials of Inuit making towards intimacy and desire, refusing heteronormative ideas of Indigenous sexuality. The Ookpiks remake the traditional Inuit snowy-owl figure; <i>Garfield Ookpik</i> fuses it with the cartoon cat to comment on how pop culture appropriates Indigenous culture.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Kablusiak: Inuvialuk visual artist born in Somba K'e (Yellowknife), raised in Edmonton, based in Calgary; Sobey Art Award 2023, the first Inuvialuk artist to win it.</p>
-    <p>Queerness and sexuality: Heart Paddle (2022), dyed sealskin, leather and artificial sinew; Ball Gag (2022), soapstone, tung oil and leather. Pop culture: Garfield Ookpik (2022), Garfield fused with the traditional Inuit Ookpik (snowy owl). The works sit on the bed in the model.</p>
-  </aside>
-</section>
-
-<!-- 04 RUCHA KULKARNI -->
-<section class="artist artist--flip" id="rucha-kulkarni" data-slide data-label="Artist pages · Womanhood">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main tall mount--cover"><img src="images/rucha-installation.jpg" alt="Two pink textiles with stitched and painted forms hang from the ceiling of a hall; a drawing of roots spreads across the floor below."></figure>
-      <p class="caption">Rucha Kulkarni, installation view</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Womanhood &nbsp;→&nbsp; Memory</span></div>
-      <h3 class="artist__name">Rucha Kulkarni</h3>
-      <p class="artist__meta">Born 1986, Pune &nbsp;·&nbsp; works between Amsterdam and Pune</p>
-      <p class="artist__lede">Rucha Kulkarni is a visual artist and social art practitioner. Her practice combines textiles, painting and installation, and asks how people locate themselves geographically, socially and mentally. In <i>Bonds per stitch</i> (2024–ongoing), stitching becomes a way of thinking about relationships.</p>
-      <dl class="label">
-        <dt>On view</dt><dd>Two textile hangings; titles to be announced</dd>
-        <dt>Materials</dt><dd>Textile and stitching</dd>
-        <dt>Thread</dt><dd>Femininity, collective making, migration</dd>
-        <dt>In the room</dt><dd>On the corner walls</dd>
-      </dl>
-      <p class="why">Single stitches form something larger together. Her participatory methods of storytelling, care and embodied knowledge let others help make the work, towards what she calls an "Egalitarian Utopia". She links the two threads.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Rucha Kulkarni, visual artist and social art practitioner between Amsterdam and Pune. Textiles, painting and installation; identity, migration, memory and community.</p>
-    <p>Bonds per stitch (2024–ongoing): stitching as a way of thinking about relationships and connection. Making can be collective. Bridge to Yee I-Lann and Meita Meilita (collective projects).</p>
-  </aside>
-</section>
-
-<!-- ============================ CHAPTER II ============================ -->
-<section class="chapter chapter--ii" id="memory" data-slide data-label="Artist pages · Memory">
-  <div class="wrap">
-    <p class="chapter__num" aria-hidden="true">II</p>
-    <div class="chapter__body">
-      <p class="eyebrow">Chapter II</p>
-      <h2>Memory</h2>
-      <p>Shared and personal: cloth made together, and objects that carry a family, a journey and a home.</p>
-      <p class="chapter__artists">Yee I-Lann <b>·</b> Meita Meilita <b>·</b> Nico Williams <b>·</b> Elfreda Dali <b>·</b> Igshaan Adams <b>·</b> Do Ho Suh</p>
-    </div>
-  </div>
-</section>
-
-<!-- 05 YEE I-LANN -->
-<section class="artist chapter-ii" id="yee-i-lann" data-slide data-label="Artist pages · Shared memory">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/yee-tikar-meja.jpg" alt="Sixty colourful woven pandanus mats arranged in a grid, each with the silhouette of a different table woven into it."></figure>
-      <p class="caption">Yee I-Lann with Bajau Sama DiLaut weavers, <i>TIKAR/MEJA</i>, 2020. Image: Silverlens</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · shared</span></div>
-      <h3 class="artist__name">Yee I-Lann</h3>
-      <p class="artist__meta">Born 1971, Kota Kinabalu, Sabah, Malaysian Borneo</p>
-      <p class="artist__lede">Since 2018 Yee I-Lann has made works with Bajau Sama DiLaut weavers on Omadal island, many of them stateless. In <i>TIKAR/MEJA</i> (mat/table) each of sixty mats carries the silhouette of a different table.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>TIKAR/MEJA</i>, 2020</dd>
-        <dt>Materials</dt><dd>Sixty dyed, woven pandanus mats</dd>
-        <dt>Thread</dt><dd>Collective making, cultural memory, women's labour</dd>
-        <dt>In the room</dt><dd>On the floor at the centre</dd>
-      </dl>
-      <p class="why">The table stands for "colonial, patriarchal, federal, state power"; the tikar, the woven mat, is its counterpart, a shared surface without hierarchy. The 2021 credit line names nineteen weavers after Yee, most of them women. Naming them answers the invisibility of women's work only in part: the work still circulates under one name.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Yee I-Lann, TIKAR/MEJA (2020): sixty dyed pandanus mats, each with the silhouette of a different table. Made with Bajau Sama DiLaut weavers on Omadal island, many stateless.</p>
-    <p>Silverlens: the table as a sign of "colonial, patriarchal, federal, state power"; the tikar as a shared, non-hierarchical surface. One artist to nineteen makers: the division of labour we discussed.</p>
-  </aside>
-</section>
-
-<!-- 06 MEITA MEILITA -->
-<section class="artist artist--flip chapter-ii" id="meita-meilita" data-slide data-label="Artist pages · Shared memory">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/meita-wanai-saiji.jpg" alt="A long white cotton cloth hung in a circle, embroidered with mountains, animals, houses and lines of text."></figure>
-      <p class="caption">Meita Meilita, <i>Wanai Saiji: The Shape of Being</i>, 2025</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · shared</span></div>
-      <h3 class="artist__name">Meita Meilita</h3>
-      <p class="artist__meta">Born Bogor, Indonesia</p>
-      <p class="artist__lede">For Meita Meilita, embroidery is a way of holding emotion and memory, and of understanding the complexities of the female condition. She draws on her own experience as a woman, child, mother and wife.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>Wanai Saiji: The Shape of Being</i>, 2025, made with Kavalan elders and PateRongan Studio in Xinshe, Hualien, Taiwan</dd>
-        <dt>Materials</dt><dd>Embroidery on cotton cloth</dd>
-        <dt>Thread</dt><dd>Shared memory, heritage, womanhood, language</dd>
-        <dt>In the room</dt><dd>On the far wall</dd>
-      </dl>
-      <p class="why">Roosters, mountains, fish, boats, crabs, village scenes and lines of Kavalan song drift across a long cotton cloth, embroidered together with Kavalan elders, with large stretches left blank. Her participatory work treats textile as a story shared among women and asks where women stand in society.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Meita Meilita: Indonesian artist whose practice centres on embroidery, a process of maintaining emotions and memory, a way to understand the complexities of the female condition.</p>
-    <p>Wanai Saiji: The Shape of Being (2025): a long embroidered cotton cloth made with Kavalan elders in Hualien, Taiwan, with lines of Kavalan song. Language as storytelling and as living identity.</p>
-  </aside>
-</section>
-
-<!-- 07 NICO WILLIAMS -->
-<section class="artist chapter-ii" id="nico-williams" data-slide data-label="Artist pages · Personal memory">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/nico-feast.jpg" alt="A blue IKEA bag woven entirely from glass beads, filled with beaded wooden spoons."></figure>
-      <p class="caption">Nico Williams, <i>Feast</i>, 2024. 10/0 Delica beads, 11/0 seed beads, 49 wood spoons</p>
-      <div class="thumbs thumbs--5">
-        <figure class="mount"><img src="images/nico-tintin.jpg" alt="A VHS case of Tintin en Amérique covered in beadwork."></figure>
-        <figure class="mount"><img src="images/nico-indian-cupboard.jpg" alt="A VHS case of The Indian in the Cupboard covered in beadwork."></figure>
-        <figure class="mount"><img src="images/nico-pokemon-snap.jpg" alt="A beaded Pokémon Snap! game box with a grey game cartridge."></figure>
-        <figure class="mount"><img src="images/nico-status-cards.jpg" alt="A wallet holding beaded versions of Indigenous status cards."></figure>
-        <figure class="mount"><img src="images/nico-ndn-market.jpg" alt="A beaded green and white trucker cap beside small beaded objects."></figure>
+      <div class="board__side board__side--p">
+        <p class="eyebrow">The personal</p>
+        <p class="board__desc">The home, as a domestic space and as body and flesh, where personal memory is compromised by friction with power structures and dominant narratives.</p>
+        <div class="grps">
+          <div class="grp"><span class="grp__no">IV</span><h3>The body and displacement</h3><ul><li><a href="#woo-hannah">Woo Hannah</a></li><li><a href="#do-ho-suh">Do Ho Suh</a></li><li><a href="#elfreda-dali">Elfreda Dali</a></li><li><a href="#hema-shironi">Hema Shironi</a></li></ul></div>
+          <div class="grp"><span class="grp__no">V</span><h3>Painful memories of home</h3><ul><li><a href="#zoe-buckman">Zoë Buckman</a></li></ul></div>
+        </div>
       </div>
-      <p class="caption"><i>TINTIN EN AMERIQUE</i>, 2025, Japanese cylindrical glass beads on polyethylene thread, VHS cassette &nbsp;·&nbsp; <i>The Indian in the Cupboard (1995)</i>, 2024, beads, original VHS tape, thread &nbsp;·&nbsp; <i>POKÉMON SNAP!</i>, 2025, glass beads, thread, plastic game case &nbsp;·&nbsp; <i>NDN Status Cards</i>, 2019–, glass beads, mixed materials &nbsp;·&nbsp; <i>NDN MARKET ESSENTIALS, OLD FIELDS AND PROUD OF IT (GREEN)</i>, 2025</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
-      <h3 class="artist__name">Nico Williams</h3>
-      <p class="artist__meta">Born 1989, Aamjiwnaang First Nation (Anishinaabe) &nbsp;·&nbsp; Tiohtià:ke/Montréal &nbsp;·&nbsp; Sobey Art Award 2024</p>
-      <p class="artist__lede">Nico Williams renews traditional beadwork through sculpture and collaboration. At Hochelaga studio he works year round with a team of seven to eleven people, an approach he describes as caretaking.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>Feast</i>, 2024; <i>TINTIN EN AMERIQUE</i>, 2025; <i>The Indian in the Cupboard (1995)</i>, 2024; <i>POKÉMON SNAP!</i>, 2025; <i>NDN Status Cards</i>, 2019–; <i>NDN MARKET ESSENTIALS, OLD FIELDS AND PROUD OF IT (GREEN)</i>, 2025</dd>
-        <dt>Materials</dt><dd>Glass beads, thread, wooden spoons, VHS cassettes, a plastic game case</dd>
-        <dt>Thread</dt><dd>Family memory, traditional craft, Indigenous identity</dd>
-        <dt>In the room</dt><dd>On the low stand</dd>
-      </dl>
-      <p class="why"><i>Feast</i> carries forty-nine beaded spoons, one for each Anishinaabe clan, recalling thanksgiving feasts and the carved ladles lost under amendments to the Indian Act. The beaded tapes, game case and status cards rework pop-culture objects and the cards that classify Indigenous identity in Canada. Beading is historically associated with women; Williams, as a man, takes it up and questions those norms.</p>
-      <blockquote class="quote site-only">"They'll touch people's moments of nostalgia. They'll go into people's psyche."<cite>Nico Williams, in interview</cite></blockquote>
     </div>
   </div>
   <aside class="notes">
-    <p>Nico Williams (b. 1989), Aamjiwnaang First Nation, Anishinaabe. Renews traditional beadwork in modern contexts; Hochelaga studio in Tiohtià:ke/Montréal with a team of 7 to 11 people. Sobey Art Award 2024.</p>
-    <p>Feast (2024): 49 beaded wooden spoons, one per Anishinaabe clan. The Indian in the Cupboard: the portrayal of Indigenous people in mainstream media. NDN Status Cards: colonial systems of identity classification. In the model the works sit on the stand.</p>
+    <p>Two overarching perspectives: the private/personal (the home as domestic space and as the body) and the communal (cultural and intergenerational memory, collaborative and participatory work).</p>
+    <p>Click a name to open that artist's page; press M to come back here.</p>
   </aside>
 </section>
 
-<!-- 08 ELFREDA DALI -->
-<section class="artist artist--flip chapter-ii" id="elfreda-dali" data-slide data-label="Artist pages · Personal memory">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/elfreda-dali-hangings.jpg" alt="Four hangings of different sizes on a white wall, each with stitched, layered faces in brown, black, cream and green."></figure>
-      <p class="caption">Elfreda Dali, wall hangings, installation view</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
-      <h3 class="artist__name">Elfreda Dali</h3>
-      <p class="artist__meta">Born 1995, Nigeria &nbsp;·&nbsp; lives in London</p>
-      <p class="artist__lede">Elfreda Dali stitches London and Lagos together, with materials from both cities. Working where art and fashion meet, she explores the complexities of a layered identity.</p>
-      <dl class="label">
-        <dt>On view</dt><dd>Wall tapestries and clothing</dd>
-        <dt>Materials</dt><dd>Textile and stitching, with materials from London and Lagos</dd>
-        <dt>Thread</dt><dd>Personal memory, migration, clothing</dd>
-        <dt>In the room</dt><dd>On the wall beside the stand</dd>
-      </dl>
-      <p class="why">Her tapestries sew the story of a heritage and trace the route of a journey she has made time and time again, so that cloth becomes something carried between two homes.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Elfreda Dali stitches London and Lagos together with materials from both locations. Her textile tapestries sew the story of the heritage and show the route of a journey she has taken time and time again.</p>
-    <p>She explores the complexities of layered identity. In the exhibition: wall tapestries and clothing.</p>
-  </aside>
-</section>
-
-<!-- 09 IGSHAAN ADAMS -->
-<section class="artist chapter-ii" id="igshaan-adams" data-slide data-label="Artist pages · Personal memory">
-  <div class="wrap">
-    <div class="artist__media">
-      <div class="duo"><figure class="mount mount--duo"><img src="images/igshaan-clouds-1.jpg" alt="Pink cloud-like forms of beads and wire suspended in the corner of a white gallery."></figure><figure class="mount mount--duo"><img src="images/igshaan-clouds-2.jpg" alt="A visitor looks up at a pink cloud of beads and wire hanging on a white wall."></figure></div>
-      <p class="caption">Igshaan Adams, suspended bead and wire sculptures, installation views</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
-      <h3 class="artist__name">Igshaan Adams</h3>
-      <p class="artist__meta">Born 1982, Cape Town, South Africa</p>
-      <p class="artist__lede">Igshaan Adams grew up in Bonteheuwel, a community shaped by apartheid. His weaving, tapestry, sculpture and installation draw on memories of childhood, family, home and the streets around it.</p>
-      <dl class="label">
-        <dt>On view</dt><dd>Cloud-like suspended sculptures; titles to be announced</dd>
-        <dt>Materials</dt><dd>Beads and wire</dd>
-        <dt>Thread</dt><dd>Personal memory, home, community</dd>
-        <dt>In the room</dt><dd>On the walls of the far corner</dd>
-      </dl>
-      <p class="why">Beads and wire are threaded into forms that resemble clouds or dust, so the labour of making stays visible in the work. Across his practice, materials from working-class homes and neighbourhoods carry a social history and blur the line between fine art and domestic or communal labour.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Igshaan Adams (b. 1982), Cape Town. Grew up in Bonteheuwel, shaped by apartheid. Fabric, thread, rope, beads, plastic and everyday domestic materials; threading, knotting, weaving and stitching make the labour of construction part of the work.</p>
-    <p>Community and collective forms of making: domestic, working-class materials challenge the line between fine art and domestic or communal labour. The question of divided labour from Yee I-Lann returns here.</p>
-  </aside>
-</section>
-
-<!-- 10 DO HO SUH -->
-<section class="artist artist--flip chapter-ii" id="do-ho-suh" data-slide data-label="Artist pages · Personal memory">
-  <div class="wrap">
-    <div class="artist__media">
-      <figure class="mount mount--main"><img src="images/do-ho-suh-nests.jpg" alt="A row of translucent fabric rooms in orange, purple, teal and pink on a concrete floor; visitors walk through them."></figure>
-      <p class="caption">Do Ho Suh, <i>Nest/s</i>, 2024, installation view</p>
-    </div>
-    <div class="artist__text">
-      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Memory · personal</span></div>
-      <h3 class="artist__name">Do Ho Suh</h3>
-      <p class="artist__meta">Born 1962, Seoul, South Korea</p>
-      <p class="artist__lede">Do Ho Suh's sculpture and installation explore home, memory, identity and space, shaped by a nomadic life between cultures.</p>
-      <dl class="label">
-        <dt>On view</dt><dd><i>Nest/s</i>, 2024</dd>
-        <dt>Materials</dt><dd>Polyester and stainless steel</dd>
-        <dt>Thread</dt><dd>Personal memory, home, displacement</dd>
-        <dt>In the room</dt><dd>The entrance: visitors walk through it</dd>
-      </dl>
-      <p class="why"><i>Nest/s</i> stitches corridors and entryways from homes he has lived in into one long passage of colourful, sheer fabric that visitors walk through. Its transparency mirrors the way memory works. The exhibition begins inside it.</p>
-    </div>
-  </div>
-  <aside class="notes">
-    <p>Do Ho Suh: sculptor and installation artist exploring home, memory, identity and space; a nomadic life between cultures.</p>
-    <p>Nest/s (2024), shown at Tate Modern in Walk the House (2025): life-size corridors and entryways from his homes in sheer polyester on stainless steel, linked into one passage. The transparency reflects how memory works. The first artwork visitors meet is a home.</p>
-  </aside>
-</section>
-
-<!-- ============================ THE SPACE ============================ -->
-<section class="section section--panel" id="space" data-slide data-label="The space">
+<!-- ============================ CONTEXT ============================ -->
+<section class="section" id="context" data-slide data-label="Historical & socio-political context">
   <div class="wrap">
     <div class="section__head">
-      <p class="eyebrow">The space</p>
-      <h2>Soft work in <em>a hard building</em></h2>
-      <p class="lede">Threads of Memory is made for a warehouse. Concrete floors and high ceilings set off the softness of thread and fabric, and suspended textiles change the scale of the industrial interior.</p>
+      <p class="eyebrow">Historical &amp; socio-political context</p>
+      <h2>Histories <em>in the cloth</em></h2>
+      <p class="lede">The works do not treat textile as a neutral or decorative material, but as a record, and as evidence of knowledge that colonial institutions failed to preserve.</p>
+    </div>
+    <div class="context context--4">
+      <div class="context__col">
+        <h3>Power, colonialism &amp; resistance</h3>
+        <p>Before European industrialisation, South Asian cottons dominated global trade, and demand for Indian calicoes and chintzes led Britain to restrict their import with the Calico Acts of the early eighteenth century. As the East India Company took political control of the subcontinent, the relationship reversed: Indian cotton was exported as raw material and machine-made Lancashire cloth sold back to India. Indian cloth became a currency of the Atlantic slave trade, and Dutch and French traders also used cotton textiles to purchase enslaved people.</p>
+        <p class="site-only">Garment production is now concentrated in countries such as Bangladesh, Vietnam and Cambodia, where the low-paid, under-protected work is mostly done by women. In Canada, the Indian Act and the residential school system sought to break the transmission of skills, language and ceremony; beadwork is one of the practices that resisted, and that Nico Williams reclaims.</p>
+      </div>
+      <div class="context__col">
+        <h3>Expanding womanhood</h3>
+        <p>In early modern Europe a tapestry could cost more than a painting. From the Renaissance, painting and sculpture were raised to intellectual arts while women were kept out of academic training, and needlework became a domestic, “feminine” pastime, a division that hardened in the nineteenth century. This history is not universal: in many non-Western contexts textile work carries other gendered meanings.</p>
+        <p class="site-only">From the 1960s feminist artists reclaimed textile, as in Judy Chicago's <i>The Dinner Party</i> (1974–79), while Black feminist writers criticised the essentialism and white feminism of such work. Kablusiak connects skin-sewing to queer and Indigenous identities, so the exhibition treats womanhood as a field that includes queer, non-binary and cross-cultural experience.</p>
+      </div>
+      <div class="context__col">
+        <h3>The exhibition as a political space</h3>
+        <p>Selection, framing, location and display shape what is remembered. Brian O'Doherty shows how the white cube presents art as timeless and detached while concealing the ideology behind it. The factory setting is a deliberate counterpoint, and because industrial spaces can be aestheticised too, it is combined with domestic cues and clear credits to the makers.</p>
+      </div>
+      <div class="context__col">
+        <h3>Cultural &amp; intergenerational memory</h3>
+        <p>A garment, an embroidered cloth or a woven mat preserves traces of those who made and used it, and techniques pass between generations through touch and practice. These memories survive in objects and skills within the home and the community, which is why the exhibition takes a domestic form.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Power, colonialism and resistance: cotton and cloth at the centre of colonial economies; the deindustrialisation of Indian textile production; cloth as currency in the Atlantic slave trade; today's garment industry and fast fashion; the Indian Act and residential schools in Canada.</p>
+    <p>Gender: expanding the category of womanhood (Judy Chicago, the Black feminist critique, Kablusiak). The exhibition as a political space (O'Doherty). Cultural and intergenerational memory.</p>
+  </aside>
+</section>
+
+<!-- ============================ THE VENUE ============================ -->
+<section class="section section--panel" id="space" data-slide data-label="The venue">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">The venue</p>
+      <h2>A textile factory <em>in Tilburg</em></h2>
+      <p class="lede">The proposed first venue is the TextielMuseum in Tilburg, housed in the former factory of the woollen-cloth firm C. Mommers &amp; Co., a national monument built by Christiaan Mommers, the son of a home weaver.</p>
     </div>
     <div class="space">
       <div class="space__points">
-        <div class="point"><span class="point__k">a</span><div><h3>Concrete and cloth</h3><p>Suspended textiles transform the scale and atmosphere of the interior. The contrast makes the softness of the works felt.</p></div></div>
-        <div class="point"><span class="point__k">b</span><div><h3>A place of labour</h3><p>The warehouse evokes labour and production, and the historical relationship between textiles and gendered work.</p></div></div>
-        <div class="point"><span class="point__k">c</span><div><h3>Met gradually</h3><p>Visitors move through the space and meet the works one by one, rather than as isolated objects on white walls.</p></div></div>
+        <div class="point"><span class="point__k">a</span><div><h3>Still a factory</h3><p>In the TextielLab, artists and designers develop their work with the lab's product developers and technical specialists. The museum's exhibition series <i>Secrets of Making</i> addressed the division of roles in that collaboration, the question Yee I-Lann's <i>TIKAR/MEJA</i> raises too.</p></div></div>
+        <div class="point"><span class="point__k">b</span><div><h3>Work done at home</h3><p class="present-only">Women did the spinning, carding, burling and mending, men the weaving. Married women were later kept out of the factories and mended cloth at home for lower pay.</p><p class="site-only">Wool production around Tilburg long remained a home industry. Women did the spinning, carding, burling and mending, and men the weaving. When production moved into the factories, married women were kept out under pressure from the Catholic clergy, and many went on burling and mending at home for lower pay.</p></div></div>
+        <div class="point"><span class="point__k">c</span><div><h3>Invisible by design</h3><p>Mending meant weaving missing threads into the cloth so that the repair could hardly be seen, which made this work invisible in a literal sense. This is the kind of labour the exhibition sets out to make visible.</p></div></div>
       </div>
       <div class="materials">
         <div>
           <h3>The building</h3>
           <ul>
-            <li><i class="sw sw-concrete"></i>Concrete floor</li>
-            <li><i class="sw sw-concrete2"></i>Concrete walls</li>
-            <li><i class="sw sw-height"></i>High ceilings</li>
+            <li><i class="sw sw-brick"></i>Former woollen mill</li>
+            <li><i class="sw sw-loom"></i>Working TextielLab</li>
+            <li><i class="sw sw-concrete"></i>Installed room</li>
           </ul>
         </div>
         <div>
@@ -1072,138 +797,126 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
           <ul>
             <li><i class="sw sw-silk"></i><span>Translucent fabric<small>Do Ho Suh</small></span></li>
             <li><i class="sw sw-pandanus"></i><span>Pandanus leaf<small>Yee I-Lann</small></span></li>
-            <li><i class="sw sw-seal"></i><span>Sealskin, soapstone<small>Kablusiak</small></span></li>
+            <li><i class="sw sw-quilt"></i><span>Antique quilts<small>Gina Adams</small></span></li>
             <li><i class="sw sw-beads"></i><span>Glass beads<small>Nico Williams</small></span></li>
             <li><i class="sw sw-floss"></i><span>Embroidery on cotton<small>Meita Meilita</small></span></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="tour">
-      <h3>One layout, <em>many cities</em></h3>
-      <p>The exhibition is designed for a type of building rather than a single address. It can travel between former industrial spaces, and the layout adapts to each one.</p>
+    <div class="tour site-only">
+      <h3>Home <em>and factory</em></h3>
+      <p>In the old factory we install the room from our 3D model, entered through Do Ho Suh's <i>Nest/s</i> and furnished as a home. A domestic interior inside a former textile factory brings together the two settings in which this labour took place. After Tilburg the exhibition travels on.</p>
     </div>
   </div>
   <aside class="notes">
-    <p>We had a warehouse-type space in mind: concrete floors and high ceilings contrast with the softness of fabric and thread. Suspended textiles transform the scale and atmosphere of the industrial interior.</p>
-    <p>The warehouse evokes labour, production and the historical relationship between textiles and gendered work. Furniture (a bed, a pouf, a low stand) brings in the home: textiles were historically domestic labour.</p>
-    <p>We deliberately don't name one venue: we frame the exhibition around a style of space, so it can travel between several existing locations.</p>
+    <p>TextielMuseum, Tilburg: former factory of C. Mommers &amp; Co., a national monument; the TextielLab still works as a factory, and the Secrets of Making series addressed the division of roles between artists and the lab's specialists.</p>
+    <p>Tilburg's home weaving: women spun, carded, burled and mended; married women were kept out of the factories and mended at home for lower pay. Mending was invisible work by design.</p>
   </aside>
 </section>
 
-<!-- ============================ ROUTE / FLOOR PLAN ============================ -->
+<!-- ============================ LAYOUT / FLOOR PLAN ============================ -->
 <section class="section" id="route" data-slide data-label="Layout">
   <div class="wrap">
     <div class="section__head">
       <p class="eyebrow">Exhibition design &amp; visitor journey</p>
-      <h2>A home <em>inside the warehouse</em></h2>
-      <p class="lede site-only">You enter through Do Ho Suh's houses into one concrete room. A bed, a pouf and a low stand set part of it as a home; the works sit on the furniture, the walls and the floor.</p>
-      <p class="lede present-only">You enter through Do Ho Suh's houses into one concrete room, partly furnished as a home. Next: a tour of the exhibition in our 3D model.</p>
+      <h2>A home <em>inside the factory</em></h2>
+      <p class="lede site-only">You enter through Do Ho Suh's <i>Nest/s</i> into one room, furnished as a home. A bed, a pouf and a low stand set part of it as a domestic interior; the works sit on the furniture, the walls and the floor.</p>
+      <p class="lede present-only">A domestic interior inside a former textile factory brings together the two settings in which this labour took place.</p>
     </div>
     <div class="plan-grid">
       <div class="plan-box">
         <div class="plan-scroll">
-          <svg class="plan" id="plan" viewBox="0 0 1000 760" role="img" aria-label="Floor plan after the 3D model: one concrete room entered through Do Ho Suh's corridor of houses, with a bed, a pouf, a low stand and works on the walls and floor.">
-            <!-- walls, entrance gap in the top wall -->
+          <svg class="plan" id="plan" viewBox="0 0 1000 760" role="img" aria-label="Floor plan after the 3D model: one room entered through Do Ho Suh's corridor of houses, with a bed, a pouf, a low stand and works on the walls and floor.">
             <path class="wall" d="M195 40 H960 V720 H40 V40 H85"/>
             <text class="lbl" x="210" y="28">Entrance</text>
-            <!-- Do Ho Suh: corridor of houses along the entrance wall -->
             <rect class="doho" x="55" y="50" width="160" height="92" style="fill:#E58FB5"/>
             <rect class="doho" x="55" y="142" width="160" height="92" style="fill:#6CC3C6"/>
             <rect class="doho" x="55" y="234" width="160" height="92" style="fill:#6F7FE0"/>
             <rect class="doho" x="55" y="326" width="160" height="92" style="fill:#7F86E6"/>
             <text class="lbl-d halo" x="135" y="242" text-anchor="middle">Do Ho Suh</text>
-            <!-- route: in through the houses, out into the room -->
             <path class="route" d="M140 0 V 440 C 140 470, 160 490, 200 492"/>
             <path class="arrow" d="M132 18 L140 32 L148 18 M190 484 L204 492 L190 500"/>
-            <!-- Labay Eyong: display cube beside the corridor -->
-            <rect class="work-w" x="300" y="95" width="105" height="105"/>
+            <rect class="work-ii" x="300" y="95" width="105" height="105"/>
             <circle class="fine" cx="352" cy="147" r="34" stroke-dasharray="4 4"/>
             <text class="lbl-d" x="352" y="232" text-anchor="middle">Labay Eyong</text>
-            <!-- Rucha Kulkarni: two hangings on the corner walls -->
-            <rect class="bar-w" x="700" y="43" width="190" height="9"/>
-            <rect class="bar-w" x="948" y="70" width="9" height="170"/>
+            <rect class="bar-ii" x="700" y="43" width="190" height="9"/>
+            <rect class="bar-ii" x="948" y="70" width="9" height="170"/>
             <text class="lbl-d" x="700" y="30">Rucha Kulkarni</text>
-            <!-- Kablusiak: the bed -->
             <g transform="rotate(-12 820 160)">
-              <rect class="work-w" x="755" y="90" width="130" height="150"/>
+              <rect class="work-ii" x="755" y="90" width="130" height="150"/>
               <rect class="fine" x="765" y="98" width="110" height="30"/>
             </g>
             <text class="lbl" x="820" y="172" text-anchor="middle">Bed</text>
             <text class="lbl-d" x="820" y="278" text-anchor="middle">Kablusiak</text>
-            <!-- Woo Hannah: hanging work on a freestanding panel beside the bed -->
             <rect class="bar-w" x="760" y="300" width="12" height="125"/>
             <path class="drape" d="M748 312 q -26 26 0 52 q -26 26 0 52"/>
             <text class="lbl-d" x="725" y="372" text-anchor="end">Woo Hannah</text>
-            <!-- Meita Meilita: far wall -->
             <rect class="bar-ii" x="948" y="380" width="9" height="180"/>
             <text class="lbl-d" x="928" y="470" text-anchor="middle" transform="rotate(-90 928 470)">Meita Meilita</text>
-            <!-- Igshaan Adams: far corner, both walls -->
             <rect class="bar-ii" x="948" y="590" width="9" height="115"/>
             <rect class="bar-ii" x="730" y="711" width="200" height="9"/>
             <text class="lbl-d" x="835" y="690" text-anchor="middle">Igshaan Adams</text>
-            <!-- Yee I-Lann: 60 mats on the floor -->
             <g id="mats"></g>
             <text class="lbl-d" x="505" y="606" text-anchor="middle">Yee I-Lann</text>
-            <!-- living area: pouf, low stand (Nico Williams), wall hangings (Elfreda Dali) -->
             <circle class="furn" cx="300" cy="545" r="20"/>
             <text class="lbl" x="300" y="590" text-anchor="middle">Pouf</text>
             <rect class="work-ii" x="110" y="620" width="230" height="32" transform="rotate(-8 225 636)"/>
             <text class="lbl" x="225" y="642" text-anchor="middle">Stand</text>
             <text class="lbl-d" x="350" y="672">Nico Williams</text>
-            <rect class="bar-ii" x="60" y="711" width="330" height="9"/>
+            <rect class="bar-w" x="60" y="711" width="330" height="9"/>
             <text class="lbl-d" x="60" y="748">Elfreda Dali</text>
           </svg>
         </div>
         <div class="legend plan-legend">
-          <span><i class="w"></i>Womanhood</span>
-          <span><i class="c"></i>Memory</span>
+          <span><i class="c"></i>The communal</span>
+          <span><i class="w"></i>The personal</span>
           <span><i class="f"></i>Furniture</span>
           <span><i class="t dash"></i>Way in</span>
         </div>
+        <p class="plan-note">Gina Adams, Hema Shironi and Zoë Buckman join the room in the next version of the model.</p>
         <div class="model-cue present-only">
           <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 3 L25 9 V20 L14 26 L3 20 V9 Z M3 9 L14 15 L25 9 M14 15 V26"/></svg>
           <span><b>Tour:</b> Fiona's 3D model of the exhibition, artist by artist.</span>
         </div>
       </div>
       <ul class="where">
-        <li><i class="cdot ii"></i><div><a href="#do-ho-suh">Do Ho Suh</a><small>Entrance, walk through</small></div></li>
-        <li><i class="cdot ii"></i><div><a href="#nico-williams">Nico Williams</a><small>On the stand</small></div></li>
-        <li><i class="cdot ii"></i><div><a href="#elfreda-dali">Elfreda Dali</a><small>Wall beside the stand</small></div></li>
-        <li><i class="cdot ii"></i><div><a href="#yee-i-lann">Yee I-Lann</a><small>On the floor, centre</small></div></li>
-        <li><i class="cdot ii"></i><div><a href="#igshaan-adams">Igshaan Adams</a><small>Far corner walls</small></div></li>
-        <li><i class="cdot ii"></i><div><a href="#meita-meilita">Meita Meilita</a><small>Far wall</small></div></li>
+        <li><i class="cdot"></i><div><a href="#do-ho-suh">Do Ho Suh</a><small>Entrance, walk through</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#labay-eyong">Labay Eyong</a><small>Beside the entrance</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#kablusiak">Kablusiak</a><small>On the bed</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#rucha-kulkarni">Rucha Kulkarni</a><small>Corner walls</small></div></li>
         <li><i class="cdot"></i><div><a href="#woo-hannah">Woo Hannah</a><small>Beside the bed</small></div></li>
-        <li><i class="cdot"></i><div><a href="#kablusiak">Kablusiak</a><small>On the bed</small></div></li>
-        <li><i class="cdot"></i><div><a href="#rucha-kulkarni">Rucha Kulkarni</a><small>Corner walls</small></div></li>
-        <li><i class="cdot"></i><div><a href="#labay-eyong">Labay Eyong</a><small>Beside the entrance</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#meita-meilita">Meita Meilita</a><small>Far wall</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#igshaan-adams">Igshaan Adams</a><small>Far corner walls</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#yee-i-lann">Yee I-Lann</a><small>On the floor, centre</small></div></li>
+        <li><i class="cdot ii"></i><div><a href="#nico-williams">Nico Williams</a><small>On the stand</small></div></li>
+        <li><i class="cdot"></i><div><a href="#elfreda-dali">Elfreda Dali</a><small>Wall beside the stand</small></div></li>
       </ul>
     </div>
   </div>
   <aside class="notes">
-    <p>Hand over to Fiona: the tour through the 3D model, where we go into each artist in more depth.</p>
-    <p>The plan follows the model: in through Do Ho Suh's houses; Labay Eyong's cube beside them; Kablusiak on the bed with Rucha Kulkarni on the corner walls behind it; Woo Hannah hanging beside the bed; Meita Meilita on the far wall; Igshaan Adams in the far corner; Yee I-Lann's mats on the floor at the centre; Nico Williams on the low stand by the pouf, with Elfreda Dali's hangings on the wall beside it.</p>
-    <p>Artist pages are at the end of this presentation, or click a name on the map.</p>
+    <p>In the old factory we install the room presented in our 3D model, entered through Do Ho Suh's Nest/s and furnished as a home.</p>
+    <p>Gina Adams, Hema Shironi and Zoë Buckman are still to be placed in the model.</p>
   </aside>
 </section>
 
-<!-- ============================ AUDIO / TECHNOLOGY ============================ -->
+<!-- ============================ TECHNOLOGY ============================ -->
 <section class="section section--panel" id="audio" data-slide data-label="Technology & participation">
   <div class="wrap">
     <div class="section__head">
-      <p class="eyebrow">Audio guide &amp; Memory Archive</p>
-      <h2>Listen to <em>the makers</em></h2>
-      <p class="lede">At each work you can hear the artist talk about it and its materials, and a short documentary introduces Do Ho Suh. Before you leave, you can add a memory of your own.</p>
+      <p class="eyebrow">Artist films &amp; Memory Archive</p>
+      <h2>The voices of <em>makers and visitors</em></h2>
+      <p class="lede">This website introduces the artists and the practical side of a visit. In the gallery, screens beside the works show the artists talking about how each work was made and who made it with them.</p>
     </div>
     <div class="audio">
-      <div class="player" aria-label="Audio guide preview">
+      <div class="player" aria-label="Artist films preview">
         <div class="player__now">
           <button class="play" type="button" id="playBtn" aria-label="Play preview">
             <svg viewBox="0 0 18 18" id="playIcon" aria-hidden="true"><path d="M4 2v14l12-7z"/></svg>
           </button>
           <div>
-            <p class="player__sub" id="nowSub">Documentary</p>
-            <p class="player__title" id="nowTitle">Do Ho Suh</p>
+            <p class="player__sub" id="nowSub">Artist film</p>
+            <p class="player__title" id="nowTitle">Nico Williams</p>
           </div>
         </div>
         <div class="bar"><i id="barFill"></i></div>
@@ -1213,107 +926,524 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
         <div class="archive">
           <p class="eyebrow">The Memory Archive</p>
           <h3>Bring a memory</h3>
-          <p>A quilt, a garment, a cloth someone made for you. Record two minutes about it in the exhibition, or from home. The stories become part of the exhibition and travel with it.</p>
-          <div><button class="btn btn--ghost btn--sm" type="button" data-toast="The Memory Archive opens with the exhibition in March 2027.">Share a memory</button></div>
+          <p>At a recording station in the exhibition, or from home through this website, record two minutes about an object of cloth or thread that holds a memory for you: a blanket from a grandparent, or the tablecloth that always lay on the table at home. Other visitors listen to the recordings in the exhibition.</p>
+          <div><button class="btn btn--ghost btn--sm" type="button" data-toast="The Memory Archive opens with the exhibition.">Record a memory</button></div>
         </div>
         <div class="archive">
-          <p class="eyebrow">Between generations</p>
-          <p>Personal memories, related stories and experiences passed between generations: the archive keeps the kind of knowledge that textiles carry and official records leave out.</p>
+          <p class="eyebrow">City by city</p>
+          <p>Because the exhibition travels, the archive grows with every venue, so that each city adds its own stories. It does with spoken memories what the exhibition attributes to textiles: it keeps what official records tend to leave out.</p>
         </div>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>Technological integration: short audio reflections by the artists about their works and materials, and a short documentary on Do Ho Suh.</p>
-    <p>Participation: visitors record personal memories, related stories and intergenerational experiences, collected in a Memory Archive that grows at each venue.</p>
+    <p>Technology brings the voices of makers and visitors into the room: this website; screens beside the works with the artists on how each work was made and who made it with them.</p>
+    <p>The Memory Archive turns the visitor into a contributor: two-minute recordings about an object of cloth or thread, at a station in the exhibition or from home. The archive grows with every venue.</p>
   </aside>
 </section>
 
-<!-- ============================ FRAMEWORK (presentation only) ============================ -->
-<section class="section section--panel present-only" id="framework" data-slide data-label="Course framework">
+<!-- ============================ FRAMEWORK ============================ -->
+<section class="section" id="framework" data-slide data-label="Curatorial framework">
   <div class="wrap">
     <div class="section__head">
       <p class="eyebrow">Curatorial framework</p>
-      <h2>From the <em>seminar room</em></h2>
-      <p class="lede">The course sessions that shape the proposal.</p>
+      <h2>Reading <em>the museum</em></h2>
+      <p class="lede">Four texts from the course shape how the exhibition is built.</p>
     </div>
-    <div class="frame-cards">
+    <div class="frame-cards frame-cards--4">
       <div class="frame-card">
-        <p class="eyebrow">Session 4</p>
-        <h3>Exhibition Space as Ideology</h3>
-        <p>The building is never neutral. Choosing a warehouse over a white cube puts labour, production and gendered work into the frame, and lets visitors meet the works gradually instead of as isolated objects.</p>
+        <p class="eyebrow">Carol Duncan</p>
+        <h3>“The Art Museum as Ritual”</h3>
+        <p>The museum as a ritual site of communion with the spirits of the past. The exhibition asks whose spirits, and from whose past.</p>
       </div>
       <div class="frame-card">
-        <p class="eyebrow">Session 5</p>
-        <h3>Exhibitions and the Politics of Memory</h3>
-        <p>Whose memory gets exhibited? Textiles keep memories that official archives leave out, and the Memory Archive adds visitors' own.</p>
+        <p class="eyebrow">Tony Bennett</p>
+        <h3>“The Exhibitionary Complex”</h3>
+        <p>Exhibitions organise how objects and people are presented, and can set up hierarchies between those who produce knowledge and those whose knowledge is put on show.</p>
       </div>
-      <div class="frame-card frame-card--todo">
-        <p class="eyebrow">Guest lecture</p>
-        <h3>Reading to be confirmed</h3>
-        <p>Add the guest-lecture reading the group links to the proposal.</p>
+      <div class="frame-card">
+        <p class="eyebrow">Brian O'Doherty</p>
+        <h3>“Inside the White Cube”</h3>
+        <p>The white cube hides its ideology behind neutrality. The factory-and-home setting gives the works back a lived context.</p>
+      </div>
+      <div class="frame-card">
+        <p class="eyebrow">Erica Robenalt</p>
+        <h3>Queer feminism at the Schwules Museum</h3>
+        <p>Museum practice that recognises lived experience and community knowledge, including expertise that institutions may not traditionally acknowledge.</p>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>Link to the course readings: the week on Exhibition Space as Ideology and the week on Exhibitions and the Politics of Memory. Add the guest-lecture reading here.</p>
+    <p>Course texts: Duncan (the museum as ritual), Bennett (the exhibitionary complex), O'Doherty (the white cube), Robenalt (lived experience and community knowledge).</p>
   </aside>
 </section>
 
 <!-- ============================ VISIT ============================ -->
-<section class="section" id="visit" data-slide data-label="Plan your visit">
+<section class="section section--panel" id="visit" data-slide data-label="Plan your visit">
   <div class="wrap">
     <div class="section__head">
       <p class="eyebrow">Plan your visit</p>
-      <h2>Visit <em>Threads of Memory</em></h2>
-      <p class="lede">Timed tickets keep the galleries calm. The audio guide is included with every ticket.</p>
+      <h2>Visit <em>Recollected Dwellings</em></h2>
+      <p class="lede">Proposed for the TextielMuseum in Tilburg from 5 March 2027. Timed tickets keep the room calm.</p>
     </div>
     <div class="visit">
       <dl class="visit__info">
-        <div class="vi"><dt>Dates</dt><dd><strong>5 March – 29 August 2027</strong>First stop of the tour</dd></div>
-        <div class="vi"><dt>Opening hours</dt><dd>Tuesday – Sunday, 10:00 – 18:00<br>Thursday until 21:00<br>Closed on Mondays</dd></div>
+        <div class="vi"><dt>Dates</dt><dd><strong>5 March – 29 August 2027</strong>Proposed; first stop of the tour</dd></div>
+        <div class="vi"><dt>Venue</dt><dd>TextielMuseum, Tilburg (proposed). The exhibition then travels to further venues.</dd></div>
         <div class="vi"><dt>Tickets</dt><dd>
           <ul class="prices">
             <li><span>Adult</span><span>€17.50</span></li>
             <li><span>Student (with ID)</span><span>€9.00</span></li>
             <li><span>Under 18</span><span>Free</span></li>
             <li><span>Friends of the exhibition</span><span>Free</span></li>
-          </ul></dd></div>
-        <div class="vi"><dt>Venue</dt><dd>A former industrial building, announced in January 2027. The exhibition then travels to further cities.</dd></div>
-        <div class="vi"><dt>Access</dt><dd>Step-free throughout, seating along the way, large-print labels and audio description for every work.</dd></div>
-        <div class="vi"><dt>Time</dt><dd>Allow 75 minutes, plus time in the Memory Archive.</dd></div>
+          </ul><small class="vi__note">Indicative prices</small></dd></div>
+        <div class="vi"><dt>Opening hours</dt><dd>Tuesday to Friday 10:00–17:00<br>Saturday and Sunday 12:00–17:00<br>Closed on Mondays<small class="vi__note">The TextielMuseum’s current hours</small></dd></div>
+        <div class="vi"><dt>Access</dt><dd>Step-free route through the room, seating along the way and large-print labels.</dd></div>
+        <div class="vi"><dt>Time</dt><dd>Allow 75 minutes, plus time at the Memory Archive.</dd></div>
       </dl>
       <div class="visit__card">
         <p class="eyebrow" style="color:inherit;opacity:.7">Tickets</p>
         <h3>Book a time slot</h3>
-        <p>Choose a day and an entry time. Thursday evenings are quieter.</p>
+        <p>Choose a day and an entry time.</p>
         <button class="btn btn--solid" type="button" data-tickets>Book tickets</button>
         <form class="signup" id="signup" novalidate>
-          <label for="email">Hear first when the venue is announced</label>
+          <label for="email">Hear first when the exhibition is confirmed</label>
           <input id="email" name="email" type="email" placeholder="Your email address" autocomplete="email">
           <button type="submit">Sign up</button>
         </form>
       </div>
       <div class="catalogue">
         <span class="book" aria-hidden="true"></span>
-        <p>The exhibition catalogue<span>Essays, wall texts and full-page plates of all ten artists. Pre-order, €35.</span></p>
-        <button class="btn btn--ghost btn--sm" type="button" data-toast="The shop opens with the first venue.">Pre-order</button>
+        <p>The exhibition catalogue<span>Essays, wall texts and full-page plates of all thirteen artists. Pre-order, €35.</span></p>
+        <button class="btn btn--ghost btn--sm" type="button" data-toast="The shop opens with the exhibition.">Pre-order</button>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>How a visitor would plan the visit: dates, timed tickets, access, the audio guide. Click "Book tickets" to show the ticket flow.</p>
+    <p>How a visitor would plan the visit: proposed dates, the venue, timed tickets, access.</p>
   </aside>
 </section>
 
 <!-- ============================ THANKS (presentation only) ============================ -->
 <section class="section thanks present-only" id="thanks" data-slide data-label="Questions">
   <div class="wrap">
-    <p class="eyebrow">Threads of Memory &nbsp;·&nbsp; Weaving Identity and Belonging</p>
+    <p class="eyebrow">Recollected Dwellings &nbsp;·&nbsp; An exhibition proposal</p>
     <h2 style="margin-top:1.5rem">Thank you<em>Questions?</em></h2>
     <p>Bjarne, Fiona, Lola &amp; Marije &nbsp;·&nbsp; Doing Modern and Contemporary Art &nbsp;·&nbsp; University of Amsterdam</p>
     <p class="thanks__more">Artist pages follow &nbsp;→</p>
   </div>
+</section>
+
+<!-- ============================ I · INDIGENOUS HISTORIES ============================ -->
+<section class="chapter chapter--ii" id="grp-1" data-slide data-label="Artists · Indigenous histories">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">I</p>
+    <div class="chapter__body">
+      <p class="eyebrow">The communal · I</p>
+      <h2>Indigenous histories</h2>
+      <p>Textile-based practices that explore Indigenous identity and challenge the narratives through which Indigenous histories have been represented.</p>
+      <p class="chapter__artists">Nico Williams <b>·</b> Kablusiak <b>·</b> Gina Adams</p>
+    </div>
+  </div>
+</section>
+
+<section class="artist chapter-ii" id="nico-williams" data-slide data-label="Artists · Indigenous histories">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/nico-feast.jpg" alt="A blue IKEA bag woven entirely from glass beads, filled with beaded wooden spoons."></figure>
+      <p class="caption">Nico Williams, <i>Feast</i>, 2024. 10/0 Delica beads, 11/0 seed beads, 49 wood spoons</p>
+      <div class="thumbs thumbs--5">
+        <figure class="mount"><img src="images/nico-tintin.jpg" alt="A VHS case of Tintin en Amérique covered in beadwork."></figure>
+        <figure class="mount"><img src="images/nico-indian-cupboard.jpg" alt="A VHS case of The Indian in the Cupboard covered in beadwork."></figure>
+        <figure class="mount"><img src="images/nico-pokemon-snap.jpg" alt="A beaded Pokémon Snap! game box with a grey game cartridge."></figure>
+        <figure class="mount"><img src="images/nico-status-cards.jpg" alt="A wallet holding beaded versions of Indigenous status cards."></figure>
+        <figure class="mount"><img src="images/nico-ndn-market.jpg" alt="A beaded green and white trucker cap beside small beaded objects."></figure>
+      </div>
+      <p class="caption"><i>TINTIN EN AMERIQUE</i>, 2025, Japanese cylindrical glass beads on polyethylene thread, VHS cassette &nbsp;·&nbsp; <i>The Indian in the Cupboard (1995)</i>, 2024, beads, original VHS tape, thread &nbsp;·&nbsp; <i>POKÉMON SNAP!</i>, 2025, glass beads, thread, plastic game case &nbsp;·&nbsp; <i>NDN Status Cards</i>, 2019–, glass beads, mixed materials &nbsp;·&nbsp; <i>NDN MARKET ESSENTIALS, OLD FIELDS AND PROUD OF IT (GREEN)</i>, 2025</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Indigenous histories</span></div>
+      <h3 class="artist__name">Nico Williams</h3>
+      <p class="artist__meta">Born 1989, Aamjiwnaang First Nation (Anishinaabe) &nbsp;·&nbsp; Tiohtià:ke/Montréal &nbsp;·&nbsp; Sobey Art Award 2024</p>
+      <p class="artist__lede">Nico Williams uses beadwork and traditional materials to address cultural reclamation, while works such as <i>Cousins</i> (2023) evoke familial relationships and shared experiences. At Hochelaga studio he works year round with a team of seven to eleven people, an approach he describes as caretaking.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Feast</i>, 2024; <i>TINTIN EN AMERIQUE</i>, 2025; <i>The Indian in the Cupboard (1995)</i>, 2024; <i>POKÉMON SNAP!</i>, 2025; <i>NDN Status Cards</i>, 2019–; <i>NDN MARKET ESSENTIALS, OLD FIELDS AND PROUD OF IT (GREEN)</i>, 2025</dd>
+        <dt>Materials</dt><dd>Glass beads, thread, wooden spoons, VHS cassettes, a plastic game case</dd>
+        <dt>Thread</dt><dd>Cultural reclamation, family memory, Indigenous identity</dd>
+        <dt>In the room</dt><dd>On the low stand</dd>
+      </dl>
+      <p class="why"><i>Feast</i> carries forty-nine beaded spoons, one for each Anishinaabe clan, recalling thanksgiving feasts and the carved ladles lost under amendments to the Indian Act. The beaded tapes, game case and status cards rework pop-culture objects and the cards that classify Indigenous identity in Canada. Beading is historically associated with women; Williams, as a man, takes it up and questions those norms.</p>
+      <blockquote class="quote site-only">"They'll touch people's moments of nostalgia. They'll go into people's psyche."<cite>Nico Williams, in interview</cite></blockquote>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Nico Williams (b. 1989), Aamjiwnaang First Nation, Anishinaabe. Cultural reclamation through beadwork; Cousins (2023) evokes familial relationships. Feast (2024): 49 beaded spoons, one per clan; ladles lost under the Indian Act.</p>
+  </aside>
+</section>
+
+<section class="artist artist--flip chapter-ii" id="kablusiak" data-slide data-label="Artists · Indigenous histories">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/kablusiak-heart-paddle.jpg" alt="A heart-shaped paddle covered in deep red dyed sealskin with a black leather handle."></figure>
+      <p class="caption">Kablusiak, <i>Heart Paddle</i>, 2022. Dyed sealskin, leather, artificial sinew</p>
+      <div class="thumbs thumbs--5">
+        <figure class="mount"><img src="images/kablusiak-ball-gag.jpg" alt="A ball gag with a carved grey soapstone ball on a black leather strap."></figure>
+        <figure class="mount"><img src="images/kablusiak-doll-3.jpg" alt="A small deep-blue fur doll figure with a leather harness."></figure>
+        <figure class="mount"><img src="images/kablusiak-garfield-ookpik.jpg" alt="An orange fur owl figure with the face of Garfield the cat."></figure>
+        <figure class="mount"><img src="images/kablusiak-pierrot-ukpik.jpg" alt="A white fur owl figure with yellow eyes and a pleated white ruff."></figure>
+        <figure class="mount"><img src="images/kablusiak-red-ookpik.jpg" alt="A red fur owl figure with round eyes and a black leather harness."></figure>
+      </div>
+      <p class="caption"><i>Ball Gag</i>, 2022, soapstone, tung oil, metal hardware, leather, artificial sinew &nbsp;·&nbsp; <i>Doll 3</i>, 2024, rabbit fur, leather, metal hardware, plastic doll eyes &nbsp;·&nbsp; <i>Garfield Ookpik</i>, 2022, rabbit fur, felt, fibre fill, embroidery floss, leather &nbsp;·&nbsp; <i>Pierrot Ukpik</i>, 2026, white rabbit fur, felt, ribbon &nbsp;·&nbsp; <i>Red Ookpik</i>, 2022, dyed sealskin, felt, fibre fill, embroidery floss, leather</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Indigenous histories</span></div>
+      <h3 class="artist__name">Kablusiak</h3>
+      <p class="artist__meta">Inuvialuk, born Somba K'e (Yellowknife) &nbsp;·&nbsp; lives in Mohkinstsis (Calgary) &nbsp;·&nbsp; Sobey Art Award 2023</p>
+      <p class="artist__lede">Kablusiak explores Inuit identity, sexuality and cultural displacement, with irony, humour and real emotional weight. Their work connects textile and skin-sewing to queer and Indigenous identities.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Heart Paddle</i>, 2022; <i>Ball Gag</i>, 2022; <i>Doll 3</i>, 2024; <i>Garfield Ookpik</i>, 2022; <i>Pierrot Ukpik</i>, 2026; <i>Red Ookpik</i>, 2022</dd>
+        <dt>Materials</dt><dd>Dyed sealskin, soapstone, rabbit fur, leather, felt, artificial sinew, embroidery floss</dd>
+        <dt>Thread</dt><dd>Queerness, sexuality, cultural displacement, pop culture</dd>
+        <dt>In the room</dt><dd>On the bed</dd>
+      </dl>
+      <p class="why"><i>Heart Paddle</i> and <i>Ball Gag</i> turn the materials of Inuit making towards intimacy and desire, refusing heteronormative ideas of Indigenous sexuality. The Ookpiks remake the traditional Inuit snowy-owl figure; <i>Garfield Ookpik</i> fuses it with the cartoon cat to comment on how pop culture appropriates Indigenous culture.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Kablusiak: Inuvialuk artist; Inuit identity, sexuality and cultural displacement, e.g. Heart Paddle (2022). Connects skin-sewing to queer and Indigenous identities, which is why the exhibition treats womanhood as a wider field.</p>
+  </aside>
+</section>
+
+<section class="artist chapter-ii" id="gina-adams" data-slide data-label="Artists · Indigenous histories">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main ph" data-slot="gina-adams" style="--w1:#B98B5E;--w2:#4F6E8C;--w3:#EFE8DD">
+        <div class="ph__label"><b>Gina Adams</b><span>Image to follow</span></div>
+      </figure>
+      <p class="caption">Gina Adams, from the series <i>Broken Treaty Quilts</i></p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Indigenous histories</span></div>
+      <h3 class="artist__name">Gina Adams</h3>
+      <p class="artist__meta">Ojibwe and colonial American descent</p>
+      <p class="artist__lede">In her <i>Broken Treaty Quilts</i>, Gina Adams stitches the texts of historical treaties between Indigenous nations and the United States onto antique quilts, in hand-cut calico letters that are not always easy to read.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>From the series <i>Broken Treaty Quilts</i>, begun in 2014</dd>
+        <dt>Materials</dt><dd>Hand-cut calico letters appliquéd onto antique quilts</dd>
+        <dt>Thread</dt><dd>Colonial violence, broken promises, dispossession</dd>
+        <dt>In the room</dt><dd>To be announced</dd>
+      </dl>
+      <p class="why">By combining a domestic textile tradition with the history of broken political promises, Adams confronts colonial violence and the dispossession of Indigenous peoples.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Gina Adams extends these concerns: in the Broken Treaty Quilts she stitches historical treaties between Indigenous nations and the United States onto antique quilts, confronting colonial violence and dispossession.</p>
+  </aside>
+</section>
+
+<!-- ============================ II · COMMUNITY AND RECOGNITION ============================ -->
+<section class="chapter chapter--ii" id="grp-2" data-slide data-label="Artists · Community and recognition">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">II</p>
+    <div class="chapter__body">
+      <p class="eyebrow">The communal · II</p>
+      <h2>Community and recognition</h2>
+      <p>Traditional weaving tied to community, power and recognition: whose labour is credited, and how traditions pass between generations.</p>
+      <p class="chapter__artists">Yee I-Lann <b>·</b> Labay Eyong</p>
+    </div>
+  </div>
+</section>
+
+<section class="artist artist--flip chapter-ii" id="yee-i-lann" data-slide data-label="Artists · Community and recognition">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/yee-tikar-meja.jpg" alt="Sixty colourful woven pandanus mats arranged in a grid, each with the silhouette of a different table woven into it."></figure>
+      <p class="caption">Yee I-Lann with Bajau Sama DiLaut weavers, <i>TIKAR/MEJA</i>, 2020. Image: Silverlens</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Community and recognition</span></div>
+      <h3 class="artist__name">Yee I-Lann</h3>
+      <p class="artist__meta">Born 1971, Kota Kinabalu, Sabah, Malaysian Borneo</p>
+      <p class="artist__lede">Since 2018 Yee I-Lann has made works with Bajau Sama DiLaut weavers on Omadal island, many of them stateless. In <i>TIKAR/MEJA</i> (mat/table) each of sixty mats carries the silhouette of a different table.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>TIKAR/MEJA</i>, 2020</dd>
+        <dt>Materials</dt><dd>Sixty dyed, woven pandanus mats</dd>
+        <dt>Thread</dt><dd>Collective authorship, community, power, recognition</dd>
+        <dt>In the room</dt><dd>On the floor at the centre</dd>
+      </dl>
+      <p class="why">The table stands for "colonial, patriarchal, federal, state power"; the tikar, the woven mat, is its counterpart, a shared surface without hierarchy. The 2021 credit line names nineteen weavers after Yee, most of them women. Naming them answers the invisibility of women's work only in part: the work still circulates under one name.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Yee I-Lann, TIKAR/MEJA (2020): pandanus mats and the form of a table connect traditional weaving to community, power and recognition. Bennett: displays can set up hierarchies between those who produce knowledge and those whose knowledge is presented.</p>
+  </aside>
+</section>
+
+<section class="artist chapter-ii" id="labay-eyong" data-slide data-label="Artists · Community and recognition">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main tall"><img src="images/labay-fallen-mother.jpg" alt="Two round tabletops wrapped in woven textiles, with woven legs stretched across the floor and golden woven discs behind them."></figure>
+      <p class="caption">Labay Eyong, <i>The Fallen Mother</i> (倒地媽媽), 2020</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Community and recognition</span></div>
+      <h3 class="artist__name">Labay Eyong</h3>
+      <p class="artist__meta">Also known as Lin Gieh-wen &nbsp;·&nbsp; Born 1982, Truku, Hualien, Taiwan</p>
+      <p class="artist__lede">Labay Eyong connects cultural heritage to contemporary life through Truku weaving traditions, in soft sculpture, film, metalwork and installation. Since becoming a mother in 2015 she has made her work a record of her own experience, from the birth of a child to the bond between mother and child.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>The Fallen Mother</i> (倒地媽媽), 2020</dd>
+        <dt>Thread</dt><dd>Motherhood, cultural heritage, traditional craft</dd>
+        <dt>In the room</dt><dd>Beside the entrance corridor</dd>
+      </dl>
+      <p class="why">By wrapping a plastic tabletop, a common fixture in Truku households though not tied to the culture, in traditional textiles, her work brings together domestic objects and cultural practices, showing how traditions can be adapted and transmitted across generations.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Labay Eyong (Lin Gieh-wen), Truku, Hualien. Wrapping a plastic tabletop in traditional textiles brings domestic objects and cultural practices together: traditions adapted and transmitted across generations. The Fallen Mother (2020): motherhood.</p>
+  </aside>
+</section>
+
+<!-- ============================ III · LABOUR AND COLLECTIVE EXPERIENCE ============================ -->
+<section class="chapter chapter--ii" id="grp-3" data-slide data-label="Artists · Labour and collective experience">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">III</p>
+    <div class="chapter__body">
+      <p class="eyebrow">The communal · III</p>
+      <h2>Labour and collective experience</h2>
+      <p>Textile-making as labour, memory and shared experience, often made by many hands.</p>
+      <p class="chapter__artists">Igshaan Adams <b>·</b> Rucha Kulkarni <b>·</b> Meita Meilita</p>
+    </div>
+  </div>
+</section>
+
+<section class="artist artist--flip chapter-ii" id="igshaan-adams" data-slide data-label="Artists · Labour and collective experience">
+  <div class="wrap">
+    <div class="artist__media">
+      <div class="duo"><figure class="mount mount--duo"><img src="images/igshaan-clouds-1.jpg" alt="Pink cloud-like forms of beads and wire suspended in the corner of a white gallery."></figure><figure class="mount mount--duo"><img src="images/igshaan-clouds-2.jpg" alt="A visitor looks up at a pink cloud of beads and wire hanging on a white wall."></figure></div>
+      <p class="caption">Igshaan Adams, suspended bead and wire sculptures, installation views</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Labour and collective experience</span></div>
+      <h3 class="artist__name">Igshaan Adams</h3>
+      <p class="artist__meta">Born 1982, Cape Town, South Africa</p>
+      <p class="artist__lede">Igshaan Adams grew up in Bonteheuwel, a community shaped by apartheid, and draws on memories of home and his surroundings. In works such as <i>Lynloop</i> (2024), thread, rope and beads create connections between places and experiences.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>Cloud-like suspended sculptures; titles to be announced</dd>
+        <dt>Materials</dt><dd>Beads and wire</dd>
+        <dt>Thread</dt><dd>Home, community, the labour of making</dd>
+        <dt>In the room</dt><dd>On the walls of the far corner</dd>
+      </dl>
+      <p class="why">Beads and wire are threaded into forms that resemble clouds or dust, so the labour of making stays visible in the work. Across his practice, materials from working-class homes and neighbourhoods carry a social history and blur the line between fine art and domestic or communal labour.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Igshaan Adams (b. 1982), Cape Town; grew up in Bonteheuwel, shaped by apartheid. In works such as Lynloop (2024), thread, rope and beads connect places and experiences.</p>
+  </aside>
+</section>
+
+<section class="artist chapter-ii" id="rucha-kulkarni" data-slide data-label="Artists · Labour and collective experience">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main tall mount--cover"><img src="images/rucha-installation.jpg" alt="Two pink textiles with stitched and painted forms hang from the ceiling of a hall; a drawing of roots spreads across the floor below."></figure>
+      <p class="caption">Rucha Kulkarni, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Labour and collective experience</span></div>
+      <h3 class="artist__name">Rucha Kulkarni</h3>
+      <p class="artist__meta">Born 1986, Pune &nbsp;·&nbsp; works between Amsterdam and Pune</p>
+      <p class="artist__lede">Rucha Kulkarni is a visual artist and social art practitioner. She approaches belonging through the Indian philosophical concept of Prakriti and the practice of stitching, linking her work to labour, memory and material histories.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>Two textile hangings; titles to be announced</dd>
+        <dt>Materials</dt><dd>Textile and stitching</dd>
+        <dt>Thread</dt><dd>Belonging, participatory making, migration</dd>
+        <dt>In the room</dt><dd>On the corner walls</dd>
+      </dl>
+      <p class="why">In <i>Bonds per stitch</i> (2024–ongoing), single stitches form something larger together. Her participatory methods of storytelling, care and embodied knowledge let others help make the work, so that remembering becomes communal making: many hands, and many memories, in a single work.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Rucha Kulkarni: belonging through the Indian philosophical concept of Prakriti and the practice of stitching; labour, memory and material histories. Participatory stitching treats remembering as communal making.</p>
+  </aside>
+</section>
+
+<section class="artist artist--flip chapter-ii" id="meita-meilita" data-slide data-label="Artists · Labour and collective experience">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/meita-wanai-saiji.jpg" alt="A long white cotton cloth hung in a circle, embroidered with mountains, animals, houses and lines of text."></figure>
+      <p class="caption">Meita Meilita, <i>Wanai Saiji: The Shape of Being</i>, 2025</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Labour and collective experience</span></div>
+      <h3 class="artist__name">Meita Meilita</h3>
+      <p class="artist__meta">Born Bogor, Indonesia</p>
+      <p class="artist__lede">Meita Meilita uses embroidery and participatory installations to explore womanhood, emotions and cultural memory. She draws on her own experience as a woman, child, mother and wife.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Wanai Saiji: The Shape of Being</i>, 2025, made with Kavalan elders and PateRongan Studio in Xinshe, Hualien, Taiwan</dd>
+        <dt>Materials</dt><dd>Embroidery on cotton cloth</dd>
+        <dt>Thread</dt><dd>Shared memory, heritage, womanhood, language</dd>
+        <dt>In the room</dt><dd>On the far wall</dd>
+      </dl>
+      <p class="why">Roosters, mountains, fish, boats, crabs, village scenes and lines of Kavalan song drift across a long cotton cloth, embroidered together with Kavalan elders, with large stretches left blank. Her shared embroidery treats remembering as communal making.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Meita Meilita: embroidery and participatory installations on womanhood, emotions and cultural memory. Wanai Saiji: The Shape of Being (2025), embroidered with Kavalan elders in Hualien.</p>
+  </aside>
+</section>
+
+<!-- ============================ IV · THE BODY AND DISPLACEMENT ============================ -->
+<section class="chapter" id="grp-4" data-slide data-label="Artists · The body and displacement">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">IV</p>
+    <div class="chapter__body">
+      <p class="eyebrow">The personal · IV</p>
+      <h2>The body and displacement</h2>
+      <p>Memory carried in the body and in leaving home: organs, houses, journeys and buried belongings.</p>
+      <p class="chapter__artists">Woo Hannah <b>·</b> Do Ho Suh <b>·</b> Elfreda Dali <b>·</b> Hema Shironi</p>
+    </div>
+  </div>
+</section>
+
+<section class="artist" id="woo-hannah" data-slide data-label="Artists · The body and displacement">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/woo-hannah-installation.jpg" alt="Two long grey fabric drapes sag from the ceiling into U-shaped folds, with a purple and a pink sewn form hanging from where they meet."></figure>
+      <p class="caption">Woo Hannah, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">The body and displacement</span></div>
+      <h3 class="artist__name">Woo Hannah</h3>
+      <p class="artist__meta">South Korea &nbsp;·&nbsp; Frieze Seoul Artist Award 2023</p>
+      <p class="artist__lede">Woo Hannah creates fabric sculptures inspired by human and non-human organs, from the uterus to blood vessels, questioning conventional understandings of bodily form and identity.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>The Great Ballroom</i>, 2023, which extends her series <i>Milk and Honey</i></dd>
+        <dt>Materials</dt><dd>Fabric, beads, sewing</dd>
+        <dt>Thread</dt><dd>The body, ageing, femininity</dd>
+        <dt>In the room</dt><dd>Hanging beside the bed</dd>
+      </dl>
+      <p class="why">Oversized drapes sag into U-shaped creases that Woo sees as both a bat and a woman's breast, a celebration of the female body as it ages. At Frieze Seoul they hung from an eight-metre ceiling.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Woo Hannah: fabric sculptures inspired by human and non-human organs, questioning conventional understandings of bodily form and identity.</p>
+  </aside>
+</section>
+
+<section class="artist artist--flip" id="do-ho-suh" data-slide data-label="Artists · The body and displacement">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/do-ho-suh-nests.jpg" alt="A row of translucent fabric rooms in orange, purple, teal and pink on a concrete floor; visitors walk through them."></figure>
+      <p class="caption">Do Ho Suh, <i>Nest/s</i>, 2024, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">The body and displacement</span></div>
+      <h3 class="artist__name">Do Ho Suh</h3>
+      <p class="artist__meta">Born 1962, Seoul, South Korea</p>
+      <p class="artist__lede">Do Ho Suh creates translucent fabric installations that reconstruct architectural spaces associated with his life, exploring how a sense of home can persist after leaving a physical place.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Nest/s</i>, 2024</dd>
+        <dt>Materials</dt><dd>Polyester and stainless steel</dd>
+        <dt>Thread</dt><dd>Home, displacement, belonging</dd>
+        <dt>In the room</dt><dd>The entrance: visitors walk through it</dd>
+      </dl>
+      <p class="why"><i>Nest/s</i> stitches corridors and entryways from homes he has lived in into one long passage of colourful, sheer fabric. As the entrance to the exhibition, it introduces the relationship between architecture, memory and belonging.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Do Ho Suh: translucent fabric installations reconstructing spaces from his life; how a sense of home persists after leaving a place. Nest/s (2024) forms the entrance.</p>
+  </aside>
+</section>
+
+<section class="artist" id="elfreda-dali" data-slide data-label="Artists · The body and displacement">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main"><img src="images/elfreda-dali-hangings.jpg" alt="Four hangings of different sizes on a white wall, each with stitched, layered faces in brown, black, cream and green."></figure>
+      <p class="caption">Elfreda Dali, wall hangings, installation view</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">The body and displacement</span></div>
+      <h3 class="artist__name">Elfreda Dali</h3>
+      <p class="artist__meta">Born 1995, Nigeria &nbsp;·&nbsp; lives in London</p>
+      <p class="artist__lede">Elfreda Dali connects London and Lagos through textiles and clothing, with materials from both cities, reflecting how movement between places shapes identity.</p>
+      <dl class="label">
+        <dt>On view</dt><dd>Wall tapestries and clothing</dd>
+        <dt>Materials</dt><dd>Textile and stitching, with materials from London and Lagos</dd>
+        <dt>Thread</dt><dd>Migration, layered identity, clothing</dd>
+        <dt>In the room</dt><dd>On the wall beside the stand</dd>
+      </dl>
+      <p class="why">Her tapestries sew the story of a heritage and trace the route of a journey she has made time and time again, so that cloth becomes something carried between two homes.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Elfreda Dali connects London and Lagos through textiles and clothing: movement between places shapes identity.</p>
+  </aside>
+</section>
+
+<section class="artist artist--flip" id="hema-shironi" data-slide data-label="Artists · The body and displacement">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main ph" data-slot="hema-shironi" style="--w1:#C4876B;--w2:#6E7D5B;--w3:#F1EADF">
+        <div class="ph__label"><b>Hema Shironi</b><span>Image to follow</span></div>
+      </figure>
+      <p class="caption">Hema Shironi, <i>Buried Alive Stories</i>, 2020</p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">The body and displacement</span></div>
+      <h3 class="artist__name">Hema Shironi</h3>
+      <p class="artist__meta">Born 1991, Sri Lanka</p>
+      <p class="artist__lede">Hema Shironi examines domestic memory and displacement through embroidery, photographs and found fabrics, addressing Sri Lanka's histories of colonisation, civil war, displacement and migration.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Buried Alive Stories</i>, 2020</dd>
+        <dt>Materials</dt><dd>Embroidery, photographs, found fabrics</dd>
+        <dt>Thread</dt><dd>Domestic memory, displacement, civil war</dd>
+        <dt>In the room</dt><dd>To be announced</dd>
+      </dl>
+      <p class="why">The work draws on her grandmother's account of burying treasured possessions around the house when the family was forced to leave it during Sri Lanka's civil war (1983–2009). It shows how ordinary objects can become traces of lives disrupted by political violence.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Hema Shironi: domestic memory and displacement. Buried Alive Stories (2020): her grandmother's account of burying treasured possessions when the family was forced to leave home during the civil war.</p>
+  </aside>
+</section>
+
+<!-- ============================ V · PAINFUL MEMORIES OF HOME ============================ -->
+<section class="chapter" id="grp-5" data-slide data-label="Artists · Painful memories of home">
+  <div class="wrap">
+    <p class="chapter__num" aria-hidden="true">V</p>
+    <div class="chapter__body">
+      <p class="eyebrow">The personal · V</p>
+      <h2>Painful memories of home</h2>
+      <p>Works that confront the painful experiences associated with home and memory.</p>
+      <p class="chapter__artists">Zoë Buckman</p>
+    </div>
+  </div>
+</section>
+
+<section class="artist" id="zoe-buckman" data-slide data-label="Artists · Painful memories of home">
+  <div class="wrap">
+    <div class="artist__media">
+      <figure class="mount mount--main ph" data-slot="zoe-buckman" style="--w1:#B85E6B;--w2:#8D8A9A;--w3:#F2E9EA">
+        <div class="ph__label"><b>Zoë Buckman</b><span>Image to follow</span></div>
+      </figure>
+      <p class="caption">Zoë Buckman, <i>Show Me Your Bruises, Then</i></p>
+    </div>
+    <div class="artist__text">
+      <div class="artist__top"><i class="cdot"></i><span class="eyebrow">Painful memories of home</span></div>
+      <h3 class="artist__name">Zoë Buckman</h3>
+      <p class="artist__meta">British &nbsp;·&nbsp; lives in New York</p>
+      <p class="artist__lede">Zoë Buckman's feminist practice uses embroidery, vintage fabrics and domestic textiles to address gendered violence and trauma.</p>
+      <dl class="label">
+        <dt>On view</dt><dd><i>Show Me Your Bruises, Then</i>, 2021–22</dd>
+        <dt>Materials</dt><dd>Three-channel video; antique textile embroidered with an excerpt from her poem</dd>
+        <dt>Thread</dt><dd>Gendered violence, shame, survival</dd>
+        <dt>In the room</dt><dd>To be announced</dd>
+      </dl>
+      <p class="why">The work looks at how stigma shapes survivors' experiences and how patterns of abuse can persist across generations. It challenges the association between textile-making and domestic care, turning familiar materials into a means of confronting experiences that might otherwise remain hidden.</p>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Zoë Buckman: embroidery, vintage fabrics and domestic textiles on gendered violence and trauma; challenges the association between textile-making and domestic care.</p>
+  </aside>
 </section>
 
 </main>
@@ -1322,22 +1452,23 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 <footer class="footer">
   <div class="wrap">
     <div class="footer__brand">
-      <span class="brand__name">Threads <em>of Memory</em></span>
-      <p>Weaving Identity and Belonging. A touring exhibition of ten artists working in thread, cloth and bead.</p>
+      <span class="brand__name">Recollected <em>Dwellings</em></span>
+      <p>A touring exhibition proposal: thirteen artists working with recollection in thread, cloth and fibre.</p>
     </div>
     <ul class="footer__links">
       <li><a href="#exhibition">About the exhibition</a></li>
       <li><a href="#artists">Artists</a></li>
+      <li><a href="#space">The venue</a></li>
+      <li><a href="#audio">Memory Archive</a></li>
       <li><a href="#visit">Plan your visit</a></li>
-      <li><a href="#audio">Audio guide</a></li>
       <li><button type="button" data-present>Presentation mode</button></li>
     </ul>
     <div class="footer__social">
       <span>Instagram</span><span>Newsletter</span><span>Press</span>
     </div>
     <div class="footer__small">
-      <p>Threads of Memory is an exhibition proposal developed for the course Doing Modern and Contemporary Art: Curating as Practice in Art History, University of Amsterdam, 2026. Dates, tickets, shop and audio guide are mock-ups; nothing is on sale.</p>
-      <p>Images: Yee I-Lann, <i>TIKAR/MEJA</i>, courtesy Silverlens. Works by Nico Williams, Kablusiak and Rucha Kulkarni courtesy the artists and their galleries.</p>
+      <p>Recollected Dwellings is an exhibition proposal developed for the course Doing Modern and Contemporary Art: Curating as Practice in Art History, University of Amsterdam, 2026. It is not an exhibition of the TextielMuseum. Dates, tickets, shop, artist films and the Memory Archive are mock-ups; nothing is on sale and nothing is recorded.</p>
+      <p>Images: Yee I-Lann, <i>TIKAR/MEJA</i>, courtesy Silverlens. All other works courtesy the artists and their galleries. Venue history after the TextielMuseum, “History and Building,” and K. Meirik and J. Wellens, <i>Wolindustrie</i> (1997).</p>
     </div>
   </div>
 </footer>
@@ -1348,8 +1479,8 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
     <div class="tix__head">
       <div>
         <p class="eyebrow">Book tickets</p>
-        <h2 id="tixTitle">Threads of Memory</h2>
-        <p>Timed entry · Audio guide included · 5 March – 29 August 2027</p>
+        <h2 id="tixTitle">Recollected Dwellings</h2>
+        <p>Timed entry · 5 March – 29 August 2027 · TextielMuseum, Tilburg (proposed)</p>
       </div>
       <button class="x" type="button" data-close aria-label="Close">×</button>
     </div>
@@ -1363,7 +1494,7 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
           </div>
         </div>
         <div class="cal" id="cal"></div>
-        <p class="cal__key">Closed on Mondays. Late opening on Thursdays.</p>
+        <p class="cal__key">Closed on Mondays. Weekdays from 10:00, weekends from 12:00.</p>
       </div>
       <div>
         <p class="sub-h" id="slotHead">Entry time</p>
@@ -1386,7 +1517,7 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
     <div class="done">
       <h3>Thank you for <em>planning a visit</em></h3>
       <div class="summary" id="summary"></div>
-      <p>Threads of Memory is an exhibition proposal by students of the University of Amsterdam, so tickets are not on sale and nothing has been booked.</p>
+      <p>Recollected Dwellings is an exhibition proposal by students of the University of Amsterdam, not an exhibition of the TextielMuseum, so tickets are not on sale and nothing has been booked.</p>
       <div style="display:flex;gap:.8rem;flex-wrap:wrap">
         <button class="btn btn--solid" type="button" data-close>Back to the exhibition</button>
         <button class="btn btn--ghost" type="button" id="tixBack">Change selection</button>
@@ -1397,11 +1528,11 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 
 <!-- ============================ PRESENTATION CHROME ============================ -->
 <div class="hud" id="hud" aria-live="polite">
-  <span class="hud__brand">Threads <em>of Memory</em></span>
+  <span class="hud__brand">Recollected <em>Dwellings</em></span>
   <span class="hud__label" id="hudLabel"></span>
   <span class="hud__count" id="hudCount"></span>
   <div class="hud__btns">
-    <button type="button" id="hudMap" class="wide" hidden title="Back to the artist map (M)">Map</button>
+    <button type="button" id="hudMap" class="wide" hidden title="Back to the artists overview (M)">Artists</button>
     <button type="button" id="hudPrev" aria-label="Previous slide">‹</button>
     <button type="button" id="hudNext" aria-label="Next slide">›</button>
     <button type="button" id="hudNotes" aria-label="Speaker notes (N)" title="Speaker notes (N)">N</button>
@@ -1419,7 +1550,7 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
       <dt><kbd>←</kbd> <kbd>PgUp</kbd></dt><dd>Previous slide</dd>
       <dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>First / last slide</dd>
       <dt><kbd>N</kbd></dt><dd>Speaker notes on / off</dd>
-      <dt><kbd>M</kbd></dt><dd>Back to the artist map</dd>
+      <dt><kbd>M</kbd></dt><dd>Back to the artists overview</dd>
       <dt><kbd>T</kbd></dt><dd>Switch light / dark</dd>
       <dt><kbd>F</kbd></dt><dd>Full screen</dd>
       <dt><kbd>Esc</kbd></dt><dd>Back to the website</dd>
@@ -1461,67 +1592,14 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
   menuBtn.addEventListener('click', () => { const o = nav.classList.toggle('is-open'); menuBtn.setAttribute('aria-expanded', o); });
   $$('#navlinks a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('is-open'); menuBtn.setAttribute('aria-expanded', false); }));
 
-  /* ---------- artists data (map, index, route, audio) ---------- */
+  /* ---------- artists, in the order of the exhibition text ---------- */
   const A = [
-    { id:'woo-hannah',     name:'Woo Hannah',     g:'w', tag:'Womanhood',          x:150, y:110, lx:0,   ly:-20, a:'middle' },
-    { id:'labay-eyong',    name:'Labay Eyong',    g:'w', tag:'Womanhood',          x:110, y:400, lx:0,   ly:30,  a:'middle' },
-    { id:'kablusiak',      name:'Kablusiak',      g:'w', tag:'Womanhood',          x:330, y:520, lx:0,   ly:32,  a:'middle' },
-    { id:'rucha-kulkarni', name:'Rucha Kulkarni', g:'w', tag:'Womanhood',          x:380, y:255, lx:-16, ly:-16, a:'end' },
-    { id:'yee-i-lann',     name:'Yee I-Lann',     g:'c', tag:'Memory · shared', x:620, y:95,  lx:0,   ly:-20, a:'middle' },
-    { id:'meita-meilita',  name:'Meita Meilita',  g:'c', tag:'Memory · shared', x:880, y:185, lx:0,   ly:-20, a:'middle' },
-    { id:'nico-williams',  name:'Nico Williams',  g:'p', tag:'Memory · personal',   x:560, y:420, lx:-16, ly:-14, a:'end' },
-    { id:'elfreda-dali',   name:'Elfreda Dali',   g:'p', tag:'Memory · personal',   x:720, y:540, lx:0,   ly:32,  a:'middle' },
-    { id:'igshaan-adams',  name:'Igshaan Adams',  g:'p', tag:'Memory · personal',   x:790, y:345, lx:16,  ly:-14, a:'start' },
-    { id:'do-ho-suh',      name:'Do Ho Suh',      g:'p', tag:'Memory · personal',   x:930, y:470, lx:0,   ly:32,  a:'middle' },
-  ];
-  const byId = Object.fromEntries(A.map(a => [a.id, a]));
-  const E = [
-    ['rucha-kulkarni','yee-i-lann','woven together', .18],
-    ['yee-i-lann','meita-meilita','cultural memory', -.18],
-    ['rucha-kulkarni','meita-meilita','collective making', .1],
-    ['rucha-kulkarni','woo-hannah','femininity', .16],
-    ['woo-hannah','labay-eyong','motherhood', -.2],
-    ['woo-hannah','kablusiak','the body', .14],
-    ['labay-eyong','nico-williams','traditional craft', .12],
-    ['kablusiak','nico-williams','pop culture', .2],
-    ['nico-williams','igshaan-adams','family memory', -.2],
-    ['igshaan-adams','do-ho-suh','the childhood home', -.18],
-    ['elfreda-dali','do-ho-suh','migration', .2],
-  ];
-
-  /* thread map */
-  const map = $('#map');
-  if (map) {
-    const gE = svgEl('g', {}, map), gL = svgEl('g', {}, map), gN = svgEl('g', {}, map);
-    E.forEach(([a, b, label, k], i) => {
-      const p = byId[a], q = byId[b];
-      const mx = (p.x + q.x) / 2, my = (p.y + q.y) / 2, dx = q.x - p.x, dy = q.y - p.y;
-      const cx = mx - dy * k, cy = my + dx * k;
-      svgEl('path', { d:`M${p.x} ${p.y} Q${cx} ${cy} ${q.x} ${q.y}`, class:'edge', 'data-a':a, 'data-b':b }, gE);
-      const tx = .25*p.x + .5*cx + .25*q.x, ty = .25*p.y + .5*cy + .25*q.y;
-      const t = svgEl('text', { x:tx, y:ty + 5, 'text-anchor':'middle', class:'edge-label', 'data-a':a, 'data-b':b }, gL);
-      t.textContent = label;
-    });
-    A.forEach(n => {
-      const g = svgEl('g', { class:'node ' + n.g, 'data-id':n.id }, gN);
-      const link = svgEl('a', { href:'#' + n.id, 'aria-label':n.name }, g);
-      svgEl('circle', { cx:n.x, cy:n.y, r:8 }, link);
-      const t = svgEl('text', { x:n.x + n.lx, y:n.y + n.ly, 'text-anchor':n.a }, link);
-      t.textContent = n.name;
-      const on = () => { map.classList.add('is-focus'); $$('.edge,.edge-label', map).forEach(e => e.classList.toggle('on', e.dataset.a === n.id || e.dataset.b === n.id)); };
-      const off = () => { map.classList.remove('is-focus'); };
-      g.addEventListener('mouseenter', on); g.addEventListener('mouseleave', off);
-      link.addEventListener('focus', on); link.addEventListener('blur', off);
-      link.addEventListener('click', (e) => { if (P.on) { e.preventDefault(); P.goId(n.id); } });
-    });
-  }
-  /* index */
-  const idx = $('#index');
-  A.forEach((n, i) => {
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="#${n.id}"><i class="cdot${n.g === 'w' ? '' : ' ii'}"></i><span class="index__name">${n.name}</span><span class="index__tag">${n.tag}</span></a>`;
-    idx.appendChild(li);
-  });
+    ['nico-williams','Nico Williams'], ['kablusiak','Kablusiak'], ['gina-adams','Gina Adams'],
+    ['yee-i-lann','Yee I-Lann'], ['labay-eyong','Labay Eyong'],
+    ['igshaan-adams','Igshaan Adams'], ['rucha-kulkarni','Rucha Kulkarni'], ['meita-meilita','Meita Meilita'],
+    ['woo-hannah','Woo Hannah'], ['do-ho-suh','Do Ho Suh'], ['elfreda-dali','Elfreda Dali'], ['hema-shironi','Hema Shironi'],
+    ['zoe-buckman','Zoë Buckman'],
+  ].map(([id, name]) => ({ id, name }));
 
   /* ---------- floor plan ---------- */
   const mats = $('#mats');
@@ -1530,9 +1608,9 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
 
   /* ---------- audio preview ---------- */
   const tracks = $('#tracks');
-  const T = A.map((n) => ({ name: n.name, title: n.name, sub: n.id === 'do-ho-suh' ? 'Documentary' : 'Artist reflection' }));
+  const T = A.map((n) => ({ name: n.name, title: n.name, sub: 'Artist film' }));
   T.push({ name:'Memory Archive', title:'Visitors’ memories', sub:'Memory Archive' });
-  let cur = 9, playing = false, prog = 0, raf;
+  let cur = 0, playing = false, prog = 0, raf;
   T.forEach((t, i) => {
     const li = document.createElement('li');
     li.innerHTML = `<button type="button" data-i="${i}" ${i === cur ? 'aria-current="true"' : ''}>${t.name}</button>`;
@@ -1550,7 +1628,7 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
     playing = !playing;
     icon.innerHTML = playing ? '<path d="M4 2h3.5v14H4zM10.5 2H14v14h-3.5z"/>' : '<path d="M4 2v14l12-7z"/>';
     $('#playBtn').setAttribute('aria-label', playing ? 'Pause preview' : 'Play preview');
-    if (playing) { if (prog >= 100) prog = 0; raf = requestAnimationFrame(tick); say('Audio preview: recordings are made with the artists before opening.'); }
+    if (playing) { if (prog >= 100) prog = 0; raf = requestAnimationFrame(tick); say('Preview: the artist films are recorded with the artists before opening.'); }
     else cancelAnimationFrame(raf);
   };
   $('#playBtn').addEventListener('click', toggle);
@@ -1592,9 +1670,9 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
   $('#calNext').addEventListener('click', () => { month = new Date(2027, month.getMonth() + 1, 1); renderCal(); });
   const renderSlots = () => {
     const box = $('#slots'); box.innerHTML = '';
-    const hrs = [10,11,12,13,14,15,16,17].concat(sel.getDay() === 4 ? [18,19,20] : []);
+    const hrs = (sel.getDay() === 0 || sel.getDay() === 6) ? [12,13,14,15,16] : [10,11,12,13,14,15,16];
     $('#slotHead').textContent = `Entry time · ${DAYS[sel.getDay()]} ${sel.getDate()} ${MONTHS[sel.getMonth()]}`;
-    if (!hrs.includes(+slot.slice(0,2))) slot = '11:00';
+    if (!hrs.includes(+slot.slice(0,2))) slot = hrs[0] + ':00';
     hrs.forEach(h => {
       const t = `${h}:00`, few = ((sel.getDate() * 7 + h) % 5) === 0;
       const b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-pressed', t === slot);
@@ -1671,11 +1749,13 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
   })();
 
   /* ---------- presentation mode ---------- */
-  const ORDER = ['top','exhibition','context','artists','space','route','audio','framework','visit','thanks',
-    'womanhood','woo-hannah','labay-eyong','kablusiak','rucha-kulkarni','memory','yee-i-lann','meita-meilita','nico-williams','elfreda-dali','igshaan-adams','do-ho-suh'];
+  const ORDER = ['top','exhibition','artists','context','space','route','audio','framework','visit','thanks',
+    'grp-1','nico-williams','kablusiak','gina-adams','grp-2','yee-i-lann','labay-eyong',
+    'grp-3','igshaan-adams','rucha-kulkarni','meita-meilita','grp-4','woo-hannah','do-ho-suh','elfreda-dali','hema-shironi',
+    'grp-5','zoe-buckman'];
   const all = $$('[data-slide]');
   const slides = ORDER.map(id => document.getElementById(id)).filter(Boolean).concat(all.filter(s => !ORDER.includes(s.id)));
-  const APPENDIX = slides.findIndex(s => s.id === 'womanhood');
+  const APPENDIX = slides.findIndex(s => s.id === 'grp-1');
   const MAP = slides.findIndex(s => s.id === 'artists');
   const hud = { label: $('#hudLabel'), count: $('#hudCount'), prog: $('#hudProgress') };
   const notes = $('#notesPanel'), help = $('#help');
@@ -1714,6 +1794,8 @@ html.presenting .help.is-on{display:grid;position:fixed;inset:0;place-items:cent
       if (cur && !cur.classList.contains('present-only')) cur.scrollIntoView({ block: 'start' });
     },
   };
+  // in the presentation, names on the overview and the plan list jump to that artist's slide
+  $$('.board a, .where a').forEach(a => a.addEventListener('click', (e) => { if (P.on) { e.preventDefault(); P.goId(a.getAttribute('href').slice(1)); } }));
   $('#presentBtn').addEventListener('click', () => P.enter());
   $$('[data-present]').forEach(b => b.addEventListener('click', () => P.enter(0)));
   $('#hudPrev').addEventListener('click', () => P.show(P.i - 1));
